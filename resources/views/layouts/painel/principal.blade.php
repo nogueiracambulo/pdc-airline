@@ -19,8 +19,9 @@
       
 
         <!-- Menu topo -->
-        {{-- @include('layouts.painel.menu-topo') --}}
-        @include('navigation-menu')
+        @include('layouts.painel.menu-topo')
+        {{-- @include('navigation-menu') --}}
+        
         <!-- Menu Lateral Esquerdo -->
         @include('layouts.painel.menu-lateral-esquerdo')
 
