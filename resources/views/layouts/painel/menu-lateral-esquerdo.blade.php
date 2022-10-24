@@ -1,8 +1,10 @@
 {{-- @include('biblioteca_cc/modal_Conteudo/registarConteudo') --}}
-{{-- @include('biblioteca_cc/modal_Disciplina/registarDisciplina') --}}
+@include('admin/AnoLectivoRegistar')
+@include('admin/AnoLectivoActualizar')
+@include('admin/AnoLectivoSelecionar')
+@include('biblioteca_cc/modal_Disciplina/registarDisciplina')
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-
     <!-- Sidebar -->
     <div class="sidebar">
         <div class="user-panel mt-7 pb-8 mb-4 d-flex">
@@ -32,6 +34,38 @@
                 data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+               <li class="nav-item menu-open">
+                <a href="#" class="nav-link ">
+                    <i class="nav-icon fas fa-book"></i>
+                    <p>
+                        Ano Lectivo
+                        <i class="right fas fa-angle-left"></i>
+                        <span class="badge badge-info right">
+                            @isset($todos_anos_lectivos)
+                                {{dd($todos_anos_lectivos)}}
+                            @endisset
+                        </span>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="#" data-toggle="modal" data-target="#Modal_Registar_anoLectivo"
+                            class="nav-link">
+                            <i class="fas fa fa-plus nav-icon"></i>
+                            <p>Novo ano Lectivo</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" data-toggle="modal" data-target="#Modal_Selecionar_anoLectivo"
+                            class="nav-link">
+                            <i class="fas fa fa-list nav-icon"></i>
+                            <p>Selecionar</p>
+                        </a>
+                    </li>
+                </ul>
+
+               
+
                 <li class="nav-item menu-open">
                     <a href="#" class="nav-link ">
                         <i class="nav-icon fas fa-book"></i>

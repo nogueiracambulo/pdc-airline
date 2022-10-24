@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AnoLectivoController;
+use App\Http\Controllers\MainController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//ROTAS  PARA UTILIZADORES VISITANTES
 Route::get('/', function () {
     // return view('welcome');
     return view('visitantes.inicio');
@@ -26,12 +28,41 @@ Route::get('/contactos', function () {
     return view('visitantes.contactos');
 });
 
-Route::middleware([
-    'auth:sanctum',
+
+// ROTA PARA GERIR SEMESTRE
+Route::post('/semestre/registo', [SemestreController::class, 'store']);
+
+// ROTA PARA GERIR DISCIPLINAS
+Route::post('/disciplinas/registo', [DisciplinaController::class, 'store']);
+Route::get('/disciplinas/perfil/{id}', [DisciplinaController::class, 'mostrarPerfil']);
+
+
+//ROTAS QUE CARREGAM A PÁGINA  "BIBLIOTECA CC"
+Route::get('biblioteca_cc', [ConteudoController::class, 'show']);
+
+//ROTAS PARA GERIR CONTEÚDOS
+Route::post('/conteudos/registo', [ConteudoController::class, 'store']);
+Route::get('/conteudo/eliminarConteudo/{id}', [ConteudoController::class, 'eliminarConteudo']);
+Route::get('/conteudo/visualizar/{id}', [ConteudoController::class, 'visualizarConteudo']);
+Route::get('/conteudo/baixar/{conteudo}', [ConteudoController::class, 'baixarConteudo']);
+
+//ROTAS PARA GERIR PUBLICAÇÕES
+// Route::post('/publicacoes/resgisto', [PublicacaoController::class,'store']);
+// Route::get('/', [PublicacaoController::class, 'mostrarInicio']);
+
+
+//ROTA PRINCIPAL
+Route::middleware([ 
+    'auth:sanctum', 
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', function () { return view('layouts.painel.principal'); })->name('dashboard');
+    // Route::get('/index',  [MainController::class, 'index']);
+
+    //ROTAS PARA O ADMINISTRADOR
+    Route::post('/ano_lectivo/registo', [AnoLectivoController::class, 'store']);
+    Route::get('/ano_lectivo/mostrar', [AnoLectivoController::class, 'show']);
+    Route::post('/ano_lectivo/selecionar', [AnoLectivoController::class, 'selecionar']);
+
 });

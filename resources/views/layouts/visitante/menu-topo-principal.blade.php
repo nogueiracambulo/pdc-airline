@@ -11,7 +11,6 @@
                                 <a class="nav-link dropdown-toggle imgPerfil" style="color:white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {{ Auth::user()->name }}
                                 </a>
-
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
@@ -42,7 +41,7 @@
                 <li><a href="/projetos">Serviços</a></li>
 
                 @if(isset(auth()->user()->id))
-                    <li><a href="/perfil">Perfil</a></li>
+                    <li><a href="/profile">Perfil</a></li>
                 @endif
 
             </ul>
