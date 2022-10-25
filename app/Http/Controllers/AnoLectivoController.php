@@ -52,8 +52,8 @@ class AnoLectivoController extends Controller
         $todos_anos_lectivos=ano_lectivo::all();
         $ano_selecionado=ano_lectivo::all()->where(['selecionado' => 1 ]);
 
-        return view('dashboard', ['todos_anos_lectivos'=>$todos_anos_lectivos,'ano_selecionado'=>$ano_selecionado]);
-        // return back()->with('sucesso','Ano lectivo salvo com sucesso');
+        // return view('dashboard', ['todos_anos_lectivos'=>$todos_anos_lectivos,'ano_selecionado'=>$ano_selecionado]);
+        return back()->with('sucesso','Ano lectivo salvo com sucesso');
 
     }
 
