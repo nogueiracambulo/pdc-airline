@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('conteudos', function (Blueprint $table) {
             $table->id();
+            $table->string('titulo');
+            $table->string('descricao');
+            $table->string('ficheiro');
+            $table->unsignedInteger('disciplina_id');
             $table->timestamps();
         });
     }

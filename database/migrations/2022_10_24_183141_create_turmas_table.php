@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('turmas', function (Blueprint $table) {
             $table->id();
+            $table->string('descricao');
+            $table->unsignedInteger('semestre_id');
             $table->timestamps();
         });
     }

@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('semestres', function (Blueprint $table) {
             $table->id();
+            $table->string('descricao');
+            $table->date('data_inicio');
+            $table->date('data_termino');
+            $table->unsignedInteger('anoLectivo_id');
             $table->timestamps();
         });
     }
