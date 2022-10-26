@@ -19,13 +19,13 @@ class RoleSeeder extends Seeder
     {
         Role::insert([
             'id' =>1,
-            'name'=>'admin', 
+            'nome'=>'admin', 
             'descricao'=>"Perfil de Administrador",
         ]);
 
         Role::insert([
             'id' =>2,
-            'name'=>'estudante', 
+            'nome'=>'estudante', 
             'descricao'=>"Perfil de Estudante",
         ]);
 

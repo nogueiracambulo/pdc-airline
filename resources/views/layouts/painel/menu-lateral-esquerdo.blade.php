@@ -41,20 +41,20 @@
                         Ano Lectivo
                         <i class="right fas fa-angle-left"></i>
                         <span class="badge badge-info right">
-                            @isset($todos_anos_lectivos)
-                                {{dd($todos_anos_lectivos)}}
-                            @endisset
+                            
                         </span>
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="#" data-toggle="modal" data-target="#Modal_Registar_anoLectivo"
-                            class="nav-link">
-                            <i class="fas fa fa-plus nav-icon"></i>
-                            <p>Novo ano Lectivo</p>
-                        </a>
-                    </li>
+                    @can('add_anoLectivo')
+                        <li class="nav-item">
+                            <a href="#" data-toggle="modal" data-target="#Modal_Registar_anoLectivo"
+                                class="nav-link">
+                                <i class="fas fa fa-plus nav-icon"></i>
+                                <p>Novo ano Lectivo</p>
+                            </a>
+                        </li>
+                    @endcan
                     <li class="nav-item">
                         <a href="#" data-toggle="modal" data-target="#Modal_Selecionar_anoLectivo"
                             class="nav-link">
@@ -65,7 +65,7 @@
                 </ul>
 
                
-
+            
                 <li class="nav-item menu-open">
                     <a href="#" class="nav-link ">
                         <i class="nav-icon fas fa-book"></i>
@@ -250,11 +250,9 @@
                                 <p>Simple Tables</p>
                             </a>
                         </li>
-
                     </ul>
                 </li>
-
-            </ul>
+             </ul>
         </nav>
         <!-- /.sidebar-menu -->
     </div>

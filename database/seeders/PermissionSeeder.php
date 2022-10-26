@@ -19,13 +19,13 @@ class PermissionSeeder extends Seeder
     {
         Permission::insert([
             'id' =>1,
-            'name'=>"add_role", 
+            'nome'=>"add_anoLectivo", 
             'descricao'=>"Adicionar um papel",
         ]);
 
         Permission::insert([
             'id' =>2,
-            'name'=>"show_role", 
+            'nome'=>"selecionarAno", 
             'descricao'=>"Ver papeis",
         ]);
     }
