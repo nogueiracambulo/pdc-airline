@@ -4,15 +4,15 @@
 @include('admin/AnoLectivoSelecionar')
 @include('biblioteca_cc/modal_Disciplina/registarDisciplina')
 <!-- Main Sidebar Container -->
+
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Sidebar -->
     <div class="sidebar">
         <div class="user-panel mt-7 pb-8 mb-4 d-flex">
             <!-- Brand Logo -->
             <a href="/biblioteca-cc" class="brand-link">
                 &nbsp;<img src="/template_admin_lte/dist/img/graduation.png" alt="" class="img-circle elevation-4"
                     style="opacity: .8">
-                <span class="text-center" style="color:rgb(233, 126, 39)">&nbsp; MULO</span>
+                <span class="text-center" style="color:rgb(233,126,39)">&nbsp;MULO</span>
                 <span class="brand-text font-weight-light">NGI</span>
             </a>
         </div>
@@ -34,6 +34,41 @@
                 data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+               <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-table"></i>
+                    <p>
+                        Definições avançadas
+                        <i class="fas fa-angle-left right"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="/admin/listar_administradores" class="nav-link">
+                            <i class="fa fa-lock nav-icon"></i>
+                            <p>Administradores</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/listar_utilizadores" class="nav-link">
+                            <i class="fas fa fa-users nav-icon"></i>
+                            <p>Outros Utilizadores</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/listar_funcoes" class="nav-link">
+                            <i class="far fa-edit nav-icon"></i>
+                            <p>Funções</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/listar_permissoes" class="nav-link">
+                            <i class="far fa-edit nav-icon"></i>
+                            <p>Permissões</p>
+                        </a>
+                    </li><hr>
+                </ul>
+            </li>
                <li class="nav-item menu-open">
                 <a href="#" class="nav-link ">
                     <i class="nav-icon fas fa-book"></i>
@@ -46,7 +81,7 @@
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
-                    @can('add_anoLectivo')
+                    @can('add_role')
                         <li class="nav-item">
                             <a href="#" data-toggle="modal" data-target="#Modal_Registar_anoLectivo"
                                 class="nav-link">
@@ -61,7 +96,7 @@
                             <i class="fas fa fa-list nav-icon"></i>
                             <p>Selecionar</p>
                         </a>
-                    </li>
+                    </li><hr>
                 </ul>
 
                
@@ -233,23 +268,6 @@
                             </a>
                         </li>
 
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
-                        <p>
-                            Resultados
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/tables/simple.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Simple Tables</p>
-                            </a>
-                        </li>
                     </ul>
                 </li>
              </ul>

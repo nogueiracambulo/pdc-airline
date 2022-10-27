@@ -32,9 +32,9 @@ class AuthServiceProvider extends ServiceProvider
         foreach($permissions as $permission){
              Gate::define($permission->nome, function(User $user) use ($permission){
                 foreach($user->roles as $role){
-                     if($role->permissions->contains('name', $permission->nome)){
+                    if($role->permissions->contains('nome', $permission->nome)){
                          return true;
-                     }
+                    }
 
                 }
                 return false;

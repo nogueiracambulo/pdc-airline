@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnoLectivoController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\AdminController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,9 +63,15 @@ Route::middleware([
     Route::get('/dashboard', function () { return view('layouts.painel.principal'); })->name('dashboard');
     // Route::get('/index',  [MainController::class, 'index']);
 
-    //ROTAS PARA O ADMINISTRADOR
+    //ROTAS EXCLUSIVAS PARA O ADMINISTRADOR
     Route::post('/ano_lectivo/registo', [AnoLectivoController::class, 'store']);
     Route::get('/ano_lectivo/mostrar', [AnoLectivoController::class, 'show']);
     Route::post('/ano_lectivo/selecionar', [AnoLectivoController::class, 'selecionar']);
 
+    // Gestão de Controlo de acesso
+    Route::get('/admin/listar_administradores', [AdminController::class, 'listar_administradores']);
+    Route::get('/admin/listar_utilizadores', [AdminController::class, 'listar_utilizadores']);
+    Route::get('/admin/listar_funcoes', [AdminController::class, 'listar_funcoes']);
+    Route::get('/admin/listar_permissoes', [AdminController::class, 'listar_permissoes']);
+   
 });

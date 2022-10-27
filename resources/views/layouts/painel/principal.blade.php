@@ -28,7 +28,7 @@
         <!-- Conteúdo principal das Páginas -->
         <div class="content-wrapper">
             <!-- Cabaçalho dos Conteúdos-->
-            <div class="content-header">
+            {{-- <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
@@ -42,7 +42,7 @@
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
-            </div>
+            </div> --}}
             @yield('content')
             @yield('esquerda')
      

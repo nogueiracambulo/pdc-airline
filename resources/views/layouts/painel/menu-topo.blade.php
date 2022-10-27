@@ -11,7 +11,7 @@
         <li class="nav-item d-none d-sm-inline-block">
             <a href="/" class="nav-link">Início</a>
         </li>
-
+{{-- 
         <li class="nav-item d-none d-sm-inline-block">
             <a href="/biblioteca_cc" class="nav-link">Biblioteca </a>
         </li>
@@ -22,7 +22,7 @@
 
         <li class="nav-item d-none d-sm-inline-block">
             <a href="/projetos" class="nav-link">Garimpo</a>
-        </li>
+        </li> --}}
 
         <li class="nav-item d-none d-sm-inline-block">
             <form action="{{route('logout')}}" method="POST">
