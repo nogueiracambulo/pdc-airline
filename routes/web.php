@@ -66,7 +66,7 @@ Route::middleware([
     //ROTAS EXCLUSIVAS PARA O ADMINISTRADOR
     Route::post('/ano_lectivo/registo', [AnoLectivoController::class, 'store']);
     Route::get('/ano_lectivo/mostrar', [AnoLectivoController::class, 'show']);
-    Route::post('/ano_lectivo/selecionar', [AnoLectivoController::class, 'selecionar']);
+    Route::post('/selecionarAno', [AnoLectivoController::class, 'selecionar']);
 
     // Gestão de Controlo de acesso
     Route::get('/admin/listar_administradores', [AdminController::class, 'listar_administradores']);

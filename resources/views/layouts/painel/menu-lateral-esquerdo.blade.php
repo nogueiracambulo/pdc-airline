@@ -34,7 +34,7 @@
                 data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-               @can('add_role')
+               
                <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>
@@ -50,6 +50,7 @@
                                 <p>Ano Lectivo</p>
                             </a>
                         </li>
+                        @can('add_role')
                         <li class="nav-item">
                             <a href="/admin/listar_administradores" class="nav-link">
                                 <i class="fa fa-lock nav-icon"></i>
@@ -74,41 +75,11 @@
                                 <p>Permissões</p>
                             </a>
                         </li><hr>
+                        @endcan
                     </ul>
                 </li>
-                @endcan
-               <li class="nav-item menu-open">
-                <a href="#" class="nav-link ">
-                    <i class="nav-icon fas fa-book"></i>
-                    <p>
-                        Ano Lectivo
-                        <i class="right fas fa-angle-left"></i>
-                        <span class="badge badge-info right">
-                            
-                        </span>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    @can('add_role')
-                        <li class="nav-item">
-                            <a href="#" data-toggle="modal" data-target="#Modal_Registar_anoLectivo"
-                                class="nav-link">
-                                <i class="fas fa fa-plus nav-icon"></i>
-                                <p>Novo ano Lectivo</p>
-                            </a>
-                        </li>
-                    @endcan
-                    <li class="nav-item">
-                        <a href="#" data-toggle="modal" data-target="#Modal_Selecionar_anoLectivo"
-                            class="nav-link">
-                            <i class="fas fa fa-list nav-icon"></i>
-                            <p>Selecionar</p>
-                        </a>
-                    </li><hr>
-                </ul>
-
                
-            
+               
                 <li class="nav-item menu-open">
                     <a href="#" class="nav-link ">
                         <i class="nav-icon fas fa-book"></i>

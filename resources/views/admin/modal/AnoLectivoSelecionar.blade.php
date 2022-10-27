@@ -11,19 +11,17 @@
                 </button>
             </div>
 
-            <form action="/ano_lectivo/selecionar" method="Post" enctype="multipart/form-data">
+            <form action="/selecionarAno" method="Post" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
-                    @if(isset($ano_lectivo))
-                        <span class="description">Selecione o ano lectivo</span><br>
-                        <div class="input-group-append">
-                            <select class="custom-select mb-3 text-light border-0 bg-orange" name="ano_id" id="ano_id">
-                                @foreach ($ano_lectivo as $ano )
-                                    <option class="bg-light" value={{$ano->id}}> {{$ano->descricao}} </option>
-                                @endforeach
-                            </select>
-                        </div>
-                    @endif
+                    <span class="description">Selecione o ano</span><br>
+                    <div class="input-group-append">
+                        <select class="custom-select mb-3 text-light border-0 bg-orange" name="ano_id" id="ano_id">
+                            @foreach ($todos_anos as $anoLectivo)
+                                <option class="bg-light" value={{$anoLectivo->id}}> {{$anoLectivo->descricao}} </option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light fecharX" data-dismiss="modal">Cancelar</button>

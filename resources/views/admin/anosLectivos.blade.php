@@ -29,13 +29,14 @@
         {{-- BOTÃO MODAL, SELECIONAR UM ANO LECTIVO PARA MOSTRAR OS CONTEÚDOS BASEADOS NELE--}}         
         <div class="list-inline">
             <div class="text-right ">
-            <a href="#" data-toggle="modal" data-target="#Modal_Selecionar_anoLectivo" 
-            class="btn btn-primary" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Selecionar ano</a>
-        
-
-            {{-- BOTÃO MODAL, REGISTAR NOVA PERMISSÃO --}}         
-            <a href="#" data-toggle="modal" data-target="#Modal_Registar_anoLectivo" 
-            class="btn btn-primary" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Novo Ano</a>
+                <a href="#" data-toggle="modal" data-target="#Modal_Selecionar_anoLectivo" 
+                class="btn btn-primary" role="button" aria-pressed="false"><i class="fas fa-list"></i> Selecionar ano</a>
+            
+                @can('add_role')
+                    {{-- BOTÃO MODAL, REGISTAR NOVA PERMISSÃO --}}         
+                    <a href="#" data-toggle="modal" data-target="#Modal_Registar_anoLectivo" 
+                    class="btn btn-primary" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Novo Ano</a>
+                @endcan
             </div>
         </div><br>
 
