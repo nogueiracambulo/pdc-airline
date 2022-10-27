@@ -5,8 +5,8 @@
 {{-- @include('biblioteca_cc/modal_Disciplina/registarDisciplina')
 @include('biblioteca_cc/modal_Disciplina/sucesso')
 @include('biblioteca_cc/modal_Conteudo/registarConteudo') --}}
-
 @section('content')
+    {{-- {{dd($roles)}} --}}
     <div class="content">
         <section class="content-header">
             <div class="container-fluid">
@@ -24,6 +24,11 @@
             </div>
         </section>
 
+        {{-- BOTÃO MODAL, REGISTAR NOVA PERMISSÃO --}}
+        {{-- <div class="text-right ">
+            <a href="#" data-toggle="modal" data-target="#Modal_Registar_Conteudo" class="btn btn-primary"
+                role="button" aria-pressed="false">Criar utilizador</a>
+        </div><br> --}}
         <section class="content">
             <div class="card">
                 <div class="card-header">
@@ -42,7 +47,7 @@
                         <thead>
                             <tr>
                                 <th style="width: 1%">
-                                    #
+                                   ID
                                 </th>
                                 <th style="width: 20%">
                                     Nome
@@ -56,57 +61,41 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    #
-                                </td>
-                                <td>
-                                    <a>
-                                        AdminLTE v3
-                                    </a>
-                                </td>
-                                <td>
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <span class="badge badge-success">Admin</span>
-                                            <span class="badge badge-success">Estudante</span>
-                                            <span class="badge badge-success">Professor</span>
-                                        </li>
-                                    </ul>
-                                </td>
-                                <td class="list-inline">
-                                    <a class="btn btn-primary btn-sm" href="/ver_detalhes">
-                                        <i class="fas fa-folder">
-                                        </i>
-                                        View
-                                    </a>
-                                    <a class="btn btn-info btn-sm" href="#">
-                                        <i class="fas fa-pencil-alt">
-                                        </i>
-                                        Edit
-                                    </a>
-                                    <a class="btn btn-danger btn-sm" href="#">
-                                        <i class="fas fa-trash">
-                                        </i>
-                                        Delete
-                                    </a>
-                                </td>
-                            </tr>
+                            @foreach ($users as $user)
+                                @foreach ($user->roles as $role)
+                                    @if ($role->nome == 'admin')
+                                        <tr>
+                                            <td>
+                                                {{ $user->id }}
+                                            </td>
+
+                                            <td>
+                                                <a>
+                                                    {{ $user->name }}
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item">
+                                                        <span class="badge badge-success">{{ $role->nome }}</span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="list-inline">
+                                                <a class="btn btn-info btn-sm" href="#">
+                                                    <i class="fas fa-pencil-alt">
+                                                    </i>
+                                                    Editar
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @endif
+                                @endforeach
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
-            {{-- BOTÃO MODAL, REGISTAR CONTEÚDO --}}
-            <div class="row">
-                <div class=" offset-1 col-lg-4 col-6"></div>
-                <div class="text-center ">
-                    <br>
-                    <a href="#" data-toggle="modal" data-target="#Modal_Registar_Conteudo" class=""
-                        role="button" aria-pressed="false"><i class="fa fa-plus-circle fa-4x"></i></a>
-                    <br><a href="#" data-toggle="modal" data-target="#Modal_Registar_Conteudo" class=""
-                        role="button" aria-pressed="false">Novo Conteúdo</i></a><br>
-                </div>
-            </div>
-        </div>
+    </div>
     </div>
 @endsection

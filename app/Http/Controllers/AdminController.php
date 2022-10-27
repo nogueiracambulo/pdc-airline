@@ -88,32 +88,31 @@ class AdminController extends Controller
 
     public function listar_administradores(){
 
-
-        return view('admin.administradores');
+        $users=User::with('roles')->get();
+        return view('admin.administradores', ['users'=>$users]);
 
     }
 
-    
+    //Retorna todos os utilizadores registados no sistema e associa-os a tabela roles(funções ou papeis)
     public function listar_utilizadores(){
-
         $users=User::with('roles')->get();
-        $roles=Role::with('users')->get();
-        
-        return view('admin.utilizadores', ['users'=>$users,'roles'=>$roles]);
+        return view('admin.utilizadores', ['users'=>$users]);
 
     }
 
     public function listar_funcoes(){
 
-        
-        return view('admin.funcoes');
+        $roles=Role::with('permissions')->get();
+        return view('admin.funcoes',['roles'=>$roles]);
 
     }
 
     public function listar_permissoes(){
 
-        
-        return view('admin.permissoes');
+        $roles=Role::with('permissions')->get();
+        $permissions=Permission::with('roles')->get();
+    
+        return view('admin.permissoes',['roles'=>$roles, 'permissions'=>$permissions]);
 
     }
 }

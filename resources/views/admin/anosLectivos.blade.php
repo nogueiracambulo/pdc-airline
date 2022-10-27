@@ -1,38 +1,48 @@
 @extends('layouts.painel.principal')
 @section('titulo', 'MULONGI - Painel de Administrador')
 
-@include('admin/modal/acesso/RegistarFuncao')
+@include('admin/modal/AnoLectivoRegistar')
+@include('admin/modal/AnoLectivoSelecionar')
 {{-- @include('biblioteca_cc/modal_Disciplina/registarDisciplina')
 @include('biblioteca_cc/modal_Disciplina/sucesso')
 @include('biblioteca_cc/modal_Conteudo/registarConteudo') --}}
 
 @section('content')
-    <div class="container-fluid">
+    {{-- {{dd($roles)}} --}}
+    <div class="content">
         <section class="content-header">
-            {{-- <div class="container-fluid"> --}}
+            <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Gestão de Funções</h1>
+                        <h1>Anos Lectivos</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/">Inicio</a></li>
-                            <li class="breadcrumb-item active">Funções</li>
+                            <li class="breadcrumb-item active">Anos Lectivos</li>
                         </ol>
                     </div>
                 </div>
-            {{-- </div> --}}
+            </div>
         </section>
-        {{-- BOTÃO MODAL, REGISTAR NOVA FUNÇÃO --}}
-        <div class="text-right ">
-            <a href="#" data-toggle="modal" data-target="#Modal_Registar_funcao" 
-            class="btn btn-primary" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Adicionar Papel</a>
-        </div><br>
         
+        {{-- BOTÃO MODAL, SELECIONAR UM ANO LECTIVO PARA MOSTRAR OS CONTEÚDOS BASEADOS NELE--}}         
+        <div class="list-inline">
+            <div class="text-right ">
+            <a href="#" data-toggle="modal" data-target="#Modal_Selecionar_anoLectivo" 
+            class="btn btn-primary" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Selecionar ano</a>
+        
+
+            {{-- BOTÃO MODAL, REGISTAR NOVA PERMISSÃO --}}         
+            <a href="#" data-toggle="modal" data-target="#Modal_Registar_anoLectivo" 
+            class="btn btn-primary" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Novo Ano</a>
+            </div>
+        </div><br>
+
         <section class="content">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Função/Papel</h3>
+                    <h3 class="card-title">Todos anos Lectivos Registados </h3>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                             <i class="fas fa-minus"></i>
@@ -43,51 +53,53 @@
                     </div>
                 </div>
                 <div class="card-body p-0">
-                    <table class="table table-striped projects">
+                    <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th style="width: 1%">
                                     ID
                                 </th>
                                 <th style="width: 20%">
-                                    Nome
-                                </th>
-                                <th style="width: 30%">
-                                    Dascrição
-                                </th>
-                                <th>
-                                    Permissões
+                                    Descrição
                                 </th>
 
+                                <th style="width: 20%">
+                                    Activo
+                                </th>
+                               
                                 <th style="width: 30%">
                                     Acção
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($roles as $role)
-                            <tr>
+                            @foreach($todos_anos as $anoLectivo)
+
+                            <tr  @if($anoLectivo->selecionado==1) class="table-success" @endif>
                                 <td>
-                                    {{$role->id}}
+                                    {{ $anoLectivo->id }}
                                 </td>
+                                
                                 <td>
                                     <a>
-                                        {{$role->nome}}
+                                        {{$anoLectivo->descricao}}
                                     </a>
                                 </td>
+
                                 <td>
-                                    <ul class="list-inline">
-                                        {{$role->descricao}}
-                                    </ul>
-                                </td>
-                                <td>
-                                    <ul class="list-inline">
-                                        @foreach($role->permissions as $permission)
-                                            {{$permission->nome}} <br>
-                                        @endforeach
-                                    </ul>
+                                    @if($anoLectivo->selecionado==1) 
+                                        Sim
+                                    @else
+                                        Não
+                                    @endif
+
                                 </td>
                                 <td class="list-inline">
+                                    <a class="btn btn-primary btn-sm" href="/ver_detalhes">
+                                        <i class="fas fa-folder">
+                                        </i>
+                                        Ver
+                                    </a>
                                     <a class="btn btn-info btn-sm" href="#">
                                         <i class="fas fa-pencil-alt">
                                         </i>
@@ -105,7 +117,6 @@
                     </table>
                 </div>
             </div>
-            
         </div>
     </div>
 @endsection

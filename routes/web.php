@@ -73,5 +73,5 @@ Route::middleware([
     Route::get('/admin/listar_utilizadores', [AdminController::class, 'listar_utilizadores']);
     Route::get('/admin/listar_funcoes', [AdminController::class, 'listar_funcoes']);
     Route::get('/admin/listar_permissoes', [AdminController::class, 'listar_permissoes']);
-   
+    Route::get('/admin/anosLectivos', [AnoLectivoController::class, 'listar_anosLectivos']);
 });

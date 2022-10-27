@@ -1,7 +1,7 @@
 @extends('layouts.painel.principal')
 @section('titulo', 'MULONGI - Painel de Administrador')
 
-
+@include('admin/modal/acesso/RegistarUtilizador')
 {{-- @include('biblioteca_cc/modal_Disciplina/registarDisciplina')
 @include('biblioteca_cc/modal_Disciplina/sucesso')
 @include('biblioteca_cc/modal_Conteudo/registarConteudo') --}}
@@ -24,7 +24,11 @@
                 </div>
             </div>
         </section>
-
+        {{-- BOTÃO MODAL, REGISTAR NOVA PERMISSÃO --}}         
+        <div class="text-right ">
+            <a href="#" data-toggle="modal" data-target="#Modal_Registar_utilizador" 
+            class="btn btn-primary" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Novo utilizador</a>
+        </div><br>
         <section class="content">
             <div class="card">
                 <div class="card-header">
@@ -43,7 +47,7 @@
                         <thead>
                             <tr>
                                 <th style="width: 1%">
-                                    #
+                                    ID
                                 </th>
                                 <th style="width: 20%">
                                     Nome
@@ -60,7 +64,7 @@
                             @foreach($users as $user)
                             <tr>
                                 <td>
-                                    #
+                                    {{ $user->id }}
                                 </td>
                                 
                                 <td>
@@ -81,34 +85,23 @@
                                     <a class="btn btn-primary btn-sm" href="/ver_detalhes">
                                         <i class="fas fa-folder">
                                         </i>
-                                        View
+                                        Ver
                                     </a>
                                     <a class="btn btn-info btn-sm" href="#">
                                         <i class="fas fa-pencil-alt">
                                         </i>
-                                        Edit
+                                        Editar
                                     </a>
                                     <a class="btn btn-danger btn-sm" href="#">
                                         <i class="fas fa-trash">
                                         </i>
-                                        Delete
+                                        Eliminar
                                     </a>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
-                </div>
-            </div>
-            {{-- BOTÃO MODAL, REGISTAR CONTEÚDO --}}
-            <div class="row">
-                <div class=" offset-1 col-lg-4 col-6"></div>
-                <div class="text-center ">
-                    <br>
-                    <a href="#" data-toggle="modal" data-target="#Modal_Registar_Conteudo" class=""
-                        role="button" aria-pressed="false"><i class="fa fa-plus-circle fa-4x"></i></a>
-                    <br><a href="#" data-toggle="modal" data-target="#Modal_Registar_Conteudo" class=""
-                        role="button" aria-pressed="false">Novo Conteúdo</i></a><br>
                 </div>
             </div>
         </div>

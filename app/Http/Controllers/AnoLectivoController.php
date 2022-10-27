@@ -126,4 +126,12 @@ class AnoLectivoController extends Controller
     {
         //
     }
+
+
+    public function listar_anosLectivos(){
+        $todos_anos=ano_lectivo::all();
+
+        return view('admin.anosLectivos',['todos_anos'=>$todos_anos]);
+
+    }
 }
