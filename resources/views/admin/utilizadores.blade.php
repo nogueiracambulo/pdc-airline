@@ -27,7 +27,7 @@
         {{-- BOTÃO MODAL, REGISTAR NOVA PERMISSÃO --}}         
         <div class="text-right ">
             <a href="#" data-toggle="modal" data-target="#Modal_Registar_utilizador" 
-            class="btn btn-primary" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Novo utilizador</a>
+            class="btn btn-primary" role="button" aria-pressed="false"><i class="fas fa fa-user-plus"></i> Novo utilizador</a>
         </div><br>
         <section class="content">
             <div class="card">

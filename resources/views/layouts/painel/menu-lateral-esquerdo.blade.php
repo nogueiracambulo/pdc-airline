@@ -10,9 +10,9 @@
         <div class="user-panel mt-7 pb-8 mb-4 d-flex">
             <!-- Brand Logo -->
             <a href="/biblioteca-cc" class="brand-link">
-                {{-- &nbsp;<img src="/template_admin_lte/dist/img/graduation.png" alt="" class="img-circle elevation-4"
-                    style="opacity: .8"> --}}
-                <span class="text-center" style="color:rgb(233,126,39); font-size: 48px">MULONGI</span>
+                &nbsp;<img src="/template_admin_lte/dist/img/graduation.png" alt="" class="img-circle elevation-4"
+                    style="opacity: .8">
+                <span class="text-center" style="color:rgb(233,126,39); ">MULONGI</span>
                 {{-- <span class="brand-text font-weight-light"></span> --}}
             </a>
         </div>
@@ -60,18 +60,18 @@
                         <li class="nav-item">
                             <a href="/admin/listar_utilizadores" class="nav-link">
                                 <i class="fas fa fa-users nav-icon"></i>
-                                <p>Outros Utilizadores</p>
+                                <p>Todos Utilizadores</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/admin/listar_funcoes" class="nav-link">
-                                <i class="far fa-edit nav-icon"></i>
+                                <i class="fas fa-list nav-icon"></i>
                                 <p>Funções</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/admin/listar_permissoes" class="nav-link">
-                                <i class="far fa-edit nav-icon"></i>
+                                <i class="fas fa-lock-open nav-icon"></i>
                                 <p>Permissões</p>
                             </a>
                         </li><hr>
@@ -80,7 +80,7 @@
                 </li>
                
                
-                <li class="nav-item menu-open">
+                <li class="nav-item ">
                     <a href="#" class="nav-link ">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
@@ -91,23 +91,23 @@
                     <ul class="nav nav-treeview">
 
                         <li class="nav-item">
-                            <a href="#" data-toggle="modal" data-target="#Modal_Registar_Disciplina"
+                            <a href="/conteudos/inicio" 
                                 class="nav-link">
-                                <i class="fas fa fa-plus nav-icon"></i>
-                                <p>Inserir Disciplina</p>
+                                <i class="fas fa fa-eye nav-icon"></i>
+                                <p>Aceder aos conteudos</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="pages/layout/top-nav.html" class="nav-link">
-                                <i class="far fa-edit nav-icon"></i>
-                                <p>Actualizar Disciplina</p>
+                            <a href="#"  data-toggle="modal" data-target="#Modal_Registar_Disciplina" class="nav-link">
+                                <i class="fas fa-plus nav-icon"></i>
+                                <p>Inserir Disciplina</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="pages/layout/top-nav.html" class="nav-link">
-                                <i class="fas fa fa-trash nav-icon"></i>
-                                <p>Eliminar Disciplinas</p>
+                                <i class="fas fa fa-list nav-icon"></i>
+                                <p>Visualizar Disciplinas</p>
                             </a>
                         </li>
                         <hr>
@@ -117,24 +117,11 @@
                         <li class="nav-item">
                             <a href="#" data-toggle="modal" data-target="#Modal_Registar_Conteudo"
                                 class="nav-link">
-                                <i class="fas fa fa-plus nav-icon"></i>
-                                <p>Inserir Conteúdo</p>
+                                <i class="fas fa fa-search nav-icon"></i>
+                                <p>Pesquisar Conteúdo</p>
                             </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/layout/top-nav.html" class="nav-link">
-                                <i class="far fa-edit nav-icon"></i>
-                                <p>Actualizar Conteúdo</p>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="pages/layout/top-nav.html" class="nav-link">
-                                <i class="fas fa-trash nav-icon"></i>
-                                <p>Eliminar Conteúdos</p>
-                                <hr>
-                            </a>
-                        </li>
+                        </li><hr>
+                        
                     </ul>
                 </li>
 

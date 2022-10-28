@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ano_lectivo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 // use App\Models\Auth;
 
 class AnoLectivoController extends Controller
@@ -77,8 +78,8 @@ class AnoLectivoController extends Controller
         $todos_anos_lectivos=ano_lectivo::all();
         $ano_selecionado=ano_lectivo::all()->where(['selecionado' => 1 ]);
         
-        // return view('dashboard', ['todos_anos_lectivos'=>$todos_anos_lectivos,'ano_selecionado'=>$ano_selecionado]);
-        return back()->with('sucesso', 'Ano lectivo selecionado com sucesso');
+        Alert::success('sucesso', 'Ano lectivo selecionado com sucesso');
+        return back();
     }
 
 

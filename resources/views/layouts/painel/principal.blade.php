@@ -60,6 +60,7 @@
     </div>
     <!-- Inclusão de arquivos JavaScript -->
     @include('layouts.painel.javascript')
+    @include('sweetalert::alert')
 </body>
 
 </html>
