@@ -18,7 +18,19 @@ return new class extends Migration
             $table->string('nome');
             $table->string('sigla');
             $table->string('nome_professor');
-            $table->unsignedInteger('turma_id');
+
+            $table->bigInteger('turma_id')->unsigned();
+            $table->foreign('turma_id')
+            ->references('id')
+            ->on('turmas')
+            ->onDelete('cascade');
+          
+
+            $table->bigInteger('criador_id')->unsigned();
+            $table->foreign('criador_id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }

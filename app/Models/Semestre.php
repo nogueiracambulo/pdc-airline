@@ -12,10 +12,16 @@ class Semestre extends Model
         'descricao',
         'data_inicio',
         'data_termino',
-        'anoLectivo_id'
+        'anoLectivo_id',
+        'criador_id'
+
     ];
 
     public function anoLectivo(){
         return $this->belongsTo(ano_lectivo::class, 'anoLectivo_id', 'id');
     }
+    public function user(){
+        return $this->belongsTo(User::class, 'criador_id', 'id');
+    }
+
 }

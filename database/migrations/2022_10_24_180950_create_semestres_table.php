@@ -18,7 +18,18 @@ return new class extends Migration
             $table->string('descricao');
             $table->date('data_inicio');
             $table->date('data_termino');
-            $table->unsignedInteger('anoLectivo_id');
+
+            $table->bigInteger('anoLectivo_id')->unsigned();
+            $table->foreign('anoLectivo_id')
+            ->references('id')
+            ->on('ano_lectivos')
+            ->onDelete('cascade');
+           
+            $table->bigInteger('criador_id')->unsigned();
+            $table->foreign('criador_id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }

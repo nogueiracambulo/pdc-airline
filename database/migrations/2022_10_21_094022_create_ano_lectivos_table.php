@@ -18,10 +18,19 @@ return new class extends Migration
             $table->string('descricao');
             $table->date('data_inicio');
             $table->date('data_termino');
-            $table->unsignedInteger('user_id');
             $table->boolean('selecionado')->default(1);
+            
+            $table->bigInteger('criador_id')->unsigned();
+            $table->foreign('criador_id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('cascade');
             $table->timestamps();
         });
+
+        
+       
+        
     }
 
     /**

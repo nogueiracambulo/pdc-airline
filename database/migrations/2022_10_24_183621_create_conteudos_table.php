@@ -18,7 +18,19 @@ return new class extends Migration
             $table->string('titulo');
             $table->string('descricao');
             $table->string('ficheiro');
-            $table->unsignedInteger('disciplina_id');
+        
+            $table->bigInteger('disciplina_id')->unsigned();
+            $table->foreign('disciplina_id')
+            ->references('id')
+            ->on('disciplinas')
+            ->onDelete('cascade');
+          
+
+            $table->bigInteger('criador_id')->unsigned();
+            $table->foreign('criador_id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }

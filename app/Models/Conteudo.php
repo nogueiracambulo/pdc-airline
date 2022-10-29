@@ -13,10 +13,15 @@ class Conteudo extends Model
         'titulo',
         'descricao',
         'ficheiro',
-        'disciplina_id'
+        'disciplina_id',
+        'criador_id'
     ];
 
     public function disciplina(){
         return $this->belongsTo(Disciplina::class, 'disciplina_id', 'id');
     }
+    public function user(){
+        return $this->belongsTo(User::class, 'criador_id', 'id');
+    }
+
 }

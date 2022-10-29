@@ -13,10 +13,15 @@ class Disciplina extends Model
         'nome',
         'sigla',
         'nome_professor',
-        'turma_id'
+        'turma_id',
+        'criador_id'
     ];
 
     public function turma(){
         return $this->belongsTo(Turma::class, 'turma_id', 'id');
     }
+    public function user(){
+        return $this->belongsTo(User::class, 'criador_id', 'id');
+    }
+
 }

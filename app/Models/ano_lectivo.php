@@ -12,13 +12,14 @@ class ano_lectivo extends Model
         'descricao',
         'data_inicio',
         'data_termino',
-        'user_id',
-        'selecionado'
+        'selecionado',
+        'criador_id'
+
     ];
 
 
     public function user(){
-        return $this->belongsTo(User::class, 'user_id', 'id');
+        return $this->belongsTo(User::class, 'criador_id', 'id');
     }
 
 }
