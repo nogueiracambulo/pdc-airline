@@ -1,8 +1,4 @@
-{{-- @include('biblioteca_cc/modal_Conteudo/registarConteudo') --}}
-@include('admin/modal/AnoLectivoRegistar')
-@include('admin/modal/AnoLectivoActualizar')
-@include('admin/modal/AnoLectivoSelecionar')
-@include('biblioteca_cc/modal_Disciplina/registarDisciplina')
+
 <!-- Main Sidebar Container -->
 
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -158,66 +154,7 @@
 
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-user"></i>
-                        <p>
-                            Professores
-                            <i class="right fas fa-angle-left"></i>
-                            <span class="badge badge-info right">6</span>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/admin" class="nav-link">
-                                <i class="far fa-eye nav-icon"></i>
-                                <p>Ver Professores</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/layout/top-nav.html" class="nav-link">
-                                <i class="fas fa fa-user-plus nav-icon"></i>
-                                <p>Registar Professor</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/layout/top-nav.html" class="nav-link">
-                                <i class="far fa-edit nav-icon"></i>
-                                <p>Editar Professor</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-user"></i>
-                        <p>
-                            Estudantes
-                            <i class="fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">6</span>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/layout/top-nav.html" class="nav-link">
-                                <i class="far fa-eye nav-icon"></i>
-                                <p>Ver Estudantes</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/layout/top-nav.html" class="nav-link">
-                                <i class="fas fa fa-user-plus nav-icon"></i>
-                                <p>Novo Estudante</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/layout/top-nav.html" class="nav-link">
-                                <i class="far fa-edit nav-icon"></i>
-                                <p>Editar Estudante</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+               
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>

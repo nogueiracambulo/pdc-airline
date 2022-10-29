@@ -14,7 +14,7 @@ class ConteudoController extends Controller
      */
     public function index()
     {
-        //
+        return view('biblioteca.home');
     }
 
     /**

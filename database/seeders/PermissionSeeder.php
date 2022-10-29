@@ -12,6 +12,8 @@ class PermissionSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     * 
+     
      *
      * @return void
      */

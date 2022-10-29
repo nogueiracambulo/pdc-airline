@@ -3,8 +3,14 @@
    
 <!-- Cabeçalho -->
 @include('layouts.painel.header')
-{{-- @include('biblioteca_cc/modal_Conteudo/registarConteudo') --}}
-{{-- @include('biblioteca_cc/modal_Disciplina/registarDisciplina') --}}
+@include('admin/modal/acesso/RegistarUtilizador')
+@include('admin/modal/acesso/RegistarPermissao')
+@include('admin/modal/acesso/RegistarFuncao')
+@include('admin/modal/AnoLectivoRegistar')
+@include('admin/modal/AnoLectivoSelecionar')
+@include('biblioteca/modal_Disciplina/registarDisciplina')
+{{-- @include('biblioteca/modal_Conteudo/registarConteudo') --}}
+
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
@@ -27,22 +33,7 @@
 
         <!-- Conteúdo principal das Páginas -->
         <div class="content-wrapper">
-            <!-- Cabaçalho dos Conteúdos-->
-            {{-- <div class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0"></h1>
-                        </div><!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Início</a></li>
-                                <li class="breadcrumb-item active">Estudante</li>
-                            </ol>
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
-                </div><!-- /.container-fluid -->
-            </div> --}}
+    
             @yield('content')
             @yield('esquerda')
      

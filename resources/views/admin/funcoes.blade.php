@@ -1,10 +1,7 @@
 @extends('layouts.painel.principal')
 @section('titulo', 'MULONGI - Painel de Administrador')
 
-@include('admin/modal/acesso/RegistarFuncao')
-{{-- @include('biblioteca_cc/modal_Disciplina/registarDisciplina')
-@include('biblioteca_cc/modal_Disciplina/sucesso')
-@include('biblioteca_cc/modal_Conteudo/registarConteudo') --}}
+
 
 @section('content')
     <div class="container-fluid">

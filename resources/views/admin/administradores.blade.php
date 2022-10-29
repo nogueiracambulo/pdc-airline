@@ -2,9 +2,6 @@
 @section('titulo', 'MULONGI - Painel de Administrador')
 
 
-{{-- @include('biblioteca_cc/modal_Disciplina/registarDisciplina')
-@include('biblioteca_cc/modal_Disciplina/sucesso')
-@include('biblioteca_cc/modal_Conteudo/registarConteudo') --}}
 @section('content')
     {{-- {{dd($roles)}} --}}
     <div class="content">

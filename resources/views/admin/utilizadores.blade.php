@@ -1,10 +1,6 @@
 @extends('layouts.painel.principal')
 @section('titulo', 'MULONGI - Painel de Administrador')
 
-@include('admin/modal/acesso/RegistarUtilizador')
-{{-- @include('biblioteca_cc/modal_Disciplina/registarDisciplina')
-@include('biblioteca_cc/modal_Disciplina/sucesso')
-@include('biblioteca_cc/modal_Conteudo/registarConteudo') --}}
 
 @section('content')
     {{-- {{dd($roles)}} --}}

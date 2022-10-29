@@ -3,22 +3,22 @@
 
 @section ('content')
     <div class="container-fluid">
-        <!-- Breadcrumb section -->
-        {{-- <div class="site-breadcrumb">
-            <div class="container">
-                <a href="/"><i class="fa fa-home"></i> Início</a> <i class="fa fa-angle-right"></i>
-                <span>Biblioteca CC </span>
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>BEM - VINDO A BIBLIOTECA!</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                            <li class="breadcrumb-item active">Biblioteca</li>
+                        </ol>
+                    </div>
+                </div>
             </div>
-        </div>
-         <br><br> --}}
-
-        @include('biblioteca_cc/modal_Disciplina/registarDisciplina')
-        @include('biblioteca_cc/modal_Disciplina/sucesso')
-        @include('biblioteca_cc/modal_Conteudo/registarConteudo')
-        
-       
+        </section>
         <div class="row">
-            
             <div class=" offset-1 col-lg-3 col-6">
                 <!-- small box -->
                 <div class="small-box bg-info">
