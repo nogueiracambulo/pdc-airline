@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Conteudo;
+use App\Models\ano_lectivo;
+use App\Models\Turma;
+use App\Models\Semestre;
 use Illuminate\Http\Request;
 
 class ConteudoController extends Controller
@@ -14,7 +17,10 @@ class ConteudoController extends Controller
      */
     public function index()
     {
-        return view('biblioteca.home');
+        $todos_anos=ano_lectivo::all();
+        $todos_semestres=Semestre::all();
+        $todas_turmas=Turma::all();
+        return view('biblioteca.home',['todos_anos'=>$todos_anos,'todos_semestres'=>$todos_semestres,'todas_turmas'=>$todas_turmas]);
     }
 
     /**

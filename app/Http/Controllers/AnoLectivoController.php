@@ -43,7 +43,7 @@ class AnoLectivoController extends Controller
         $ano_lectivo->descricao=$request->descricao;
         $ano_lectivo->data_inicio=$request->data_inicio;
         $ano_lectivo->data_termino=$request->data_termino;
-        $ano_lectivo->user_id=auth()->user()->id;
+        $ano_lectivo->criador_id=auth()->user()->id;
         
         DB::table('ano_lectivos')->update(['selecionado' => 0 ]);
         $ano_lectivo->selecionado = 1;
@@ -53,8 +53,8 @@ class AnoLectivoController extends Controller
         $todos_anos_lectivos=ano_lectivo::all();
         $ano_selecionado=ano_lectivo::all()->where(['selecionado' => 1 ]);
 
-        // return view('dashboard', ['todos_anos_lectivos'=>$todos_anos_lectivos,'ano_selecionado'=>$ano_selecionado]);
-        return back()->with('sucesso','Ano lectivo salvo com sucesso');
+        Alert::success('sucesso', 'Ano lectivo criado com sucesso');
+        return back();
 
     }
 
