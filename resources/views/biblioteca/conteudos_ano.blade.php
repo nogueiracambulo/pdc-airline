@@ -1,27 +1,28 @@
 @extends('layouts.painel.principal')
 
-@section('titulo', 'STUDENT-GUIDER | Biblioteca CC')
+@section('titulo', 'MULONGI | Biblioteca ')
 
 @section ('content')
-
-    @include('biblioteca_cc/modal_Conteudo/registarConteudo')
-    @include('biblioteca_cc/modal_Disciplina/registarDisciplina')
     <div class="container">
-  
-        <div class="">
-            <div class="container">
-                <a href="/"><i class="fa fa-home"></i> Início</a> <i class="fa fa-angle-right"></i>
-                <a href="/biblioteca_cc"><span>Biblioteca CC </span></a>
-                <i class="fa fa-angle-right"></i>
-                <span>{{$ano}}º ANO </span>
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Biblioteca</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/">Início</a></li>
+                            <li class="breadcrumb-item active">{{$ano}}º ANO</li>
+                        </ol>
+                    </div>
+                </div>
             </div>
-        </div>
-       
+        </section>   
         <section class="">
             <div class="row">
                 <div class="col-lg-12 post-list">
                     <div class="container">
-
                         {{-- LISTA DE DISCIPLINAS DO PRIMEIRO SEMESTRE DE CADA ANO--}}
                         <div class="course-thumb">
                             <div class="">
@@ -32,8 +33,8 @@
                             </div>
                         </div>
                         <div class="row ">
-                            @foreach ( $disciplinas as $disc )
-                                @if($disc->semestre==1)
+                            @foreach ($todas_disciplinas as $disc )
+                                @if($disc->turma_id==$ano)
                                     <!-- course item -->
                                     <div @if($loop->first) class="offset-1 col-lg-2 col-6" @else class="col-lg-2 col-6" @endif >
                                         <!-- small box -->
@@ -56,6 +57,7 @@
                                         </div>
                                     </div>
                                 @endif
+                                {{-- @endforeach --}}
                             @endforeach
                         </div>
 
@@ -68,8 +70,7 @@
                             </div>
                         </div>
                         <div class="row ">
-                        
-                            @foreach ( $disciplinas as $disc )
+                            @foreach ( $todas_disciplinas as $disc )
                                 @if($disc->semestre==2)
                                     <!-- course item -->
                                     <div @if($loop->iteration==4) class="offset-1 col-lg-2 col-6" @else class="col-lg-2 col-6" @endif>
@@ -131,12 +132,12 @@
                     </ul>
                 </div>
             </div> 
-            <div class="offset-3 col-6">
+            {{-- <div class="offset-3 col-6">
                 <div class="text-center " >
                     <a href="#" data-toggle="modal" data-target="#Modal_Registar_Conteudo"  class="link_btn" role="button" aria-pressed="false" ><i class="fa fa-plus-circle fa-4x"></i></a>
                     <br><a href="#" data-toggle="modal" data-target="#Modal_Registar_Disciplina"  class="link_btn" role="button" aria-pressed="false" >Novo Conteúdo</i></a><br>
                 </div>
-            </div>
+            </div> --}}
         </section>
     </div>
 @endsection

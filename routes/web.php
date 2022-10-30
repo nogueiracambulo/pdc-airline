@@ -55,6 +55,7 @@ Route::middleware([
     //=================================================MÓDULO BIBLIOTECA==================================================================================   
     //ROTAS QUE CARREGAM A PÁGINA  "BIBLIOTECA"
     Route::get('conteudos/inicio', [ConteudoController::class, 'index']);
+    Route::get('conteudos/turma/{id}', [ConteudoController::class, 'listarDisciplina']);
 
     // ROTA PARA GERIR SEMESTRE
     Route::post('/semestre/registo', [SemestreController::class, 'store']);
