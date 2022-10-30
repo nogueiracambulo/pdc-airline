@@ -60,7 +60,7 @@ class User extends Authenticatable
     ];
 
     public function ano_lectivo(){
-        return $this->belongsToMany(ano_lectivo::class);
+        return $this->hasMany(ano_lectivo::class);
     }
 
     public function roles(){

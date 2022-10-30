@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('descricao');
 
-            $table->bigInteger('semestre_id')->unsigned();
-            $table->foreign('semestre_id')
+            $table->bigInteger('anoLectivo_id')->unsigned();
+            $table->foreign('anoLectivo_id')
             ->references('id')
-            ->on('semestres')
+            ->on('ano_lectivos')
             ->onDelete('cascade');
           
 

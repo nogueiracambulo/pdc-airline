@@ -13,6 +13,7 @@ class Disciplina extends Model
         'nome',
         'sigla',
         'nome_professor',
+        'semestre',
         'turma_id',
         'criador_id'
     ];

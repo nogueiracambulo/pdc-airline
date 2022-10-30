@@ -20,30 +20,24 @@
             </div>
         </section>   
         <div class="row">
-            @foreach($todos_anos as $ano_lectivo)
-                @if($ano_lectivo->selecionado==1)
-                    @foreach($todos_semestres as $semestre)
-                        @if($semestre->anoLectivo_id==$ano_lectivo->id)
-                            @foreach($todas_turmas as $turma)
-                                @if($turma->semestre_id==$semestre->id)
-                                    <div class="@if($loop->first) offset-1 @endif  col-lg-3 col-6">
-                                        <!-- small box -->
-                                        <div class="small-box bg-info">
-                                            <div class="inner">
-                                                <h3>{{$turma->descricao}}</h3>
-                                                <p>{{$ano_lectivo->descricao}}</p>
-                                            </div>
-                                            <div class="icon">
-                                                <i class="fas fa-graduation-cap"></i>
-                                            </div>
-                                            <a href="/conteudos/turma/{{$turma->id}}" class="small-box-footer"> Aceder <i class="fas fa-arrow-circle-right"></i></a>
-                                        </div>
-                                    </div>
-                                @endif
-                            @endforeach
-                        @endif
-                    @endforeach
-                @endif
+            @foreach($ano_lectivo as $ano_lectivo)
+                @foreach($todas_turmas as $turma)
+                    @if($turma->anoLectivo_id==$ano_lectivo->id)
+                        <div class="@if($loop->first) offset-1 @endif  col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-info">
+                                <div class="inner">
+                                    <h3>{{$turma->descricao}}</h3>
+                                    <p>{{$ano_lectivo->descricao}}</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <a href="/conteudos/turma/{{$turma->id}}" class="small-box-footer"> Aceder <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
             @endforeach
         </div>
 

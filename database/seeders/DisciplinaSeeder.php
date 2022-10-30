@@ -21,6 +21,7 @@ class DisciplinaSeeder extends Seeder
             'nome'=>"Lógica de Programação", 
             'sigla'=>"LP", 
             'nome_professor'=>"João Costa",
+            'semestre'=>1,
             'turma_id'=>1,
             'criador_id'=>1,
         ]);

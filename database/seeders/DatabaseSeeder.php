@@ -27,7 +27,6 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             RoleUserSeeder::class,
             PermissionRoleSeeder::class,
-            SemestreSeeder::class,
             TurmaSeeder::class,
             DisciplinaSeeder::class,
             ConteudoSeeder::class

@@ -10,12 +10,12 @@ class Turma extends Model
     use HasFactory;
     protected $fillable = [
         'descricao',
-        'semestre_id',
+        'anoLectivo_id',
         'criador_id'
     ];
 
-    public function semestre(){
-        return $this->belongsTo(Semestre::class, 'semestre_id', 'id');
+    public function ano_lectivo(){
+        return $this->belongsTo(ano_lectivo::class, 'anoLectivo_id', 'id');
     }
     public function user(){
         return $this->belongsTo(User::class, 'criador_id', 'id');

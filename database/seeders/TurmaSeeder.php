@@ -20,7 +20,7 @@ class TurmaSeeder extends Seeder
         Turma::insert([
             'id' =>1,
             'descricao'=>"1º ANO", 
-            'semestre_id'=>1,
+            'anoLectivo_id'=>1,
             'criador_id'=>1,
         ]);
 

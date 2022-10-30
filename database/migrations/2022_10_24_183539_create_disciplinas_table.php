@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nome');
             $table->string('sigla');
             $table->string('nome_professor');
+            $table->integer('semestre');
 
             $table->bigInteger('turma_id')->unsigned();
             $table->foreign('turma_id')
