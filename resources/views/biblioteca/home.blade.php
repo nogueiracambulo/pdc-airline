@@ -9,6 +9,9 @@
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <h1>BEM - VINDO A BIBLIOTECA!</h1>
+                        {{-- @foreach($ano_lectivo as $ano_lectivo)
+                            Está a visualizar conteúdo do ano lectivo {{$ano_lectivo->descricao}}
+                        @endforeach --}}
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -18,12 +21,24 @@
                     </div>
                 </div>
             </div>
+            <div class="list-inline">
+                <div class="text-right ">
+                    <a href="#" data-toggle="modal" data-target="#Modal_Selecionar_anoLectivo" 
+                    class="btn btn-primary" role="button" aria-pressed="false"><i class="fas fa-list"></i> Selecionar ano</a>
+                
+                    @can('add_role')
+                        {{-- BOTÃO MODAL, REGISTAR NOVA TURMA --}}         
+                        <a href="#" data-toggle="modal" data-target="#Modal_Registar_turma" 
+                        class="btn btn-primary" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Nova Turma</a>
+                    @endcan
+                </div>
+            </div><br>
         </section>   
         <div class="row">
             @foreach($ano_lectivo as $ano_lectivo)
                 @foreach($todas_turmas as $turma)
                     @if($turma->anoLectivo_id==$ano_lectivo->id)
-                        <div class="@if($loop->first) offset-1 @endif  col-lg-3 col-6">
+                        <div class="@if($loop->first)  @endif  col-md-4 ">
                             <!-- small box -->
                             <div class="small-box bg-info">
                                 <div class="inner">
@@ -40,14 +55,5 @@
                 @endforeach
             @endforeach
         </div>
-
-    {{-- BOTÃO MODAL, REGISTAR CONTEÚDO --}}
-    <div class="row"> 
-        <div class=" offset-1 col-lg-4 col-6"></div>
-            <div class="text-center " >
-                <br>
-                <a href="#" data-toggle="modal" data-target="#Modal_Registar_Conteudo"  class="" role="button" aria-pressed="false" ><i class="fa fa-plus-circle fa-4x"></i></a>
-            </div> 
-         </div> 
     </div>
 @endsection

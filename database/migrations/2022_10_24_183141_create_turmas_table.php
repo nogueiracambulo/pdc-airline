@@ -22,7 +22,7 @@ return new class extends Migration
             ->references('id')
             ->on('ano_lectivos')
             ->onDelete('cascade');
-          
+        
 
             $table->bigInteger('criador_id')->unsigned();
             $table->foreign('criador_id')

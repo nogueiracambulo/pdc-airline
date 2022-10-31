@@ -7,6 +7,7 @@
 @include('admin/modal/acesso/RegistarPermissao')
 @include('admin/modal/acesso/RegistarFuncao')
 @include('admin/modal/AnoLectivoRegistar')
+@include('admin/modal/turmaRegistar')
 @include('admin/modal/AnoLectivoSelecionar')
 @include('biblioteca/modal_Disciplina/registarDisciplina')
 {{-- @include('biblioteca/modal_Conteudo/registarConteudo') --}}

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Turma;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TurmaController extends Controller
 {
@@ -35,7 +36,14 @@ class TurmaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $turma=new Turma;
+       $turma->descricao=$request->descricao;
+       $turma->anoLectivo_id=$request->anoLectivo;
+       $turma->criador_id=$request->criador;
+
+       $turma->save();
+       Alert::success('sucesso', 'Turma criada com sucesso');
+       return back();
     }
 
     /**

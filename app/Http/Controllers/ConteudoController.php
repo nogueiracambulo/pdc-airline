@@ -18,9 +18,10 @@ class ConteudoController extends Controller
      */
     public function index()
     {
+        $todos_anos=ano_lectivo::all();
         $ano_lectivo=DB::table('ano_lectivos')->where('selecionado',1)->get();
         $todas_turmas=DB::table('turmas')->get();
-        return view('biblioteca.home',['ano_lectivo'=>$ano_lectivo,'todas_turmas'=>$todas_turmas]);
+        return view('biblioteca.home',['ano_lectivo'=>$ano_lectivo,'todas_turmas'=>$todas_turmas,'todos_anos'=>$todos_anos]);
     }
 
     public function listarDisciplina($id){

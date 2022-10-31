@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnoLectivoController;
+use App\Http\Controllers\TurmaController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ConteudoController;
 use App\Http\Controllers\AdminController;
@@ -58,7 +59,7 @@ Route::middleware([
     Route::get('conteudos/turma/{id}', [ConteudoController::class, 'listarDisciplina']);
 
     // ROTA PARA GERIR SEMESTRE
-    Route::post('/semestre/registo', [SemestreController::class, 'store']);
+    Route::post('/turmas/registo', [TurmaController::class, 'store']);
 
     // ROTA PARA GERIR DISCIPLINAS
     Route::post('/disciplinas/registo', [DisciplinaController::class, 'store']);
