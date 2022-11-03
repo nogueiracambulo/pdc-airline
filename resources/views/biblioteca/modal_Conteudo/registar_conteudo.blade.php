@@ -1,11 +1,11 @@
 
 
  <!-- Modal Registar-->
- <div class=" modal fade" data-backdrop="static" data-keyboard="false" id="Modal_Registar_Conteudo" tabindex="-1" aria-labelledby="Modal_Registar_DisciplinaLabel" aria-hidden="true">
+ <div class=" modal fade" data-backdrop="static" data-keyboard="false" id="Modal_Registar_Conteudo" tabindex="-1" aria-labelledby="Modal_Registar_Conteudo" aria-hidden="true">
     <div class="modal-dialog modal-md">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="Modal_Registar_DisciplinaLabel">Registar Conteudo</h5>
+                <h5 class="modal-title" id="Modal_Registar_Conteudo">Registar Conteúdo</h5>
                 <button type="button" class="close fecharX" data-dismiss="modal">
                     <span >&times;</span>
                 </button>
@@ -28,33 +28,28 @@
                        <span class="description" style="color:red">{{$message}} </span><br>
                     @enderror <br>
 
-                    {{-- @if(isset($disciplina)) --}}
-                        @foreach ($disciplina as $disciplina)
-                            <div class="input-group-append">
-                                <input type="search" class="form-control form-control-sm @error('disciplina') is-invalid @enderror"  name="disciplina" value={{$disciplina->id}} hidden>
-                                <input type="search" class="form-control form-control-sm"   placeholder="{{$disciplina->nome}}" disabled> <br><br>
-                            </div>
-                        @endforeach
-                    {{-- @else --}}
-                        <span class="description">Selecione a Disciplina associada ao Conteúdo</span><br>
+                    @isset($disciplina)
                         <div class="input-group-append">
-                            <select class="custom-select mb-3 text-light border-0 bg-orange" name="disciplina" id="disciplina">
-                                @foreach ($disciplinas as $disc )
-                                    <option class="bg-light" value={{$disc->id}}> {{$disc->nome}} </option>
-                                @endforeach
-                            </select>
+                            <input type="search" class="form-control form-control-sm @error('disciplina') is-invalid @enderror"  name="disciplina" value="{{$disciplina->id}}" hidden>
+                            <input type="search" class="form-control form-control-sm"   placeholder="{{$disciplina->nome}}" disabled> <br><br>
                         </div>
-                    {{-- @endif --}}
-
+                        @error('disciplina')
+                        <span class="description" style="color:red">{{$message}} </span><br>
+                        @enderror <br>
+                        
+                        <div class="input-group-append">
+                            <input type="search" class="form-control form-control-sm @error('turma') is-invalid @enderror"  name="turma" value="{{$disciplina->turma_id}}" hidden>
+                        </div>
+                    @endisset   
                     <div class="input-group-append">
-                        <input type="file" id="conteudo" name="conteudo" >
-                        <label for="conteudo" class="btn_file">Carregar o conteúdo</label>
+                        <input type="file" id="ficheiro" name="ficheiro" style="display: none" >
+                        <label for="ficheiro" class="btn_file">Carregar o conteúdo</label>
                     </div><br>
-                    <br>
+                     <br>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light fecharX" data-dismiss="modal">Cancelar</button>
-                    <button type="submit"  class="btn btn-light btn_continuar">Continuar</button>
+                    <button type="submit" data-toggle="modal" data-target="#ModalSucesso" class="btn btn-light btn_continuar">Continuar</button>
                 </div>
             </form>
         </div>

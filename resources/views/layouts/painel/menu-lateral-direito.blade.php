@@ -20,7 +20,7 @@
                     @foreach ($conteudos as $conteudo)
                     <br><div class="rp-item">
                       <div class="rp-thumb ">
-                          <iframe scrolling="no" width="100%" src="/conteudos/{{ $conteudo->conteudo }}"
+                          <iframe scrolling="no" width="100%" src="/conteudos/{{ $conteudo->ficheiro }}"
                               frameborder="0">
                           </iframe>
                       </div>

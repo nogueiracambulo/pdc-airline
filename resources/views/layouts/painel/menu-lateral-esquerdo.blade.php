@@ -6,7 +6,7 @@
         <div class="user-panel mt-7 pb-8 mb-4 d-flex">
             <!-- Brand Logo -->
             <a href="/biblioteca-cc" class="brand-link">
-                &nbsp;<img src="/template_admin_lte/dist/img/graduation.png" alt="" class="img-circle elevation-4"
+                &nbsp;<img src="/template_admin_lte/dist/img/2/6-sim.png" alt="" class="img-circle elevation-4"
                     style="opacity: .8">
                 <span class="text-center" style="color:rgb(233,126,39); ">MULONGI</span>
                 {{-- <span class="brand-text font-weight-light"></span> --}}

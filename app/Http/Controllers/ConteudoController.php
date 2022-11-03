@@ -16,6 +16,8 @@ class ConteudoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    //RETORNA A PÁGINA INICIAL PARA ACEDER AOS CONTEÚDOS
     public function index()
     {
         $todos_anos=ano_lectivo::all();
@@ -24,13 +26,26 @@ class ConteudoController extends Controller
         return view('biblioteca.home',['ano_lectivo'=>$ano_lectivo,'todas_turmas'=>$todas_turmas,'todos_anos'=>$todos_anos]);
     }
 
+    //RETORNA A LISTA DE DISCIPLINAS DE UMA TURMA E SEUS CONTEÚDOS
     public function listarDisciplina($id){
         $todas_disciplinas=DB::table('disciplinas')->where('turma_id',$id)->get();
         // $todas_disciplinas=Disciplina::all();
-
+       
         $ano_desc=Turma::select('descricao')->where('id',$id);
         $ano=$id;
         return view('biblioteca.conteudos_ano',['todas_disciplinas'=>$todas_disciplinas, 'ano_desc'=>$ano_desc,'ano'=>$ano]);
+
+    }
+
+   //RETORNA O PERFIL DA DISCIPLINA E SEUS CONTEÚDOS
+    public function listarConteudos($id_turma,$id_disciplina){
+        $conteudos=DB::table('conteudos')->where('disciplina_id',$id_disciplina)->get();
+
+        
+
+        $disciplina=DB::table('disciplinas')->where('id',$id_disciplina)->get();
+
+        return view('biblioteca.disciplinaPerfil',['conteudos'=>$conteudos,'disciplina'=>$disciplina]);
 
     }
     /**

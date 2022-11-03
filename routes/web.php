@@ -6,6 +6,7 @@ use App\Http\Controllers\TurmaController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ConteudoController;
 use App\Http\Controllers\AdminController;
+use APP\Http\Controllers\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,9 +44,6 @@ Route::middleware([
     Route::get('/dashboard', function () { return view('layouts.painel.principal'); })->name('dashboard');
     // Route::get('/index',  [MainController::class, 'index']);
 
-  
-
-
     // Gestão de Controlo de acesso - ROTAS EXCLUSIVAS PARA O ADMINISTRADOR
     Route::get('/admin/listar_administradores', [AdminController::class, 'listar_administradores']);
     Route::get('/admin/listar_utilizadores', [AdminController::class, 'listar_utilizadores']);
@@ -67,6 +65,10 @@ Route::middleware([
 
     //ROTAS PARA GERIR CONTEÚDOS
     Route::post('/conteudos/registo', [ConteudoController::class, 'store']);
+    Route::get('/conteudos/listar/{id_turma}/{id_disciplina}', [ConteudoController::class, 'listarConteudos']);
+    Route::get('/conteudos/detalhes', [ConteudoController::class, 'listarConteudo']);
+
+
     Route::get('/conteudo/eliminarConteudo/{id}', [ConteudoController::class, 'eliminarConteudo']);
     Route::get('/conteudo/visualizar/{id}', [ConteudoController::class, 'visualizarConteudo']);
     Route::get('/conteudo/baixar/{conteudo}', [ConteudoController::class, 'baixarConteudo']);
@@ -76,6 +78,9 @@ Route::middleware([
     Route::get('/ano_lectivo/mostrar', [AnoLectivoController::class, 'show']);
     Route::post('/selecionarAno', [AnoLectivoController::class, 'selecionar']);
 
+
+    // ROTAS PARA GERIR O UTILIZADOR
+    route::get('/perfil', [UserController::class,'index']);
     //ROTAS PARA GERIR PUBLICAÇÕES
     // Route::post('/publicacoes/resgisto', [PublicacaoController::class,'store']);
     // Route::get('/', [PublicacaoController::class, 'mostrarInicio']);

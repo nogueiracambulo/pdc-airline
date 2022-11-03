@@ -10,14 +10,14 @@
 @include('admin/modal/turmaRegistar')
 @include('admin/modal/AnoLectivoSelecionar')
 @include('biblioteca/modal_Disciplina/registarDisciplina')
-{{-- @include('biblioteca/modal_Conteudo/registarConteudo') --}}
+@include('biblioteca/modal_Conteudo/registar_conteudo')
 
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="/template_Admin_lte/dist/img/graduation.png" alt="STUDENT GUIDER"
+            <img class="animation__shake" src="/template_Admin_lte/dist/img/2/3.png" alt="STUDENT GUIDER"
                 height="80" width="80">
         </div>
 

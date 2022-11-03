@@ -24,7 +24,7 @@
         {{-- BOTÃO MODAL, REGISTAR NOVA PERMISSÃO --}}         
         <div class="text-right ">
             <a href="#" data-toggle="modal" data-target="#Modal_Registar_permissao" 
-            class="btn btn-primary" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Adicionar Permissão</a>
+            class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Adicionar Permissão</a>
         </div><br>
         
         <section class="content">

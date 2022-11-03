@@ -18,12 +18,21 @@
                     </div>
                 </div>
             </div>
+            <div class="list-inline">
+                <div class="text-right ">
+                    @can('add_role')
+                        {{-- BOTÃO MODAL, REGISTAR NOVA DISCIPLINA --}}         
+                        <a href="#" data-toggle="modal" data-target="#Modal_Registar_Disciplina" 
+                        class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Adicionar Disciplina</a>
+                    @endcan
+                </div>
+            </div><br>
         </section>   
         <section class="">
             <div class="row">
                 <div class="col-lg-12 post-list">
                     <div class="container">
-                        {{-- LISTA DE DISCIPLINAS DO PRIMEIRO SEMESTRE DE CADA ANO--}}
+                        <!--LISTA DE DISCIPLINAS DO PRIMEIRO SEMESTRE DE CADA ANO -->
                         <div class="course-thumb">
                             <div class="">
                                 <span>
@@ -52,7 +61,7 @@
                                                 @endif
                                             </div>
                                             <div class="icon"><i class="fas fa-book"></i></div>
-                                            <a href="/conteudos/disciplina/{{$disciplina->id}}" class="small-box-footer">Aceder <i
+                                            <a href="/conteudos/listar/{{$disciplina->id}}" class="small-box-footer">Aceder <i
                                                 class="fas fa-arrow-circle-right"></i></a>
                                         </div>
                                     </div>
@@ -88,8 +97,8 @@
                                                 @endif
                                             </div>
                                             <div class="icon"><i class="fas fa-book"></i></div>
-                                            <a href="/conteudos/disciplina/{{$disciplina->id}}" class="small-box-footer">Aceder <i
-                                                class="fas fa-arrow-circle-right"></i></a>
+                                            <a href="/conteudos/listar/{{$disciplina->turma_id}}/{{$disciplina->id}}" class="small-box-footer">Aceder 
+                                                <i class="fas fa-arrow-circle-right"></i></a>
                                         </div>
                                     </div>
                                 @endif

@@ -14,12 +14,21 @@
             <form action="/turmas/registo" method="Post" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
-                    <div class="input-group input-group-sm mb-0">
-                        <input type="search" class="form-control form-control-sm @error('descricao') is-invalid @enderror" name="descricao" placeholder="Descrição da turma"><br>
+                    <div class="input-group input-group-sm mb-3">
+                        <select name="descricao" class="form-control form-control-sm">
+                            <option value=""> Selecione o nome da turma</option>
+                            <option value="1º ANO"> 1º ANO</option>
+                            <option value="2º ANO"> 2º ANO</option>
+                            <option value="3º ANO"> 3º ANO</option>
+                            <option value="4º ANO"> 4º ANO</option>
+                            <option value="5º ANO"> 5º ANO</option>
+                            <option value="6º ANO"> 6º ANO</option>
+                        </select>
+                        {{-- <input type="search" class="form-control form-control-sm @error('descricao') is-invalid @enderror" name="descricao" placeholder="Descrição da turma"><br> --}}
                     </div>
-                    @error('descricao')
+                    {{-- @error('descricao')
                        <span class="description" style="color:red">{{$message}} </span><br>
-                    @enderror <br>
+                    @enderror <br> --}}
 
                     <div class="input-group input-group-sm mb-0">  
                         @isset($ano_lectivo)                  

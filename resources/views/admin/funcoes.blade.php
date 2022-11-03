@@ -23,7 +23,7 @@
         {{-- BOTÃO MODAL, REGISTAR NOVA FUNÇÃO --}}
         <div class="text-right ">
             <a href="#" data-toggle="modal" data-target="#Modal_Registar_funcao" 
-            class="btn btn-primary" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Adicionar Papel</a>
+            class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Adicionar Papel</a>
         </div><br>
         
         <section class="content">

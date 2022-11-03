@@ -12,7 +12,7 @@
                 <a href="/biblioteca_cc"><span>Biblioteca CC </span></a>
                 <i class="fa fa-angle-right"></i>
                     @foreach ($disciplina as $discipl)
-                        <a href="/1/1"><span>{{$discipl->ano}}º ANO </span></a>
+                        <a href="/conteudos/turma/1"><span>{{$discipl->ano}}º ANO </span></a>
                         <i class="fa fa-angle-right"></i>
                         <span>
                             {{$discipl->nome}}
@@ -21,14 +21,10 @@
             </div>
         </div>
 
-        @include('biblioteca_cc/modal_Conteudo/registarConteudo')
-        @include('biblioteca_cc/modal_Conteudo/eliminarConteudo')
-
         @foreach ($disciplina as $disciplina)
             
      
             {{-- CONTEÚDO CENTRAL --}}
-            
             {{-- @foreach ($conteudo as $conteudo) --}}
 
                 <div class=" offset-1 col-md-9 "><br>
