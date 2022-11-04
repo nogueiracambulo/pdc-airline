@@ -1,6 +1,6 @@
 {{-- @extends('layouts.main') --}}
 @extends('layouts.painel.principal') 
-@section('titulo', 'MULONGI | PERFIL DA DISCIPLINA')
+@section('titulo', 'MULONGI | Biblioteca-Conteúdos')
 
 @section('content')
     <div class="container-fluid">

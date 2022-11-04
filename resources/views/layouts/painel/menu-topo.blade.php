@@ -11,30 +11,7 @@
         <li class="nav-item d-none d-sm-inline-block">
             <a href="/" class="nav-link">Início</a>
         </li>
-{{-- 
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="/biblioteca_cc" class="nav-link">Biblioteca </a>
-        </li>
 
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="/projetos" class="nav-link">Projectos</a>
-        </li>
-
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="/projetos" class="nav-link">Garimpo</a>
-        </li> --}}
-
-        <li class="nav-item d-none d-sm-inline-block">
-            <form action="{{route('logout')}}" method="POST">
-                @csrf
-                <button class="btn btn-primary" type="submit" style="border-radius:100%">
-              
-                    <i class="fas fa-arrow-circle-left"></i>
-                </button>
-               
-            </form>
-  
-        </li>
 
     
     </ul>
@@ -64,10 +41,10 @@
         </li>
 
         <!-- Messages Dropdown Menu -->
-        <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="far fa-comments"></i>
-                <span class="badge badge-danger navbar-badge">3</span>
+        <li class="nav-item dropdown" >
+            <a class="nav-link" data-toggle="dropdown" href="#" >
+                <i class="fas fa-comment-dots" ></i>
+                {{-- <span class="badge badge-danger navbar-badge">3</span> --}}
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <a href="#" class="dropdown-item">
@@ -127,8 +104,8 @@
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="far fa-bell"></i>
-                <span class="badge badge-warning navbar-badge">15</span>
+                <i class="fas fa-bell"></i>
+                {{-- <span class="badge badge-warning navbar-badge">15</span> --}}
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <span class="dropdown-item dropdown-header">15 Notifications</span>
@@ -151,18 +128,40 @@
                 <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
             </div>
         </li>
-        <li class="nav-item">
+
+        {{-- <li class="nav-item">
             <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                 <i class="fas fa-expand-arrows-alt"></i>
             </a>
-        </li>
-        <li class="nav-item">
+        </li> --}}
+        {{-- <li class="nav-item">
             <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#"
                 role="button">
                 <i class="fas fa-th-large"></i>
             </a>
-        </li>
+        </li> --}}
 
+        <!-- Sair -->
+        <li class="nav-item dropdown ">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <div class="user-panel  image">
+                    <img src={{ Auth::user()->profile_photo_url }} class="img-circle elevation-3" alt="Foto perfil">
+                </div>
+                {{-- <span class="badge badge-warning navbar-badge"></span> --}}
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <div class="dropdown-divider"></div>
+                <a href="/perfil" class="dropdown-item"> <i class="fas fa-user mr-2"></i> {{Auth::user()->name}}</a>
+                <div class="dropdown-divider"></div>
+                <form action="{{route('logout')}}" method="POST">
+                    @csrf
+                    <button class="dropdown-item btn btn-outline-primary" type="submit">
+                        <i class="fas fa-power-off mr-2"></i> Terminar Sessão
+                    </button>
+                </form>
+                
+            </div>
+        </li>
     </ul>
 </nav>
 

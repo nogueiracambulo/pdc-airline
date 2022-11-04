@@ -29,22 +29,35 @@
                     @enderror <br>
 
                     <div class="input-group-append">
-                        <input type="search" class="form-control form-control-sm @error('Professor') is-invalid @enderror"  name="Professor" placeholder="Informe o nome do Professor da Disciplina">
+                        <input type="search" class="form-control form-control-sm @error('Professor') is-invalid @enderror"  name="professor" placeholder="Informe o nome do Professor da Disciplina">
                     </div>
                     @error('Professor')
                        <span class="description" style="color:red">{{$message}} </span><br>
                     @enderror <br>
 
+
                     <div class="input-group-append">
-                        <select class="custom-select mb-3 text-light border-0 bg-orange" name="ano" id="ano">
-                            <option class="bg-light" selected >Selecione o Ano associado a Disciplina</option>
-                            <option class="bg-light" value=1>1º Ano</option>
-                            <option class="bg-light" value=2>2º Ano</option>
-                            <option class="bg-light" value=3>3º Ano</option>
-                            <option class="bg-light" value=4>4º Ano</option>
-                            <option class="bg-light" value=5>5º Ano</option>
-                        </select>
+                        <span class="description"> Turma/Ano academico associado a Disciplina</span>   
                     </div>
+                
+                    <div class="input-group-append">
+                        @isset($ano) 
+                            <select class="custom-select mb-3 text-light border-0 bg-orange" name="ano" id="ano">
+                                <option class="bg-light" value="{{$ano}}">{{$ano}}º ANO</option>
+                            </select>
+                    
+                        @else
+                            <select class="custom-select mb-3 text-light border-0 bg-orange" name="ano" id="ano">
+                                <option class="bg-light" value="1">1º ANO</option>
+                                <option class="bg-light" value="1">2º ANO</option>
+                                <option class="bg-light" value="1">3º ANO</option>
+                                <option class="bg-light" value="1">4º ANO</option>
+                                <option class="bg-light" value="1">5º ANO</option>
+                                <option class="bg-light" value="1">6º ANO</option>
+                            </select>
+                        @endisset
+                    </div>
+                    
                     <span> Semestre do ano </span>
                     <div class="input-group-append">
 

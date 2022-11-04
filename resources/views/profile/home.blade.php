@@ -1,17 +1,24 @@
 @extends('layouts.painel.principal')
 {{-- @extends('layouts.main') --}}
-@section('titulo', 'CCGUIDER - Perfil')
+@section('titulo', 'MULONGI - Perfil')
 
 @section ('content')
-  
 	<!-- Breadcrumb section -->
-	<div class="site-breadcrumb">
-    <br><br>
-		<div class="container">
-			<a href="/"><i class="fa fa-home"></i> Início</a> <i class="fa fa-angle-right"></i>
-			<span>Perfil</span><br><br>
-		</div>
-	</div>
+	<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Perfil do Utilizador</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    <li class="breadcrumb-item active">Perfil</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+  </section>
 	<!-- Breadcrumb section end -->
   <div class="container">
         <!-- Main content -->
@@ -25,7 +32,7 @@
               <div class="card-body box-profile">
                 <div class="text-center">
                   
-                  <img class="profile-user-img img-circle responsive"
+                  <img class="profile-user-img img-circle"
                         src={{Auth::user()->profile_photo_url}}
                         alt="User profile picture">
                 </div>
@@ -39,8 +46,9 @@
                     <b>Seguidores</b> <a class="float-right">1,322</a>
                   </li> --}}
                 </ul>
-
-                <button href="#" class="btn btn-outline-primary rounded-pill"><b>Enviar mensagem</b></button>
+                <div class="text-center">
+                    <button href="#" class="btn btn-outline-primary rounded-pill"><b>Enviar mensagem</b></button>
+                </div>
               </div>
               <!-- /.card-body -->
             </div>
@@ -83,7 +91,7 @@
                 <ul class="nav nav-pills">
                   <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Notificações</a></li>
                   <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Cronologia</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Controlo de Notas</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Simulação de Histórico</a></li>
                 </ul>
               </div><!-- /.card-header -->
               <div class="card-body">

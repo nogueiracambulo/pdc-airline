@@ -39,12 +39,9 @@ class ConteudoController extends Controller
 
    //RETORNA O PERFIL DA DISCIPLINA E SEUS CONTEÚDOS
     public function listarConteudos($id_turma,$id_disciplina){
+
         $conteudos=DB::table('conteudos')->where('disciplina_id',$id_disciplina)->get();
-
-        
-
         $disciplina=DB::table('disciplinas')->where('id',$id_disciplina)->get();
-
         return view('biblioteca.disciplinaPerfil',['conteudos'=>$conteudos,'disciplina'=>$disciplina]);
 
     }

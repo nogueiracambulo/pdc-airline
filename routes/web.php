@@ -4,9 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnoLectivoController;
 use App\Http\Controllers\TurmaController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DisciplinaController;
 use App\Http\Controllers\ConteudoController;
 use App\Http\Controllers\AdminController;
-use APP\Http\Controllers\User;
+
 
 /*
 |--------------------------------------------------------------------------

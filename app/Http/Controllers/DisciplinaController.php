@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Disciplina;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+
+
 
 class DisciplinaController extends Controller
 {
@@ -35,7 +38,18 @@ class DisciplinaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $disciplina=new Disciplina;
+        $disciplina->nome=$request->nome;
+        $disciplina->sigla=$request->sigla;
+        $disciplina->nome_professor=$request->professor;
+        $disciplina->semestre=$request->semestre;
+        $disciplina->turma_id=$request->ano;
+        $disciplina->criador_id=auth()->user()->id;
+
+        $disciplina->save();
+
+        Alert::success('sucesso', 'Disciplina criada com sucesso');
+        return back();
     }
 
     /**

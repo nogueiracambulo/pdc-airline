@@ -1,5 +1,5 @@
 @extends('layouts.painel.principal')
-@section('titulo', 'MULONGI - Painel de Administrador')
+@section('titulo', 'MULONGI -Ano Lectivo')
 
 
 
