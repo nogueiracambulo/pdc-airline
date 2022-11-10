@@ -1,8 +1,8 @@
 
-<form action="/conteudo/eliminarConteudo/{{$conteudo->id}}" method="GET" enctype="multipart/form-data">
+<form action="/conteudo/eliminarConteudo/{{$data->id}}" method="GET" enctype="multipart/form-data">
     @csrf
     <!-- Modal -->
-    <div class="modal fade" data-backdrop="static" data-keyboard="false" id="ModalDelete{{$conteudo->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" data-backdrop="static" data-keyboard="false" id="ModalDelete{{$data->id}}" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

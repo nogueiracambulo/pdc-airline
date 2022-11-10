@@ -31,54 +31,10 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                
-               <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
-                        <p>
-                            Definições avançadas
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/admin/anosLectivos" class="nav-link">
-                                <i class="fa fa-clock nav-icon"></i>
-                                <p>Ano Lectivo</p>
-                            </a>
-                        </li>
-                        @can('add_role')
-                        <li class="nav-item">
-                            <a href="/admin/listar_administradores" class="nav-link">
-                                <i class="fa fa-lock nav-icon"></i>
-                                <p>Administradores</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/admin/listar_utilizadores" class="nav-link">
-                                <i class="fas fa fa-users nav-icon"></i>
-                                <p>Todos Utilizadores</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/admin/listar_funcoes" class="nav-link">
-                                <i class="fas fa-list nav-icon"></i>
-                                <p>Funções</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/admin/listar_permissoes" class="nav-link">
-                                <i class="fas fa-lock-open nav-icon"></i>
-                                <p>Permissões</p>
-                            </a>
-                        </li><hr>
-                        @endcan
-                    </ul>
-                </li>
-               
-               
                 <li class="nav-item ">
                     <a href="#" class="nav-link ">
-                        <i class="nav-icon fas fa-book"></i>
+                    
+                        <i class="nav-icon fa fa-folder-open"></i>
                         <p>
                             Biblioteca
                             <i class="right fas fa-angle-left"></i>
@@ -89,23 +45,18 @@
                         <li class="nav-item">
                             <a href="/conteudos/inicio" 
                                 class="nav-link">
-                                <i class="fas fa fa-eye nav-icon"></i>
-                                <p>Aceder aos conteudos</p>
+                                <i class="fas fa fa-list nav-icon"></i>
+                                <p>Aceder aos conteúdos</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a href="#"  data-toggle="modal" data-target="#Modal_Registar_Disciplina" class="nav-link">
-                                <i class="fas fa-plus nav-icon"></i>
+                                <i class="fas fa-plus-circle nav-icon"></i>
                                 <p>Inserir Disciplina</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="pages/layout/top-nav.html" class="nav-link">
-                                <i class="fas fa fa-list nav-icon"></i>
-                                <p>Visualizar Disciplinas</p>
-                            </a>
-                        </li>
+                        
                         <hr>
                     </ul>
 
@@ -123,8 +74,8 @@
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-users"></i>
-                        <i class="fa-light fa-screen-users"></i>
+                        <i class="nav-icon fas fa-laptop-code"></i>
+                     
                         <p>
                             Projectos
                             <i class="fas fa-angle-left right"></i>
@@ -157,7 +108,7 @@
                
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
+                        <i class="nav-icon fas fa-chalkboard-teacher"></i>
                         <p>
                             Garimpo
                             <i class="fas fa-angle-left right"></i>
@@ -171,6 +122,49 @@
                             </a>
                         </li>
 
+                    </ul>
+                </li>
+                 <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-cog"></i>
+                        <p>
+                            Definições avançadas
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/anosLectivos" class="nav-link">
+                                <i class="fa fa-calendar nav-icon"></i>
+                                <p>Ano Lectivo</p>
+                            </a>
+                        </li>
+                        @can('add_role')
+                        <li class="nav-item">
+                            <a href="/admin/listar_administradores" class="nav-link">
+                                <i class="fa fa-user-lock nav-icon"></i>
+                                <p>Administradores</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/listar_utilizadores" class="nav-link">
+                                <i class="fas fa fa-users nav-icon"></i>
+                                <p>Todos Utilizadores</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/listar_funcoes" class="nav-link">
+                                <i class="fas fa-list nav-icon"></i>
+                                <p>Funções</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/listar_permissoes" class="nav-link">
+                                <i class="fas fa-lock-open nav-icon"></i>
+                                <p>Permissões</p>
+                            </a>
+                        </li><hr>
+                        @endcan
                     </ul>
                 </li>
              </ul>

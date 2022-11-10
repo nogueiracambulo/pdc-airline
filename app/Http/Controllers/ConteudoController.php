@@ -8,6 +8,7 @@ use App\Models\Disciplina;
 use App\Models\Conteudo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ConteudoController extends Controller
 {
@@ -45,14 +46,31 @@ class ConteudoController extends Controller
         return view('biblioteca.disciplinaPerfil',['conteudos'=>$conteudos,'disciplina'=>$disciplina]);
 
     }
+
+    //Lista aos detalhes um conteúdo.
+
+    public function verDetalhes($id){
+        $conteudo=Conteudo::findOrfail($id);
+        $disciplina=DB::table('disciplinas')->where('id', $conteudo->id)->get();
+        return view('biblioteca.conteudoDetalhes',['conteudo'=>$conteudo,'disciplina'=>$disciplina]);
+        
+    }
+
+    //FUNÇÃO PARA TRANSFERIR(BAIXAR) NO DISPOSITIVO DO UTILIZADOR, UM CONTEUDO
+    public function baixarConteudo($conteudo){
+        return response()->download(public_path("storage/$conteudo"));
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+      
+        
     }
 
     /**
@@ -63,7 +81,24 @@ class ConteudoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $conteudo = new Conteudo;
+
+        $content=$request->ficheiro;
+        $ConteudoName=time().'.'.$content->getClientOriginalExtension();
+        $request->ficheiro->move('storage',$ConteudoName);
+        // $request->ficheiro->storeAs('public/storage', $ConteudoName);
+
+
+        $conteudo->ficheiro=$ConteudoName;
+        $conteudo->titulo=$request->titulo;
+        $conteudo->descricao=$request->descricao;
+        $conteudo->disciplina_id=$request->disciplina;
+        $conteudo->criador_id=auth()->user()->id;
+
+        $conteudo->save();
+
+        Alert::success('sucesso','Conteúdo registado com sucesso');
+        return back();
     }
 
     /**

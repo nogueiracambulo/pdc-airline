@@ -48,6 +48,9 @@
                                 <th style="width: 20%">
                                     Nome
                                 </th>
+                                <th style="width: 20%">
+                                    E-mail
+                                </th>
                                 <th style="width: 30%">
                                     Papel(Função)
                                 </th>
@@ -71,12 +74,20 @@
                                 <td>
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
+                                            {{$user->email}}
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
                                             @foreach($user->roles as $role)
                                                 <span class="badge badge-success">{{$role->nome}}</span>
                                             @endforeach
                                         </li>
                                     </ul>
                                 </td>
+                              
                                 <td class="list-inline">
                                     <a class="btn btn-primary btn-sm" href="/ver_detalhes">
                                         <i class="fas fa-folder">

@@ -5,6 +5,8 @@ use App\Models\User;
 use App\Models\Role;
 use App\Models\Permission;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminController extends Controller
 {
@@ -95,15 +97,16 @@ class AdminController extends Controller
 
     //Retorna todos os utilizadores registados no sistema e associa-os a tabela roles(funções ou papeis)
     public function listar_utilizadores(){
+        $roles=Role::with('permissions')->get();
         $users=User::with('roles')->get();
-        return view('admin.utilizadores', ['users'=>$users]);
+        return view('admin.utilizadores', ['users'=>$users, 'roles'=>$roles]);
 
     }
 
     public function listar_funcoes(){
-
+       $permissions=Permission::all();
         $roles=Role::with('permissions')->get();
-        return view('admin.funcoes',['roles'=>$roles]);
+        return view('admin.funcoes',['roles'=>$roles,'permissions'=>$permissions]);
 
     }
 
@@ -114,5 +117,51 @@ class AdminController extends Controller
     
         return view('admin.permissoes',['roles'=>$roles, 'permissions'=>$permissions]);
 
+    }
+
+    public function registarFuncao(Request $request){
+        $funcao = new Role;
+        $funcao->nome=$request->nome;
+        $funcao->descricao=$request->descricao;
+
+        $funcao->save();
+        $permissoes=$request->permissoes;
+
+        //Atribuindo permissões a função
+         for($i=0; $i < count($permissoes); $i++){
+            if($permissoes[$i]!=null){
+                Role::find($funcao->id)->permissions()->attach($permissoes[$i]);
+            }
+         }
+
+        Alert::success('sucesso', 'Função criada com sucesso');
+        return back();
+    }
+
+
+    public function registarPermissao(Request $request){
+        $permissao = new Permission;
+        $permissao->nome=$request->nome;
+        $permissao->descricao=$request->descricao;
+
+        $permissao->save();
+      
+        Alert::success('sucesso', 'Permissão criada com sucesso');
+        return back();
+    }
+
+
+    public function registarUtilizador(Request $request){
+        $utilizador = new User;
+        $utilizador->name=$request->name;
+        $utilizador->email=$request->email;
+        $utilizador->password=Hash::make($request->password);
+        $utilizador->save();
+
+        //Atribuindo Função ao Utilizador
+        User::find($utilizador->id)->roles()->attach($request->funcao);
+                
+        Alert::success('sucesso', 'Utilizador criado com sucesso');
+        return back();
     }
 }

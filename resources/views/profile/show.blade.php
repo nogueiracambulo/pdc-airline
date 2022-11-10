@@ -1,4 +1,8 @@
+{{-- @extends('layouts.painel.principal') --}}
+
 <x-app-layout>
+
+{{-- @section('content') --}}
     <x-slot name="header">
         <h2 class="h4 font-weight-bold">
             {{ __('Profile') }}
@@ -32,4 +36,5 @@
             @livewire('profile.delete-user-form')
         @endif
     </div>
+{{-- @endsection --}}
 </x-app-layout>

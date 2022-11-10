@@ -15,26 +15,26 @@
                 @csrf
                 <div class="modal-body">
                     <div class="input-group input-group-sm mb-0">
-                        <input type="search" class="form-control form-control-sm @error('descricao') is-invalid @enderror" name="descricao" placeholder="Descrição do Ano Lectivo"><br>
+                        <input type="search" class="form-control form-control-sm @error('nome') is-invalid @enderror" name="nome" placeholder="Informe o nome da função"><br>
                     </div>
                     @error('descricao')
                        <span class="description" style="color:red">{{$message}} </span><br>
                     @enderror <br>
-
-                    <div class="input-group-append">
-                        <input type="date" class="form-control form-control-sm @error('data_inicio') is-invalid @enderror"  name="data_inicio" placeholder="Informe a data de início">
+                    <div class="input-group input-group-sm mb-0">
+                        <input type="search" class="form-control form-control-sm @error('descricao') is-invalid @enderror" name="descricao" placeholder="Informe uma descrição para função"><br>
                     </div>
-                    @error('data_inicio')
+                    @error('descricao')
                        <span class="description" style="color:red">{{$message}} </span><br>
                     @enderror <br>
-
-                    <div class="input-group-append">
-                        <input type="date" class="form-control form-control-sm @error('data_termino') is-invalid @enderror"  name="data_termino" placeholder="Informe a data de término">
+                    <!-- Adicionar permissões para esta função -->
+                    <span class="description"> Defina as permissões para a nova Função <hr></span>
+                    <div class="checkbox ">
+                        @isset($permissions)
+                            @foreach ($permissions as $permission)
+                                <input type="checkbox" value="{{$permission->id}}" name="permissoes[]"> {{ $permission->nome}} <br>
+                            @endforeach
+                        @endisset
                     </div>
-                    @error('data_termino')
-                       <span class="description" style="color:red">{{$message}} </span><br>
-                    @enderror <br>
-
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light fecharX" data-dismiss="modal">Cancelar</button>

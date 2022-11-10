@@ -47,7 +47,7 @@
                     {{-- @endif --}}
 
                     <div class="input-group-append">
-                        <input type="file" id="conteudo" name="conteudo" >
+                        <input type="file" id="ficheiro" name="ficheiro" >
                         <label for="conteudo" class="btn_file">Carregar o conteúdo</label>
                     </div><br>
                     <br>

@@ -101,7 +101,7 @@
                                                     <div class="row">
                                                     <td>
                                                         <div class="col-lg-4">                                            
-                                                            <iframe src="{{$data->ficheiro}}" frameborder="0" scrolling="no"></iframe>
+                                                            <iframe src="/storage/{{$data->ficheiro}}" frameborder="0" scrolling="no"></iframe>
                                                             {{-- <iframe width="300%" height="50%" src="https://www.youtube.com/embed/lxYikfwyXcQ" title="Add Video to Webpages with Video and iFrame Elements #tryminim" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe> --}}
                                                         </div>
                                                     </td>  
@@ -111,16 +111,15 @@
                                                             <h4>{{$data->titulo}}</h4>
                                                             {{$data->descricao}}<br>
                                                             {{-- </a>  --}}
-                                                        <a href="#" class="btn btn-outline-success"><i class="fas fa-download"></i></a>
-                                                        <a href="#" class="btn btn-outline-info"><i class="fas fa-eye"></i></a>
-                                                        <a href="#" class="btn btn-outline-danger"><i class="fas fa-trash"></i></a>
+                                                        <a href="/conteudo/baixar/{{$data->ficheiro}}" class="btn btn-outline-success"><i class="fas fa-download"></i></a>
+                                                        <a href="/conteudo/visualizar/{{$data->id}}" class="btn btn-outline-info"><i class="fas fa-eye"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#ModalDelete{{$data->id}}"class="btn btn-outline-danger"><i class="fas fa-trash"></i></a>
                                                         </div>
                                                     </td>
                                                 </div>
                                                 </tr>
                                             </tbody>
                                         @endforeach
-                                    
                                     </table>
                               </div>
                               <!-- /.Conteúdo do tipo PDF -->

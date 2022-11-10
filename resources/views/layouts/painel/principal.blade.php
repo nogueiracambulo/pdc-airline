@@ -12,6 +12,7 @@
 @include('admin/modal/AnoLectivoSelecionar')
 @include('biblioteca/modal_Disciplina/registarDisciplina')
 @include('biblioteca/modal_Conteudo/registar_conteudo')
+@include('biblioteca/modal_Conteudo/eliminarConteudo')
 
 
 <body class="hold-transition sidebar-mini layout-fixed">

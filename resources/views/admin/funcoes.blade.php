@@ -2,7 +2,6 @@
 @section('titulo', 'MULONGI - Funções')
 
 
-
 @section('content')
     <div class="container-fluid">
         <section class="content-header">

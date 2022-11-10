@@ -15,27 +15,38 @@
                 @csrf
                 <div class="modal-body">
                     <div class="input-group input-group-sm mb-0">
-                        <input type="search" class="form-control form-control-sm @error('descricao') is-invalid @enderror" name="descricao" placeholder="Descrição do Ano Lectivo"><br>
+                        <input type="text" class="form-control form-control-sm @error('name') is-invalid @enderror" name="name" placeholder="Informe o nome do utilizador"><br>
                     </div>
-                    @error('descricao')
+                    @error('name')
                        <span class="description" style="color:red">{{$message}} </span><br>
                     @enderror <br>
 
-                    <div class="input-group-append">
-                        <input type="date" class="form-control form-control-sm @error('data_inicio') is-invalid @enderror"  name="data_inicio" placeholder="Informe a data de início">
+                    <div class="input-group input-group-sm mb-0">
+                        <input type="email" class="form-control form-control-sm @error('email') is-invalid @enderror" name="email" placeholder="Informe o e-mail"><br>
                     </div>
-                    @error('data_inicio')
+                    @error('email')
                        <span class="description" style="color:red">{{$message}} </span><br>
                     @enderror <br>
 
-                    <div class="input-group-append">
-                        <input type="date" class="form-control form-control-sm @error('data_termino') is-invalid @enderror"  name="data_termino" placeholder="Informe a data de término">
+                    <div class="input-group input-group-sm mb-0">
+                        <input type="password" class="form-control form-control-sm @error('password') is-invalid @enderror" name="password" placeholder="Informe a palavra passe"><br>
                     </div>
-                    @error('data_termino')
+                    @error('password')
                        <span class="description" style="color:red">{{$message}} </span><br>
                     @enderror <br>
-
+                    
+                    <span class="description"> Selecione a Função deste Utilizador</span>
+                    <div class="input-group input-group-sm mb-3">
+                        <select name="funcao" class="form-control form-control-sm">
+                        @isset($roles)
+                            @foreach ($roles as $role)
+                                <option value={{$role->id}}> {{$role->nome}} - {{$role->descricao}} </option>
+                            @endforeach
+                        @endisset
+                        </select>
+                    </div>
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light fecharX" data-dismiss="modal">Cancelar</button>
                     <button type="submit"  class="btn btn-light btn_continuar">Continuar</button>

@@ -24,7 +24,7 @@
             <div class="list-inline">
                 <div class="text-right ">
                     <a href="#" data-toggle="modal" data-target="#Modal_Selecionar_anoLectivo" 
-                    class="btn btn-outline-primary rounded-pill outline" role="button" aria-pressed="false"><i class="fas fa-list"></i> Selecionar ano</a>
+                    class="btn btn-outline-primary rounded-pill outline" role="button" aria-pressed="false"><i class="fa fa-calendar-check"></i> Selecionar ano</a>
                 
                     @can('add_role')
                         {{-- BOTÃO MODAL, REGISTAR NOVA TURMA --}}         

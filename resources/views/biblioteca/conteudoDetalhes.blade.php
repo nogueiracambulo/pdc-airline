@@ -6,49 +6,49 @@
 @section('content')
     <div class="container-fluid">
         <!-- SESSÃO PARA ORIENTAÇÃO NA NAVEGAÇÃO ENTRE PÁGINAS -->
-        <div class="site-breadcrumb">
-            <div class="container">
-                <a href="/"><i class="fa fa-home"></i> Início</a> <i class="fa fa-angle-right"></i>
-                <a href="/biblioteca_cc"><span>Biblioteca CC </span></a>
-                <i class="fa fa-angle-right"></i>
-                    @foreach ($disciplina as $discipl)
-                        <a href="/conteudos/turma/1"><span>{{$discipl->ano}}º ANO </span></a>
-                        <i class="fa fa-angle-right"></i>
-                        <span>
-                            {{$discipl->nome}}
-                    @endforeach
-                </span>
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Biblioteca</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/">Início</a></li>
+                            <li class="breadcrumb-item active">{{$conteudo->disciplina->turma_id}}º ANO</li>
+                        </ol>
+                    </div>
+                </div>
             </div>
-        </div>
+            <div class="list-inline">
+                <div class="text-right ">
+                    @can('add_role')
+                        <!-- BOTÃO MODAL, EDITAR CONTEÚDO-->         
+                        <a href="#" data-toggle="modal" data-target="#" 
+                        class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false"><i class="fas fa-edit"></i> Editar conteúdo</a>
+                    @endcan
+                    @can('add_role')
+                        <!-- BOTÃO MODAL,ELIMINAR CONTEÚDO -->         
+                        <a href="#" data-toggle="modal" data-target="#" 
+                        class="btn btn-outline-danger rounded-pill" role="button" aria-pressed="false"><i class="fas fa-trash"></i> Eliminar conteúdo</a>
+                    @endcan
+                </div>
+            </div><br>
+        </section>  
 
         @foreach ($disciplina as $disciplina)
-            
-     
             {{-- CONTEÚDO CENTRAL --}}
-            {{-- @foreach ($conteudo as $conteudo) --}}
-
-                <div class=" offset-1 col-md-9 "><br>
+                <div class=" col-md-12 "><br>
 
                     <div class="card">
                         <blockquote class="">
                             <b>Título do conteúdo: </b>{{$conteudo->titulo}} <br>
                             <b>Descrição: </b>{{ $conteudo->descricao }}
                         </blockquote>
-                        <div class="col-lg-12 post-list">
-                            <div class="card-body">
-                                <div class="text-center " >
-                                    <a href="#" data-toggle="modal" data-target="#Modal_Registar_Conteudo"  class="link_btn" role="button" aria-pressed="false" ><i class="fa fa-plus-circle fa-4x"></i></a>
-                                    <br><a href="#" data-toggle="modal" data-target="#Modal_Registar_Conteudo"  class="link_btn" role="button" aria-pressed="false" >Novo Conteúdo</i></a><br>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
 
-                    @if(\Session::has('sucesso'))
-                        <div class="alert alert-success">
-                            {!! \Session::get('sucesso')!!}
-                        </div>
-                    @endif
+                  
                     <div class="post">
                         <div class="card">
                             <div class="card-body">
@@ -61,34 +61,26 @@
                                             </span>
                                         </div>
 
-                                        <div id="image-container" style="width:100%">
-                                            {{-- <img src="/img/{{$conteudo->imagem}}" class="img-fluid"><br><br> --}}
-                                        </div>
-
-                                        <div class="container-fluid">
+                      
+                                        <div class="container">
                                             <div class="col-12">
-                                                <iframe height="500" scrolling="no" width="100%" src="/conteudos/{{$conteudo->conteudo}}" frameborder="0"></iframe>
+                                                <iframe height="500" scrolling="no" width="100%" src="/storage/{{$conteudo->ficheiro}}" frameborder="0"></iframe>
                                             </div>
                                         </div>
 
                                         <div class="col-12 col-sm-8">
-                                            <h5 class="my-3">Título: {{$conteudo->titulo}} </h5>
                                             <hr>
                                             <div class="row">
                                                 <div class="col-12 col-sm-7">
-                                                    <h4 class="mt-0"><small>Disciplina: </small><br>{{$disciplina->nome}} </h4>
-
-                                                    <div class=" bg-light">
-
-                                                    </div>
+                                                    <h5 class="mt-0">Disciplina: {{$conteudo->disciplina->nome}} </h5>
                                                 </div>
                                                 <div class="col-8 col-sm-5">
                                                     <!-- botão  (Baixar conteúdo Gratis) -->
-                                                    <a class="btn btn-danger" href="#" data-toggle="modal" data-target="#ModalDelete{{$conteudo->id}}">
+                                                    {{-- <a class="btn btn-danger" href="#" data-toggle="modal" data-target="#ModalDelete{{$conteudo->id}}">
                                                         <i class="fa fa-trash fa-lg mr-0"></i>
                                                         Eliminar
-                                                    </a>
-                                                    <a class="btn btn-success" href="{{url('/conteudo/baixar',$conteudo->conteudo)}}">
+                                                    </a> --}}
+                                                    <a class="btn btn-success" href="/conteudo/baixar/{{$conteudo->ficheiro}}">
                                                         <i class="fa fa-download fa-lg mr-0"></i>
                                                         Baixar
                                                     </a><br>
@@ -105,7 +97,7 @@
                                             </div>
                                         </nav>
                                         <div class="tab-content p-2" id="nav-tabContent">
-                                            <div class="tab-pane fade" id="product-owner" role="tabpanel" aria-labelledby="product-owner-tab"><b>Autor:</b>  <br> <b>Descricao do conteúdo:</b><br>  {{$conteudo->descricao}}  </small></h4> </div>
+                                            <div class="tab-pane fade" id="product-owner" role="tabpanel" aria-labelledby="product-owner-tab"><b>Autor:</b> {{$conteudo->user->name}} <br> <b>Descricao do conteúdo:</b> {{$conteudo->descricao}}  </small></h4> </div>
                                             <div class="tab-pane fade" id="product-comments" role="tabpanel" aria-labelledby="product-comments-tab"><b>Data de criação:</b>  {{$conteudo->created_at}} <br> <b> Última actualização:</b>  {{$conteudo->updated_at}} <br></div>
                                         </div>
                                     </div>
@@ -115,7 +107,6 @@
                     </div>
                 </div>
              {{-- @endforeach --}}
-        
         @endforeach
     </div>
 
