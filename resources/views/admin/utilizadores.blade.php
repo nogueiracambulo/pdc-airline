@@ -94,7 +94,7 @@
                                         </i>
                                         Ver
                                     </a>
-                                    <a class="btn btn-info btn-sm" href="#">
+                                    <a class="btn btn-info btn-sm" href="/editar_utilizador/{{$user->id}}">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Editar

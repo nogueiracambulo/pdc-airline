@@ -51,15 +51,13 @@ class ConteudoController extends Controller
 
     public function verDetalhes($id){
         $conteudo=Conteudo::findOrfail($id);
-        $disciplina=DB::table('disciplinas')->where('id', $conteudo->id)->get();
-        return view('biblioteca.conteudoDetalhes',['conteudo'=>$conteudo,'disciplina'=>$disciplina]);
-        
+        $disciplinas=DB::table('disciplinas')->where('id', $conteudo->id)->get();
+        return view('biblioteca.conteudoDetalhes',['conteudo'=>$conteudo,'disciplinas'=>$disciplinas]);
     }
 
     //FUNÇÃO PARA TRANSFERIR(BAIXAR) NO DISPOSITIVO DO UTILIZADOR, UM CONTEUDO
     public function baixarConteudo($conteudo){
         return response()->download(public_path("storage/$conteudo"));
-
     }
 
     /**
@@ -85,9 +83,19 @@ class ConteudoController extends Controller
 
         $content=$request->ficheiro;
         $ConteudoName=time().'.'.$content->getClientOriginalExtension();
+        $tipo=$content->getClientOriginalExtension();
         $request->ficheiro->move('storage',$ConteudoName);
-        // $request->ficheiro->storeAs('public/storage', $ConteudoName);
 
+        if($tipo=='jpg' || $tipo=='png' || $tipo=='webp'){
+            $conteudo->tipo="imagem";
+        }
+        if($tipo=='mp4'){
+            $conteudo->tipo="video";
+        }
+
+        if($tipo=='docx' || $tipo=='pptx' || $tipo=='pdf' ){
+            $conteudo->tipo="pdf";
+        }
 
         $conteudo->ficheiro=$ConteudoName;
         $conteudo->titulo=$request->titulo;
@@ -141,8 +149,22 @@ class ConteudoController extends Controller
      * @param  \App\Models\Conteudo  $conteudo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Conteudo $conteudo)
+    //eliminar Conteudo
+    public function destroy($id,Request $request)
     {
-        //
+        $cont = Conteudo::find($id);
+        $cont->delete();
+        
+        // DB::select("
+        // delete from conteudos
+        // WHERE id = '{$id}'
+        // ");
+
+        $conteudos=DB::table('conteudos')->where('disciplina_id',$request->disciplina)->get();
+        $disciplina=DB::table('disciplinas')->where('id',$request->disciplina)->get();
+
+        Alert::success('Sucesso','Conteúdo eliminado com sucesso');
+
+        return view('biblioteca.disciplinaPerfil',['conteudos'=>$conteudos,'disciplina'=>$disciplina]);
     }
 }

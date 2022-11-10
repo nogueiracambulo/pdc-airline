@@ -88,102 +88,103 @@
                             </ul>
                           </div>
                           
-                          <!-- /.Conteúdo do tipo Vídeo -->
+                          <!-- /.Conteúdo do tipo VIDEO -->
                           <div class="card-body">
                             <div class="tab-content">
                               <div class="active tab-pane" id="activity">
-                                    <h3>VIDEOS</h3>
                                     <table class=""> 
-                                        @foreach ($conteudos as $data ) 
-                                           {{-- {{ dd($data->getClientOriginalExtension())}} --}}
-                                            <tbody >
-                                                <tr>
-                                                    <div class="row">
-                                                    <td>
-                                                        <div class="col-lg-4">                                            
-                                                            <iframe src="/storage/{{$data->ficheiro}}" frameborder="0" scrolling="no"></iframe>
-                                                            {{-- <iframe width="300%" height="50%" src="https://www.youtube.com/embed/lxYikfwyXcQ" title="Add Video to Webpages with Video and iFrame Elements #tryminim" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe> --}}
-                                                        </div>
-                                                    </td>  
-                                                    <td >
-                                                        <div class="col-lg-12"> 
-                                                            {{-- <a href="#">   --}}
-                                                            <h4>{{$data->titulo}}</h4>
-                                                            {{$data->descricao}}<br>
-                                                            {{-- </a>  --}}
-                                                        <a href="/conteudo/baixar/{{$data->ficheiro}}" class="btn btn-outline-success"><i class="fas fa-download"></i></a>
-                                                        <a href="/conteudo/visualizar/{{$data->id}}" class="btn btn-outline-info"><i class="fas fa-eye"></i></a>
-                                                        <a href="#" data-toggle="modal" data-target="#ModalDelete{{$data->id}}"class="btn btn-outline-danger"><i class="fas fa-trash"></i></a>
-                                                        </div>
-                                                    </td>
-                                                </div>
-                                                </tr>
-                                            </tbody>
+                                        @foreach ($conteudos as $data )
+                                            @if($data->tipo=="video")
+                                                <tbody >
+                                                    <tr>
+                                                        <div class="row">
+                                                        <td>
+                                                            <div class="col-lg-4">  
+                                                                <video src="/storage/{{$data->ficheiro}}"  width="300" controls autoplay loop muted></video>                                          
+                                                                {{-- <iframe src="/storage/{{$data->ficheiro}}" frameborder="0" scrolling="no"></iframe> --}}
+                                                                {{-- <iframe width="300%" height="50%" src="https://www.youtube.com/embed/lxYikfwyXcQ" title="Add Video to Webpages with Video and iFrame Elements #tryminim" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe> --}}
+                                                            </div>
+                                                        </td>  
+                                                        <td >
+                                                            <div class="col-lg-12"> 
+                                                                {{-- <a href="#">   --}}
+                                                                <h4>{{$data->titulo}}</h4>
+                                                                {{$data->descricao}}<br>
+                                                                {{-- </a>  --}}
+                                                            <a href="/conteudo/baixar/{{$data->ficheiro}}" class="btn btn-outline-success"><i class="fas fa-download"></i></a>
+                                                            <a href="/conteudo/visualizar/{{$data->id}}" class="btn btn-outline-info"><i class="fas fa-eye"></i></a>
+                                                            <a href="#" data-toggle="modal" data-target="#ModalDelete{{$data->id}}"class="btn btn-outline-danger"><i class="fas fa-trash"></i></a>
+                                                            </div>
+                                                        </td>
+                                                    </div>
+                                                    </tr>
+                                                </tbody>
+                                            @endif
                                         @endforeach
                                     </table>
                               </div>
                               <!-- /.Conteúdo do tipo PDF -->
                               <div class="tab-pane" id="timeline">
-                                <h3>PDFS</h3>
                                 <table class=""> 
                                     @foreach ($conteudos as $data ) 
-                                        <tbody >
-                                            <tr>
-                                                <div class="row">
-                                                <td>
-                                                    <div class="col-lg-3">                                            
-                                                        <iframe src="http://127.0.0.1:8000/" frameborder="0" scrolling="no"></iframe>
-                                                        {{-- <iframe width="300%" height="50%" src="https://www.youtube.com/embed/lxYikfwyXcQ" title="Add Video to Webpages with Video and iFrame Elements #tryminim" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe> --}}
-                                                    </div>
-                                                </td>  
-                                                <td >
-                                                    <div class="col-lg-10"> 
-                                                        {{-- <a href="#">   --}}
-                                                        <h4>{{$data->titulo}}</h4>
-                                                        {{$data->descricao}}<br>
-                                                        {{-- </a>  --}}
-                                                    <a href="#" class="btn btn-outline-success"><i class="fas fa-download"></i></a>
-                                                    <a href="#" class="btn btn-outline-info"><i class="fas fa-eye"></i></a>
-                                                    <a href="#" class="btn btn-outline-danger"><i class="fas fa-trash"></i></a>
-                                                    </div>
-                                                </td>
-                                            </div>
-                                            </tr>
-                                        </tbody>
+                                        @if($data->tipo=="pdf")
+                                            <tbody >
+                                                <tr>
+                                                    <div class="row">
+                                                    <td>
+                                                        <div class="col-lg-3">                                            
+                                                            <iframe src="/storage/{{$data->ficheiro}}" scrolling="no" frameborder="0" width="300" ></iframe>
+                                                            {{-- <iframe width="300%" height="50%" src="https://www.youtube.com/embed/lxYikfwyXcQ" title="Add Video to Webpages with Video and iFrame Elements #tryminim" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe> --}}
+                                                        </div>
+                                                    </td>  
+                                                    <td >
+                                                        <div class="col-lg-10"> 
+                                                            {{-- <a href="#">   --}}
+                                                            <h4>{{$data->titulo}}</h4>
+                                                            {{$data->descricao}}<br>
+                                                            {{-- </a>  --}}
+                                                            <a href="/conteudo/baixar/{{$data->ficheiro}}" class="btn btn-outline-success"><i class="fas fa-download"></i></a>
+                                                            <a href="/conteudo/visualizar/{{$data->id}}" class="btn btn-outline-info"><i class="fas fa-eye"></i></a>
+                                                            <a href="#" data-toggle="modal" data-target="#ModalDelete{{$data->id}}"class="btn btn-outline-danger"><i class="fas fa-trash"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </div>
+                                                </tr>
+                                            </tbody>
+                                        @endif
                                     @endforeach                                
                                 </table>
                               </div>
                               <!-- /.tab-pane -->
             
                               <div class="tab-pane" id="settings">
-                                <h3>IMAGENS</h3>
                                 <table class=""> 
                                     @foreach ($conteudos as $data ) 
-                                        <tbody >
-                                            <tr>
-                                                <div class="row">
-                                                <td>
-                                                    <div class="col-lg-3">                                            
-                                                        <iframe src="http://127.0.0.1:8000/" frameborder="0" scrolling="no"></iframe>
-                                                        {{-- <iframe width="300%" height="50%" src="https://www.youtube.com/embed/lxYikfwyXcQ" title="Add Video to Webpages with Video and iFrame Elements #tryminim" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe> --}}
-                                                    </div>
-                                                </td>  
-                                                <td >
-                                                    <div class="col-lg-10"> 
-                                                        {{-- <a href="#">   --}}
-                                                        <h4>{{$data->titulo}}</h4>
-                                                        {{$data->descricao}}<br>
-                                                        {{-- </a>  --}}
-                                                    <a href="#" class="btn btn-outline-success"><i class="fas fa-download"></i></a>
-                                                    <a href="#" class="btn btn-outline-info"><i class="fas fa-eye"></i></a>
-                                                    <a href="#" class="btn btn-outline-danger"><i class="fas fa-trash"></i></a>
-                                                    </div>
-                                                </td>
-                                            </div>
-                                            </tr>
-                                        </tbody>
+                                        @if($data->tipo=="imagem")
+                                            <tbody >
+                                                <tr>
+                                                    <div class="row">
+                                                    <td>
+                                                        <div class="col-lg-3">                                            
+                                                            <img src="/storage/{{$data->ficheiro}}" width="300">
+                                                        </div>
+                                                    </td>  
+                                                    <td >
+                                                        <div class="col-lg-10"> 
+                                                            {{-- <a href="#">   --}}
+                                                            <h4>{{$data->titulo}}</h4>
+                                                            {{$data->descricao}}<br>
+                                                            {{-- </a>  --}}
+                                                            <a href="/conteudo/baixar/{{$data->ficheiro}}" class="btn btn-outline-success"><i class="fas fa-download"></i></a>
+                                                            <a href="/conteudo/visualizar/{{$data->id}}" class="btn btn-outline-info"><i class="fas fa-eye"></i></a>
+                                                            <a href="#" data-toggle="modal" data-target="#ModalDelete{{$data->id}}"class="btn btn-outline-danger"><i class="fas fa-trash"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </div>
+                                                </tr>
+                                            </tbody>
+                                        @endif
                                     @endforeach
-                                
                                 </table>
                               </div>
                             </div>

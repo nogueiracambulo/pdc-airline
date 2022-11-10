@@ -164,4 +164,28 @@ class AdminController extends Controller
         Alert::success('sucesso', 'Utilizador criado com sucesso');
         return back();
     }
+
+    public function editarUtilizador($id){
+        $utilizador =User::find($id);
+        $roles=Role::all();
+       
+        return view('admin.utilizadorEditar',['roles'=>$roles, 'utilizador'=>$utilizador]);
+
+    }
+
+    public function actualizarUtilizador(Request $request){
+        $utilizador = User::findOrfail($request->id)->update();
+
+        $utilizador->name=$request->name;
+        $utilizador->email=$request->email;
+        $utilizador->password=Hash::make($request->password);
+        $utilizador->save();
+
+        //Atribuindo Função ao Utilizador
+        User::find($utilizador->id)->roles()->attach($request->funcao);
+                
+        Alert::success('sucesso', 'Utilizador criado com sucesso');
+        return back();
+    }
+    
 }

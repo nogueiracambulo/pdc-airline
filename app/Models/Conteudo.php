@@ -14,7 +14,8 @@ class Conteudo extends Model
         'descricao',
         'ficheiro',
         'disciplina_id',
-        'criador_id'
+        'criador_id',
+        'tipo'
     ];
 
     public function disciplina(){

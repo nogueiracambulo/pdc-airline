@@ -29,6 +29,7 @@
                     @enderror <br>
 
                     @isset($disciplina)
+                        {{-- @foreach ($disciplina as $disciplina) --}}
                         <div class="input-group-append">
                             <input type="search" class="form-control form-control-sm @error('disciplina') is-invalid @enderror"  name="disciplina" value="{{$disciplina->id}}" hidden>
                             <input type="search" class="form-control form-control-sm"   placeholder="{{$disciplina->nome}}" disabled> <br><br>
@@ -40,6 +41,7 @@
                         <div class="input-group-append">
                             <input type="search" class="form-control form-control-sm @error('turma') is-invalid @enderror"  name="turma" value="{{$disciplina->turma_id}}" hidden>
                         </div>
+                        {{-- @endforeach --}}
                     @endisset   
                     <div class="input-group-append">
                         <input type="file" id="ficheiro" name="ficheiro" style="display: none" >

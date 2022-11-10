@@ -25,6 +25,7 @@ class ConteudoSeeder extends Seeder
             'ficheiro'=>"/template_admin_lte/dist/img/graduation.png",
             'disciplina_id'=>1,
             'criador_id'=>1,
+            'tipo'=>"imagem",
         ]);
     }
 }

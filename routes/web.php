@@ -54,7 +54,8 @@ Route::middleware([
     Route::post('/registar_funcao', [AdminController::class, 'registarFuncao']);
     Route::post('/registar_permissao', [AdminController::class, 'registarPermissao']);
     Route::post('/registar_utilizador', [AdminController::class, 'registarUtilizador']);
-
+    Route::get('/editar_utilizador/{id}', [AdminController::class, 'editarUtilizador']);
+    Route::PUT('/actualizar_utilizador/{id}', [AdminController::class, 'actualizarUtilizador']);
     //=================================================MÓDULO BIBLIOTECA==================================================================================   
     //ROTAS QUE CARREGAM A PÁGINA  "BIBLIOTECA"
     Route::get('conteudos/inicio', [ConteudoController::class, 'index']);
@@ -72,9 +73,8 @@ Route::middleware([
     Route::get('/conteudos/listar/{id_turma}/{id_disciplina}', [ConteudoController::class, 'listarConteudos']);
     Route::get('/conteudo/visualizar/{id}', [ConteudoController::class, 'verDetalhes']);
     Route::get('/conteudo/baixar/{conteudo}', [ConteudoController::class, 'baixarConteudo']);
+    Route::get('/conteudo/eliminarConteudo/{id}', [ConteudoController::class, 'destroy']);
 
-    Route::get('/conteudo/eliminarConteudo/{id}', [ConteudoController::class, 'eliminarConteudo']);
-    Route::get('/conteudo/baixar/{conteudo}', [ConteudoController::class, 'baixarConteudo']);
 
     //ROTAS PARA GERIR ANO LECTIVO
     Route::post('/ano_lectivo/registo', [AnoLectivoController::class, 'store']);

@@ -29,15 +29,17 @@
                     @endcan
                     @can('add_role')
                         <!-- BOTÃO MODAL,ELIMINAR CONTEÚDO -->         
-                        <a href="#" data-toggle="modal" data-target="#" 
+                        <a href="#" data-toggle="modal" data-target="#ModalDelete{{$conteudo->id}}" 
                         class="btn btn-outline-danger rounded-pill" role="button" aria-pressed="false"><i class="fas fa-trash"></i> Eliminar conteúdo</a>
                     @endcan
                 </div>
             </div><br>
         </section>  
 
-        @foreach ($disciplina as $disciplina)
-            {{-- CONTEÚDO CENTRAL --}}
+        {{-- @foreach ($disciplinas as $disciplina) --}}
+
+            {{-- <!-- @foreach ($conteudo as $conteudo) --> --}}
+            <!-- CONTEÚDO CENTRAL -->
                 <div class=" col-md-12 "><br>
 
                     <div class="card">
@@ -45,10 +47,7 @@
                             <b>Título do conteúdo: </b>{{$conteudo->titulo}} <br>
                             <b>Descrição: </b>{{ $conteudo->descricao }}
                         </blockquote>
-                        
                     </div>
-
-                  
                     <div class="post">
                         <div class="card">
                             <div class="card-body">
@@ -56,7 +55,7 @@
                                     <div class="active tab-pane" id="activity">
                                         <div class="user-block">
                                             <span class="username">
-                                                {{-- <a href="/agente/perfil/{{$usuario->id}}">{{$usuario->name}} </a> --}}
+                                                {{-- <!-- <a href="/agente/perfil/{{$usuario->id}}">{{$usuario->name}} </a> --> --}}
                                                 <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
                                             </span>
                                         </div>
@@ -76,10 +75,10 @@
                                                 </div>
                                                 <div class="col-8 col-sm-5">
                                                     <!-- botão  (Baixar conteúdo Gratis) -->
-                                                    {{-- <a class="btn btn-danger" href="#" data-toggle="modal" data-target="#ModalDelete{{$conteudo->id}}">
+                                                    <!-- <a class="btn btn-danger" href="#" data-toggle="modal" data-target="#ModalDelete{{$conteudo->id}}">
                                                         <i class="fa fa-trash fa-lg mr-0"></i>
                                                         Eliminar
-                                                    </a> --}}
+                                                    </a> -->
                                                     <a class="btn btn-success" href="/conteudo/baixar/{{$conteudo->ficheiro}}">
                                                         <i class="fa fa-download fa-lg mr-0"></i>
                                                         Baixar
@@ -106,10 +105,7 @@
                         </div>
                     </div>
                 </div>
-             {{-- @endforeach --}}
-        @endforeach
+             {{-- <!-- @endforeach --> --}}
+        {{-- @endforeach  --}}
     </div>
-
-
-
 @endsection
