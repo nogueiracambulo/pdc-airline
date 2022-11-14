@@ -1,7 +1,7 @@
 
 @include('layouts/Garimpo/modal_Garimpo/registarGarimpoChat')
-<!-- Main Sidebar Container -->
 
+<!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <div class="sidebar">
         <div class="user-panel mt-7 pb-8 mb-4 d-flex">
@@ -109,7 +109,7 @@
                
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
+                        <i class="nav-icon fas fa-chalkboard-teacher "></i>
                         <p>
                             Garimpo
                             <i class="fas fa-angle-left right"></i>
@@ -118,7 +118,7 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                         <a href="#" data-toggle="modal" data-target="#Modal_Registar_Garimpo_Chat" class="nav-link">
-                            <i class="fas fa fa-plus nav-icon"></i>
+                            <i class="fas fa-plus-circle nav-icon"></i>
                                 <p>Adicionar Garimpo</p>
                             </a>
                         </li>
@@ -131,13 +131,13 @@
                         </li>
                         <li class="nav-item">
                             <a href="pedidos/garimpo/" class="nav-link">
-                                <i class="far fa-eye nav-icon"></i>
+                                <i class="fas fa fa-list nav-icon"></i>
                                     <p>Listar Pedidos de Adesão</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="garimpos/usuario/" class="nav-link">
-                                <i class="far fa-eye nav-icon"></i>
+                                <i class="fas fa fa-list nav-icon"></i>
                                     <p>Listar Membros</p>
                             </a>
                         </li>

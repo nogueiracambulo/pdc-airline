@@ -6,7 +6,7 @@ use App\Models\Garimpo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class GarimpoController extends Controller
+class garimpoChatController extends Controller
 {
     /**
      * Display a listing of the resource.
