@@ -13,25 +13,22 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('conteudos', function (Blueprint $table) {
+        Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo');
-            $table->string('descricao');
-            $table->string('ficheiro');
-        
-            $table->bigInteger('disciplina_id')->unsigned();
-            $table->foreign('disciplina_id')
-            ->references('id')
-            ->on('disciplinas')
-            ->onDelete('cascade');
-          
+            $table->string('estado')->default("pendente");
 
-            $table->bigInteger('criador_id')->unsigned();
-            $table->foreign('criador_id')
+            $table->bigInteger('garimpo_id')->unsigned();
+            $table->foreign('garimpo_id')
+            ->references('id')
+            ->on('garimpos')
+            ->onDelete('cascade');
+            
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')
             ->references('id')
             ->on('users')
             ->onDelete('cascade');
-            
+
             $table->timestamps();
         });
     }
@@ -43,6 +40,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('conteudos');
+        Schema::dropIfExists('pedidos');
     }
 };

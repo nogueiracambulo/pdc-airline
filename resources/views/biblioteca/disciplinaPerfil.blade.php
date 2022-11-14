@@ -155,7 +155,7 @@
                                     @endforeach                                
                                 </table>
                               </div>
-                              <!-- /.tab-pane -->
+                             <!-- /.Conteúdo do tipo IMAGEM -->
             
                               <div class="tab-pane" id="settings">
                                 <table class=""> 

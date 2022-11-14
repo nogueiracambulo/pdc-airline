@@ -13,26 +13,22 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('conteudos', function (Blueprint $table) {
+        Schema::create('mensagens', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo');
-            $table->string('descricao');
-            $table->string('ficheiro');
-        
-            $table->bigInteger('disciplina_id')->unsigned();
-            $table->foreign('disciplina_id')
-            ->references('id')
-            ->on('disciplinas')
-            ->onDelete('cascade');
-          
-
-            $table->bigInteger('criador_id')->unsigned();
-            $table->foreign('criador_id')
+            $table->string('texto');
+            $table->string('img')->default("padrao");
+           
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')
             ->references('id')
             ->on('users')
             ->onDelete('cascade');
-            
-            $table->timestamps();
+
+            $table->bigInteger('garimpo_id')->unsigned();
+            $table->foreign('garimpo_id')
+            ->references('id')
+            ->on('garimpos')
+            ->onDelete('cascade');
         });
     }
 
@@ -43,6 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('conteudos');
+        Schema::dropIfExists('mensagems');
     }
 };

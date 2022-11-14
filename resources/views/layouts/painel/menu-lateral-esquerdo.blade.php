@@ -124,6 +124,7 @@
 
                     </ul>
                 </li>
+                @can('add_role')
                  <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-cog"></i>
@@ -139,7 +140,7 @@
                                 <p>Ano Lectivo</p>
                             </a>
                         </li>
-                        @can('add_role')
+                        
                         <li class="nav-item">
                             <a href="/admin/listar_administradores" class="nav-link">
                                 <i class="fa fa-user-lock nav-icon"></i>
