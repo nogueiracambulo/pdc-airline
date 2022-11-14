@@ -1,4 +1,5 @@
 
+@include('layouts/Garimpo/modal_Garimpo/registarGarimpoChat')
 <!-- Main Sidebar Container -->
 
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -108,7 +109,7 @@
                
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-chalkboard-teacher"></i>
+                        <i class="nav-icon fas fa-edit"></i>
                         <p>
                             Garimpo
                             <i class="fas fa-angle-left right"></i>
@@ -116,12 +117,30 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/forms/general.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>General Elements</p>
+                        <a href="#" data-toggle="modal" data-target="#Modal_Registar_Garimpo_Chat" class="nav-link">
+                            <i class="fas fa fa-plus nav-icon"></i>
+                                <p>Adicionar Garimpo</p>
                             </a>
                         </li>
-
+                       
+                        <li class="nav-item">
+                            <a href="ver/garimpo" class="nav-link">
+                                <i class="far fa-eye nav-icon"></i>
+                                    <p>Ver Garimpo</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pedidos/garimpo/" class="nav-link">
+                                <i class="far fa-eye nav-icon"></i>
+                                    <p>Listar Pedidos de Adesão</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="garimpos/usuario/" class="nav-link">
+                                <i class="far fa-eye nav-icon"></i>
+                                    <p>Listar Membros</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 @can('add_role')
