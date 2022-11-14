@@ -4,9 +4,108 @@ namespace App\Http\Controllers;
 
 use App\Models\Pedido;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PedidoController extends Controller
 {
+
+
+
+//O usuario pode pedir a adesao ao garimpo e esperar pela a aprovacao do pedido pelo 
+     //criador do garimpo
+     public function inscreverPedido($id)
+     {
+         $pedido = new Pedido;
+         $pedido->garimpo_id=$id;
+         $pedido->estado="pendente";
+        
+         $pedido->user_id = auth()->user()->id;
+         
+         $pedido->save();
+         return redirect()->back()->with('sucesso', 'Pedido enviado com Sucesso');
+     }
+ 
+     //Permite a listagem de todos os pedidos de adesao aos garimpos do usuario
+     public function listarPedido()
+     {
+         $userLogado = auth()->user()->id;
+         
+         $pedidos = DB::select("SELECT g.id as garimpoId, g.nome, u.name, p.created_at, p.id as pedidoId, g.inscritos
+         FROM pedidos p, garimpos g, users u
+         WHERE (g.id = p.garimpo_id and g.user_id = $userLogado) AND (p.estado = 'pendente' and u.id = p.user_id)");
+ 
+         return view('layouts.Pedido.listarpedido', ['pedidos' => $pedidos]);
+     }
+ 
+     //Mediante a esta funcao o dono do garimpo pode rejeitar um pedido, bem como o usuario requisitante
+     //cancelar o seu pedido de adesao ao garimpo
+     public function eliminarPedido($id){
+ 
+         $pedido = DB::select("
+         delete from pedidos
+         WHERE id = '{$id}'
+         ");
+         
+         return redirect()->back()->with('sucesso', 'Pedido eliminado com Sucesso');
+     }
+ 
+     //Funcao que so o dono do garimpo pode fazer
+     public function aceitarPedido($id, $numInscritos){
+ 
+         $pedido = pedido::find($id);
+         $pedido->estado = "aceito";
+         $idGarimpo = $pedido->garimpo_id;
+         $pedido->save();
+ 
+         $garimpo= DB::table('garimpos')
+             ->where('id', $idGarimpo)
+             ->update(['inscritos' => ($numInscritos+1)]);
+        
+         
+         return redirect()->back()->with('sucesso', 'Pedido aceito com Sucesso');
+     }
+ 
+     //Lista os Membros dos usuarios do grupo
+     public function listarMembrosGarimpo($idGarimpo, $nomeGarimpo, $inscritos){
+ 
+         $membros = DB::select("Select u.name, g.nome, u.email, p.id as pedidoId
+         from users u, pedidos p, garimpos g
+         where (g.id = p.garimpo_id and p.user_id = u.id) AND (g.id = $idGarimpo and p.estado = 'aceito')");
+ 
+         return view('layouts.Garimpo.listarMembrosGarimpo', ['membros'=> $membros, 'nomeGarimpo'=> $nomeGarimpo, 'inscritos'=> $inscritos]); 
+ 
+     }
+ 
+     //Lista os Garimpos do usuario Logado
+     public function listarGarimpoUsuario(){
+ 
+         $userLogado = auth()->user()->id;
+ 
+         $garimpos = DB::select("SELECT g.id as garimpoId, g.nome, g.inscritos, g.descricao, u.name  
+         FROM garimpos g, users u
+         WHERE (g.user_id=u.id) and (u.id= $userLogado)");
+ 
+         return view('layouts.Garimpo.listarGarimpoUsuario', ['garimpos'=> $garimpos]); 
+     }
+ 
+     public function removerMembro($pedidoId, $numInscritos){
+ 
+         $pedido = pedido::find($pedidoId);
+         $idGarimpo = $pedido->garimpo_id;
+ 
+         $pedido = DB::select("
+         delete from pedidos
+         WHERE id = '{$pedidoId}'
+         ");
+ 
+         $garimpo= DB::table('garimpos')
+         ->where('id', $idGarimpo)
+         ->update(['inscritos' => ($numInscritos-1)]);
+ 
+         return redirect()->back()->with('sucesso', 'Removido com sucesso');
+     }
+ 
+
     /**
      * Display a listing of the resource.
      *
