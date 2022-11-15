@@ -2,83 +2,105 @@
 
 
 @section('content' )
-<section class="courses-section spad">
-		<div class="container">
-			<div class="section-title text-center">
-				<h3>AULAS DE APOIO (GARIMPOS)</h3>
-				<p>Elimine suas dúvidas com o colega que melhor entendeu a matéria</p>
+	<section class="content-header">
+		<div class="container-fluid">
+			<div class="row mb-2">
+				<div class="col-sm-6">
+					<h1>BEM - VINDO AO GARIMPO!</h1>
+					<p>Elimine suas dúvidas com o colega que melhor entendeu a matéria</p>
+				</div>
+				<div class="col-sm-6">
+					<ol class="breadcrumb float-sm-right">
+						<li class="breadcrumb-item"><a href="/">Inicio</a></li>
+						<li class="breadcrumb-item active">Garimpo</li>
+					</ol>
+				</div>
 			</div>
 
-			@if (count($garimpos) == 0)
-				<div class="section-title text-center">
-					<h4>Sem Garimpo Disponível</h4>
-				</div>
-			@else
-				<div class="row">
-					@foreach ($garimpos as $garimpo)
-						<!-- course item -->
-						<div class="col-lg-4 col-md-6 course-item">
-							<div class="course-thumb">
-								<img src="img/course/1.jpg" alt="">
-								<div class="course-cat">
-									<span>{{$garimpo->nome}}</span>
-								</div>
-							</div>
-							<div class="course-info">
-								<div class="date"><i class="fa fa-clock-o"></i> {{$garimpo->name}}</div>
-								<h4>{{$garimpo->descricao}}</h4>
-								<h4 class="cource-price">5000KZ<span>/mês</span></h4>
-								<h5 class="cource-price">Inscritos<span>/{{$garimpo->inscritos}}</span></h5>
-							</div>
-							<?php $sinal=false ?>
-							<?php $id=0 ?>
-							<?php $idlogado = auth()->user()->id?>
-							<?php $std="a" ?>
+			<div class="text-right ">
+				<a href="#" data-toggle="modal" data-target="#Modal_Selecionar_anoLectivo" 
+				class="btn btn-outline-primary rounded-pill outline" role="button" aria-pressed="false"><i class="fa fa-calendar-check"></i> Selecionar ano</a>	
+					{{-- BOTÃO MODAL, REGISTAR NOVA TURMA --}}         
+					<a href="#" data-toggle="modal" data-target="#Modal_Registar_Garimpo_Chat" 
+					class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Criar novo Garimpo</a>
+			</div>
+		</div><br>
+	</section>  
 
-							@if(auth()->user()->id == $garimpo->userId)
-								<a href="ver/chat/{{$garimpo->garimpoId}}/{{$garimpo->nome}}">
-									<p>Entrar</p>
-								</a>
-								<a href="eliminar/garimpo/{{$garimpo->garimpoId}}">
-									<p>Eliminar Garimpo</p>
-								</a>
-							@else
-								@foreach($inscritos as $inscrito)
-									@if(($garimpo->garimpoId == $inscrito->garimpo_id))
-										<?php $id=$inscrito->pedidoId?>
-										@if($inscrito->estado == "pendente")
-											<?php $sinal = true; ?>
-											<?php $std="pendente"; ?>
-											<?php $id = $inscrito->pedidoId; ?>
-										@else
-											<?php $sinal = true; 
-											$std="aceito";?>
-											<?php $id = $inscrito->pedidoId;?>
-										@endif
-										
-									@endif	
-									
-								@endforeach
-							
-								@if(($sinal==true) and ($std=="pendente"))
-									<a href="eliminar/pedido/{{$id}}">
-										<p>Cancelar pedido de Adesão </p>
-									</a>
-								@elseif(($sinal==true) and ($std=="aceito"))
-									<a href="ver/chat/{{$garimpo->garimpoId}}/{{$garimpo->nome}}">
-										<p>Entrar</p>
-									</a>
-								@else
-									<a href="inscrever/garimpo/{{$garimpo->garimpoId}}">
-										<p>Inscrever-se no Garimpo</p>
-									</a>
-								@endif
-							@endif
+	<section class="courses-section spad">
+		<div class="container">
+			<div class="text-center col-12 card rounded-pill">
+				<h3 class="text-center">Garimpos disponíveis
+			</div>
+			{{-- <div class=" ">
+				<div class=""> --}}
+					@if (count($garimpos) == 0)
+						<div class="section-title text-center">
+							<h4>Sem Garimpo Disponível</h4>
 						</div>
-							<!-- course item -->
-					@endforeach
-			@endif
-		</div>	
+					@else
+						<div class="row">
+							@foreach ($garimpos as $garimpo)
+							
+								<div class="col-md-5">
+									<br>
+									<img class="rounded" src="/{{$garimpo->fotoCapa}}" alt="" width="430" >
+								</div>
+								
+								<div class="col-md-7">
+									<blockquote class="primary" style="color:black;">
+										<div>
+											<h3><i style="color:black;" class="fas fa-chalkboard-teacher"></i> Garimpo de {{$garimpo->nome}}</h3>
+											<h5 style="color:rgb(12, 80, 126);"><i  class="fas fa-graduation-cap"></i> {{$garimpo->descricao}}<br></h5>
+											<i class="fas fa-user"> </i> com <b><a href="/perfil">{{ $garimpo->name}}</a></b><br>
+											
+											<i class="fas fa-money-bill"></i> {{$garimpo->Preco}} kz<span>/mês</span><br>
+											<i class="fas fa-users"></i> Inscritos - <span>{{$garimpo->inscritos}}</span><br>
+											<i class="fas fa-star" style="color:gold"></i> Nível de recomendação - <span>{{$garimpo->inscritos}} %</span><br>
+											<br>
+										</div>
+									</blockquote>
+									
+									<?php $sinal=false ?>
+									<?php $id=0 ?>
+									<?php $idlogado = auth()->user()->id?>
+									<?php $std="a" ?>
+									<blockquote class="primary">
+									@if(auth()->user()->id == $garimpo->userId)
+										<a class="btn btn-primary" href="ver/chat/{{$garimpo->garimpoId}}/{{$garimpo->nome}}"><i class="fas fa-folder"></i> Aceder ao Chat</a>
+										<a class="btn btn-danger" href="eliminar/garimpo/{{$garimpo->garimpoId}}"><i class="fas fa-trash"></i> Eliminar garimpo </a>
+									@else
+										@foreach($inscritos as $inscrito)
+											@if(($garimpo->garimpoId == $inscrito->garimpo_id))
+												<?php $id=$inscrito->pedidoId?>
+												@if($inscrito->estado == "pendente")
+													<?php $sinal = true; ?>
+													<?php $std="pendente"; ?>
+													<?php $id = $inscrito->pedidoId; ?>
+												@else
+													<?php $sinal = true; 
+													$std="aceito";?>
+													<?php $id = $inscrito->pedidoId;?>
+												@endif
+											@endif
+										@endforeach
+									
+										@if(($sinal==true) and ($std=="pendente"))
+												<a class="btn btn-primary" href="eliminar/pedido/{{$id}}"> Cancelar pedido de Adesão</a>
+											@elseif(($sinal==true) and ($std=="aceito"))
+												<a class="btn btn-primary" href="ver/chat/{{$garimpo->garimpoId}}/{{$garimpo->nome}}"> Entrar</a>
+											@else 
+												<a class="btn btn-primary" href="inscrever/garimpo/{{$garimpo->garimpoId}}">Inscrever-se no Garimpo</a>
+										@endif
+									@endif
+								 	</blockquote>
+									
+								</div>
+							@endforeach
+						</div>
+					@endif
+				{{-- </div>
+			</div>	 --}}
 		</div>
 	</section>
 @endsection

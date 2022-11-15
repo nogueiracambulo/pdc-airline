@@ -25,8 +25,8 @@
                 <!-- widget -->
                 <div class="col-sm-6 col-lg-3 footer-widget">
                     <div class="about-widget">
-                        <img src="vendor_visitante/img/logorodape2.png" alt="">
-                        <p>CC-GUIDER é um Guião para os estudantes de Ciências da Computação, projetado para os estudantes da Faculdade de Ciências da Universidade Agostinho Neto, aonde os estudantes encontram uma orientação acadêmica </p>
+                        <img  width="150px" src="/template_admin_lte/dist/img/2/actual.png" alt="">
+                        <p>MULONGI é um Guião do estudante, projectado para os estudantes</p>
                         <div class="social pt-1">
                             <a href=""><i class="fa fa-twitter-square"></i></a>
                             <a href=""><i class="fa fa-facebook"></i></a>
@@ -46,7 +46,7 @@
                             <li><a href="/contactos">contactos</a></li>
                             <li><a href="/disciplinas1">Grelha Curricular</a></li>
                             <li><a href="/biblioteca_cc">Biblioteca CC</a></li>
-                            <li><a href="/projetos">Projetos</a></li>
+                            <li><a href="/projetos">Trabalhos</a></li>
                         </ul>
                         <ul>
 
@@ -75,7 +75,7 @@
                                 @empty
                             @endforelse
                         @else
-                        <p>CC-GUIDER <br> Publicações não disponíveis!!!</p>
+                        <p>MULONGI <br> Publicações não disponíveis!!!</p>
                         <span><i class="fa fa-clock-o"></i>@php  @endphp</span>
                         @endif
                     </ul>
@@ -106,7 +106,7 @@
         <div class="copyright">
             <div class="container">
                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos os direitos reservados | Departamento de Ciências da Computação FCUAN, <a href="https://bc-soft.com" target="_blank">CC-GUIDER</a>
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos os direitos reservados | Departamento de Ciências da Computação FCUAN, <a href="https://bc-soft.com" target="_blank">MULONGI</a>
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
             </div>
         </div>

@@ -2,14 +2,19 @@
 
 
 <header class="header-section"  >
-    <div class="container" style="background-color: white
-    ">
+    <div class="container-fluid" style="background-color: white">
         <!-- logo -->
-        <a href="index.html" class="site-logo"><img src="vendor_visitante/img/logoguider2.png" alt=""></a>
         <div class="nav-switch">
             <i class="fa fa-bars"></i>
-        </div>
+        </div> 
         <div class="header-info">
+            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+            <div class="offset-1 col-1 hf-item">
+                <a href="/" >
+                    <img src="/template_admin_lte/dist/img/2/preload.png" alt="">
+                </a>
+            </div>
+
             <div class="hf-item">
                 <i class="fa fa-clock-o"></i>
                 <p><span>Atendimento presencial:</span>Segunda à Sexta-feira: 08H00 às 15h00</p>

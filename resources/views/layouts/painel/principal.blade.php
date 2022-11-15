@@ -19,7 +19,7 @@
     <div class="wrapper">
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="/template_Admin_lte/dist/img/2/5-sim.png" alt="STUDENT GUIDER"
+            <img class="animation__shake" src="/template_Admin_lte/dist/img/2/preload.png" alt="STUDENT GUIDER"
                 height="80" width="80">
         </div>
 

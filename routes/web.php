@@ -35,9 +35,7 @@ Route::get('/contactos', function () {
     return view('visitantes.contactos');
 });
 
-Route::get('/projetos', function () {
-    return view('dashboard');
-});
+
 
 
 //ROTA PRINCIPAL
@@ -48,7 +46,9 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () { return view('layouts.painel.principal'); })->name('dashboard');
     // Route::get('/index',  [MainController::class, 'index']);
-
+    Route::get('/projetos', function () {
+        return view('dashboard');
+    });
     // Gestão de Controlo de acesso - ROTAS EXCLUSIVAS PARA O ADMINISTRADOR
     Route::get('/admin/listar_administradores', [AdminController::class, 'listar_administradores']);
     Route::get('/admin/listar_utilizadores', [AdminController::class, 'listar_utilizadores']);

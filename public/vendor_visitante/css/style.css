@@ -260,7 +260,7 @@ ol {
 	display: inline-block;
 	position: relative;
 	text-align: center;
-	color: #f6783a;
+	color:rgb(22, 136, 212);
 	font-size: 17px;
 	padding-top: 13px;
 	margin-right: 20px;
@@ -293,16 +293,20 @@ ol {
 	display: block;
 	font-size: 12px;
 	text-transform: uppercase;
-	color: #020031;
+	color:#0c0b25;
 	font-weight: 500;
+	
 }
 
 .nav-switch {
 	display: none;
 }
 
+
+
 .nav-section {
-	background: #020031;
+	background: #0c0b25;
+	
 }
 
 .nav-section .nav-right {

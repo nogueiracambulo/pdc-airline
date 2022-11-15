@@ -1,7 +1,7 @@
-@extends('layouts.painel.principal')
+@extends('layouts.visitante.principal')
 
 @section('titulo', 'MULONGI - Sobre nós')
-@section ('content')
+@section ('content')  
 	<!-- Breadcrumb section -->
 	<div class="site-breadcrumb">
 		<div class="container">
@@ -16,7 +16,7 @@
 	<section class="about-section spad pt-0">
 		<div class="container">
 			<div class="section-title text-center">
-				<h3>BEM-VINDO AO CC-GUIDER</h3>
+				<h3>BEM-VINDO AO MOLONGI</h3>
 				<p>Organize a tua carreira estudantil e Desenvolva projetos de forma responsável <br> e profissional, respeitando o tempo e as etapas</p>
 			</div>
 			<div class="row">

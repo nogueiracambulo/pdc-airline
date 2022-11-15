@@ -87,7 +87,7 @@
 	<section class="service-section spad">
 		<div class="container services">
 			<div class="section-title text-center">
-				<h3>MÓDULOS CC-GUIDER</h3>
+				<h3>SERVIÇOS MULONGI</h3>
 				<p>Providenciamos a oportunidade que lhe prepara para uma carreira
                      estudantil brilhante<br> e um potencial profissional de sucesso em TI</p>
 			</div>
@@ -97,8 +97,8 @@
 						<img src="vendor_visitante/img/cc-icon/biblioteca.png" alt="1">
 					</div>
 					<div class="service-content">
-						<h4>BIBLIOTECA CC</h4>
-						<p>Neste módulo CC-GUIDER, encontrará uma grande facilidade em localizar os conteúdos das suas disciplinas,
+						<h4>BIBLIOTECA </h4>
+						<p>Neste módulo MULONGI, encontrará uma grande facilidade em localizar os conteúdos das suas disciplinas,
                             pois eles estarão organizados aqui de acordo ao ano acadêmico e disciplina.</P>
                         <P> Vai ainda encontrar links associados aos conteúdos, que em algum momento já serviram de auxílio para
                             compreensão da matéria para estudantes que foram bem sucedidos.</p>
@@ -109,10 +109,10 @@
 						<img src="vendor_visitante/img/services-icons/4.png" alt="1">
 					</div>
 					<div class="service-content">
-						<h4>PROJETOS CC</h4>
+						<h4>TRABALHOS</h4>
 						<p>Este módulo atenta-se aos projetos semestrais das disciplinas realizados no departamento</p>
                         <p>Permite aos docentes publicarem propostas de projetos e avaliar grupos de estudantes bem como projetos desenvolvidos por eles </p>
-                        <p>Aos estudantes são permitidos criar grupos de 2 a 5 elementos para desenvolver o projeto de uma disciplina específica, carregá-lo no CC-GUIDER e aguardar pela avaliação do docente.</p>
+                        <p>Aos estudantes são permitidos criar grupos de 2 a 5 elementos para desenvolver o projeto de uma disciplina específica, carregá-lo no MULONGI e aguardar pela avaliação do docente.</p>
 
                     </div>
 				</div>
@@ -121,8 +121,8 @@
 						<img src="vendor_visitante/img/services-icons/3.png" alt="1">
 					</div>
 					<div class="service-content">
-						<h4>CONSULTORIA CC</h4>
-						<p>O CC-GUIDER lhe proporciona a oportunidade de comaltar as dúvidas nos assuntos de todas a Disciplinas do curso, estudando online com outros estudantes ou agendar estudo presencial com colegas que melhor percebem o assunto específico</p>
+						<h4>GARIMPO</h4>
+						<p>O MULONGI lhe proporciona a oportunidade de comaltar as dúvidas nos assuntos de todas a Disciplinas do curso, estudando online com outros estudantes ou agendar estudo presencial com colegas que melhor percebem o assunto específico</p>
 					</div>
 				</div>
 
@@ -139,7 +139,7 @@
 				<div class="col-lg-5">
 					<div class="section-title text-white">
 						<h3>REGISTO</h3>
-						<p>Crie sua conta CC-GUIDER e eleve a experiência ao mais alto nível!</p>
+						<p>Crie sua conta MULONGI e eleve a experiência ao mais alto nível!</p>
 					</div>
 					<div class="enroll-list text-white">
 						<div class="enroll-list-item">
@@ -149,13 +149,13 @@
 						</div>
 						<div class="enroll-list-item">
 							<span>2</span>
-							<h5>Consultoria</h5>
-							<p>Solicite na Comunidade acadêmica da CC, explicações sobre temas e disciplinas específicas</p>
+							<h5>Garimpo</h5>
+							<p>Solicite na Comunidade académica MULONGI, explicações sobre temas e disciplinas específicas</p>
 						</div>
 						<div class="enroll-list-item">
 							<span>3</span>
-							<h5>Projetos</h5>
-							<p>Acompanhamento em projetos tecnológicos semestrais por disciplina, alertas de timings e interação com Docentes das cadeiras</p>
+							<h5>Trabalhos</h5>
+							<p>Acompanhamento em trabalhos por disciplina, alertas de timings e interação com Docentes das cadeiras</p>
 						</div>
 					</div>
 				</div>
@@ -328,7 +328,7 @@
 		<div class="container">
 			<div class="section-title text-center">
 				<h3>EVENTOS ACADÊMICOS</h3>
-				<p>A Equipa CC-GUIDER lhe actualiza sobre os eventos acadêmicos a se realizar
+				<p>A Equipa MULONGI lhe actualiza sobre os eventos acadêmicos a se realizar
                     <br> no departamento de Ciências da Computação</p>
 			</div>
 			<div class="row">

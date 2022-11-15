@@ -4,8 +4,8 @@
  <div class=" modal fade" data-backdrop="static" data-keyboard="false" id="Modal_Registar_Garimpo_Chat" tabindex="-1" aria-labelledby="Modal_Registar_DisciplinaLabel" aria-hidden="true">
     <div class="modal-dialog modal-md">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="Modal_Registar_Garimpo_ChatLabel">Registar Chat Garimpo</h5>
+            <div class="modal-header " style="background-color: rgb(14, 166, 236);">
+                <h5 class="modal-title" id="Modal_Registar_Garimpo_ChatLabel">Registar Garimpo</h5>
                 <button type="button" class="close fecharX" data-dismiss="modal">
                     <span >&times;</span>
                 </button>

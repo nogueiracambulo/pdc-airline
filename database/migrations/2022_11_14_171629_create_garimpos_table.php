@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('garimpos', function (Blueprint $table) {
-            $fotoCapaPadrao="img/capa_disciplina/padrao.png";
+            $fotoCapaPadrao="storage/capa_garimpo/padrao.png";
             $preco = "Grátis";
 
             $table->id();

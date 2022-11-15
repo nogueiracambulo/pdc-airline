@@ -55,7 +55,7 @@ class garimpoChatController extends Controller
 
     public function listarGarimpos(){
         
-        $garimpos =DB::select("SELECT g.id as garimpoId,g.nome, g.descricao, u.name, u.id as userId, g.inscritos
+        $garimpos =DB::select("SELECT g.id as garimpoId,g.nome, g.descricao, g.fotoCapa, g.Preco, u.name, u.id as userId, g.inscritos
         FROM garimpos g, users u
         where g.user_id = u.id");
 
