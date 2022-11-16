@@ -19,10 +19,15 @@
                 </div>
 
                 <div class="text-right ">
-                    {{-- BOTÃO MODAL, LISTAR TODOS PEDIDOS DE ADESÃO --}}
-                    <a href="/pedidos/garimpo"
+                    {{-- BOTÃO MODAL, MOSTRAR CHAT DO GARIMPO --}}
+                    <a href="/ver/chat/{{$garimpo->id}}/{{$garimpo->id}}"
                         class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false">
-                        <i class="fas fa-bell"></i> Ver todos pedidos</a>
+                        <i class="fas fa-comment"></i> Aceder ao chat</a>
+
+                    {{-- BOTÃO MODAL, LISTAR TODOS MEMBROS DO GARIMPO --}}
+                    <a href="/listar/membro/{{$garimpo->id}}/{{$garimpo->id}}"
+                        class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false">
+                        <i class="fas fa-users"></i> Ver todos membros</a>
                 </div>
             </div>
         </section>
@@ -63,7 +68,7 @@
             </div>
 
             <div class="col-md-8">
-                <section class="content">
+                {{-- <section class="content"> --}}
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Pedidos de adesão</h3>
@@ -77,7 +82,43 @@
                             </div>
                         </div>
                         <div class="card-body p-0">
-                            <table class="table table-striped projects">
+                            <div class="timeline timeline-inverse">
+                  
+                                <!-- NOTIFICAÇÃO SOBRE PEDIDO DE ADESÃO A UM GARIMPO CRIADO PELO UTILIZADOR QUE ESTÁ LOGADO -->
+                                <!-- timeline item -->
+                                <div>
+                                  @isset($pedidos)
+                                  <br>
+                                  {{-- <i class="fas fa-envelope bg-primary"></i> --}}
+                                    @foreach ($pedidos as $pedido)
+                                  
+                                      <div class="timeline-item">
+                                       
+                                        <span class="time">&times;</span>
+                                        <div class="timeline-body">
+                                          <div class="user-block">
+                                            <img class="img-circle img-bordered-sm" src={{asset('template_Admin_lte/dist/img/user1-128x128.jpg')}} alt="user image">
+                                            <span class="username"><a href="#">{{$pedido->name}}</a></span>
+                                            <span class="description">Enviado aos {{$pedido->created_at}}</span>
+                                          </div>
+                                          <div class="container-fluid"> 
+                                            <p><br><br> 
+                                                
+                                                 Pretende aderir a este garimpo!!!
+                                            </p>
+                                          </div>
+                                        </div>
+                                        <div class="timeline-footer ">
+                                          <a href="/aceitar/pedido/{{$pedido->pedidoId}}/{{$pedido->inscritos}}" class="btn btn-success btn-sm"><i class="far fa-thumbs-up mr-1"></i> Aceitar</a>
+                                          <a href="/eliminar/pedido/{{$pedido->pedidoId}}" class="btn btn-danger btn-sm"><i class="fas fa-ban"></i> Rejeitar</a>
+                                        </div>
+                                      </div><br>
+                                    @endforeach
+                                  @endisset
+                                </div>
+                                <!-- END timeline item -->
+                            </div>
+                            {{-- <table class="table table-striped projects">
                                 <thead>
                                     <tr>
                                         <th style="width: 1%">
@@ -86,9 +127,7 @@
                                         <th style="width: 20%">
                                             Nome
                                         </th>
-                                        {{-- <th style="width: 20%">
-                                            E-mail
-                                        </th> --}}
+                                      
 
                                         <th style="width: 30%">
                                             Acção
@@ -107,13 +146,7 @@
                                             </td>
 
                                             <td> <a>{{ $user->name }} </a></td>
-                                            {{-- <td>
-                                                <ul class="list-inline">
-                                                    <li class="list-inline-item">
-                                                        {{ $user->email }}
-                                                    </li>
-                                                </ul>
-                                            </td> --}}
+                                         
 
                                             <td class="list-inline">
                                                 <a class="btn btn-success btn-sm" href="aceitar/pedido/{{$user->pedidoId}}/{{$user->inscritos}}">
@@ -128,10 +161,10 @@
                                         </tr>
                                     @endforeach
                                 </tbody>
-                            </table>
+                            </table> --}}
                         </div>
                     </div>
-                </section>
+                {{-- </section> --}}
             </div>
         </div>
     </section>

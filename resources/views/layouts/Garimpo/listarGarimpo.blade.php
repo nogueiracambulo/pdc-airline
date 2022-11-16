@@ -18,6 +18,11 @@
 			</div>
 
 			<div class="text-right ">
+				{{-- BOTÃO MODAL, LISTAR TODOS PEDIDOS DE ADESÃO AOS GARIMPOS DO UTILIZADOR LOGADO --}}         
+				<a href="/pedidos/garimpo" 
+				class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false">
+				<i class="fas fa-bell"></i> Ver pedidos de adesão</a>
+
 				{{-- BOTÃO MODAL, REGISTAR GARIMPO --}}         
 				<a href="#" data-toggle="modal" data-target="#Modal_Registar_Garimpo_Chat" 
 				class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Criar novo Garimpo</a>
@@ -65,8 +70,8 @@
 									<?php $std="a" ?>
 									<blockquote class="primary">
 									@if(auth()->user()->id == $garimpo->userId)
-										<a class="btn btn-primary" href="ver/chat/{{$garimpo->garimpoId}}/{{$garimpo->nome}}"><i class="fas fa-folder"></i> Aceder ao Chat</a>
-										<a class="btn btn-danger" href="eliminar/garimpo/{{$garimpo->garimpoId}}"><i class="fas fa-trash"></i> Eliminar garimpo </a>
+										<a class="btn btn-primary" href="/ver/chat/{{$garimpo->garimpoId}}/{{$garimpo->nome}}"><i class="fas fa-comment"></i> Aceder ao Chat</a>
+										<a class="btn btn-danger" href="/eliminar/garimpo/{{$garimpo->garimpoId}}"><i class="fas fa-trash"></i> Eliminar garimpo </a>
 									@else
 										@foreach($inscritos as $inscrito)
 											@if(($garimpo->garimpoId == $inscrito->garimpo_id))
@@ -84,11 +89,11 @@
 										@endforeach
 									
 										@if(($sinal==true) and ($std=="pendente"))
-												<a class="btn btn-warning" href="eliminar/pedido/{{$id}}"><i class="fas fa-ban"></i> Cancelar pedido de Adesão</a>
+												<a class="btn btn-warning" href="/eliminar/pedido/{{$id}}"><i class="fas fa-ban"></i> Cancelar pedido de Adesão</a>
 											@elseif(($sinal==true) and ($std=="aceito"))
-												<a class="btn btn-primary" href="ver/chat/{{$garimpo->garimpoId}}/{{$garimpo->nome}}"><i class="fas fa-folder"></i> Aceder ao chat</a>
+												<a class="btn btn-primary" href="/ver/chat/{{$garimpo->garimpoId}}/{{$garimpo->nome}}"><i class="fas fa-comment"></i> Aceder ao chat</a>
 											@else 
-												<a class="btn btn-primary" href="inscrever/garimpo/{{$garimpo->garimpoId}}"><i class="fas fa-plus-circle"></i> Inscrever-se no Garimpo</a>
+												<a class="btn btn-primary" href="/inscrever/garimpo/{{$garimpo->garimpoId}}"><i class="fas fa-plus-circle"></i> Inscrever-se no Garimpo</a>
 										@endif
 									@endif
 								 	</blockquote>

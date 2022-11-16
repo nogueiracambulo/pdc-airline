@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Garimpo {{ $nomeGarimpo }} <br> Todos membros</h1>
+                        <h1>Garimpo {{ $garimpo->nome }} <br> Todos membros</h1>
 
                     </div>
                     <div class="col-sm-6">
@@ -19,10 +19,15 @@
                 </div>
 
                 <div class="text-right ">
+                    {{-- BOTÃO MODAL, MOSTRAR CHAT DO GARIMPO --}}
+                    <a href="/ver/chat/{{$garimpo->id}}/{{$garimpo->id}}"
+                    class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false">
+                    <i class="fas fa-comment"></i> Aceder ao chat</a>
+
                     {{-- BOTÃO MODAL, LISTAR MEMBROS --}}
                     <a href="/pedidos/garimpo/{{ $garimpo->id }}"
-                        class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false">
-                        <i class="fas fa-bell"></i> Ver pedidos de adesão</a>
+                    class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false">
+                    <i class="fas fa-bell"></i> Ver pedidos de adesão</a>
                 </div>
             </div>
         </section>
@@ -114,7 +119,7 @@
                                                 </a>
                                              
                                                 <a class="btn btn-danger btn-sm"
-                                                    href="remover/membro/{{ $user->pedidoId }}/{{ $garimpo->inscritos }}">
+                                                    href="/remover/membro/{{ $user->pedidoId }}/{{ $garimpo->inscritos }}">
 													<i class="fas fa-trash"></i> Remover
                                                 </a>
                                             </td>

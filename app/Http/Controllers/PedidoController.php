@@ -35,7 +35,7 @@ class PedidoController extends Controller
          FROM pedidos p, garimpos g, users u
          WHERE (g.id = p.garimpo_id and g.user_id = $userLogado) AND (p.estado = 'pendente' and u.id = p.user_id)");
  
-         return view('layouts.Pedido.listarpedido', ['pedidos' => $pedidos]);
+         return view('profile.home', ['pedidos' => $pedidos]);
      }
 
      //Lista os pedidos relacionados a um Garimpo em específico

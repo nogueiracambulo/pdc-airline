@@ -16,7 +16,6 @@
 
 
 <body class="hold-transition sidebar-mini layout-fixed" >
-   
     @include('layouts.painel.menu-topo')
     {{-- <div class="masthead" style="background-image: url('/template_admin_lte/dist/img/2/mulongi-fundo.jpg');" >
         <div class="color-overlay d-flex justify-content-center align-items-center"> --}}

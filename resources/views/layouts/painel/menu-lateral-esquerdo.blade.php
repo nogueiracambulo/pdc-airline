@@ -78,7 +78,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="ver/garimpo" class="nav-link">
+                            <a href="/ver/garimpo" class="nav-link">
                                 <i class="fas fa-list nav-icon"></i>
                                 <p>Todos garimpos</p>
                             </a>
@@ -90,17 +90,11 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pedidos/garimpo/" class="nav-link">
+                            <a href="/pedidos/garimpo/" class="nav-link">
                                 <i class="fas fa fa-bell nav-icon"></i>
                                 <p>Pedidos de adesão</p>
                             </a>
                         </li><hr>
-                        {{-- <li class="nav-item">
-                            <a href="garimpos/usuario/" class="nav-link">
-                                <i class="fas fa fa-list nav-icon"></i>
-                                    <p>Listar Membros</p>
-                            </a>
-                        </li> --}}
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">

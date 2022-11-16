@@ -21,10 +21,15 @@
 			</div>
 
 			<div class="text-right ">
-				{{-- BOTÃO MODAL, LISTAR MEMBROS --}}         
-				<a href="listar/membro/{{$idGarimpo}}/{{$nomeGarimpo}}" 
+				{{-- BOTÃO MODAL, LISTAR PEDIDOS DE ADESÃO AO GARIMPO --}}         
+				<a href="/pedidos/garimpo/{{ $idGarimpo}}" 
 				class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false">
-				<i class="fas fa-list"></i> Membros do Garimpo</a>
+				<i class="fas fa-bell"></i> Ver pedidos de adesão</a>
+
+				{{-- BOTÃO MODAL, LISTAR MEMBROS --}}         
+				<a href="/listar/membro/{{$idGarimpo}}/{{$nomeGarimpo}}" 
+				class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false">
+				<i class="fas fa-users"></i> Ver todos membros</a>
 			</div>
 		</div>
 	</section>  
