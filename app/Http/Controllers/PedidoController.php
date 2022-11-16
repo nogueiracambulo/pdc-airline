@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pedido;
+use App\Models\Garimpo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -36,6 +37,19 @@ class PedidoController extends Controller
  
          return view('layouts.Pedido.listarpedido', ['pedidos' => $pedidos]);
      }
+
+     //Lista os pedidos relacionados a um Garimpo em específico
+     public function listarPedidoGarimpo($idGarimpo)
+     {
+        $userLogado = auth()->user()->id;
+        $garimpo=Garimpo::findOrfail($idGarimpo);
+
+        $pedidos = DB::select("SELECT g.id as garimpoId, g.nome, u.profile_photo_path, u.name, p.created_at, p.id as pedidoId, g.inscritos
+         FROM pedidos p, garimpos g, users u
+         WHERE (g.id = p.garimpo_id and g.user_id = $userLogado and g.id= $idGarimpo) AND (p.estado = 'pendente' and u.id = p.user_id)");
+ 
+         return view('layouts.Garimpo.listarPedidoGarimpo', ['pedidos' => $pedidos, 'garimpo'=>$garimpo]);
+     }
  
      //Mediante a esta funcao o dono do garimpo pode rejeitar um pedido, bem como o usuario requisitante
      //cancelar o seu pedido de adesao ao garimpo
@@ -52,7 +66,7 @@ class PedidoController extends Controller
      //Funcao que so o dono do garimpo pode fazer
      public function aceitarPedido($id, $numInscritos){
  
-         $pedido = pedido::find($id);
+         $pedido = Pedido::find($id);
          $pedido->estado = "aceito";
          $idGarimpo = $pedido->garimpo_id;
          $pedido->save();
@@ -66,13 +80,17 @@ class PedidoController extends Controller
      }
  
      //Lista os Membros dos usuarios do grupo
-     public function listarMembrosGarimpo($idGarimpo, $nomeGarimpo, $inscritos){
+     public function listarMembrosGarimpo($idGarimpo, $nomeGarimpo){
  
-         $membros = DB::select("Select u.name, g.nome, u.email, p.id as pedidoId
+         $membros = DB::select("Select u.id, u.name, g.nome, u.email, p.id as pedidoId
          from users u, pedidos p, garimpos g
          where (g.id = p.garimpo_id and p.user_id = u.id) AND (g.id = $idGarimpo and p.estado = 'aceito')");
  
-         return view('layouts.Garimpo.listarMembrosGarimpo', ['membros'=> $membros, 'nomeGarimpo'=> $nomeGarimpo, 'inscritos'=> $inscritos]); 
+         $logado = auth()->user()->id;
+
+         $garimpo=Garimpo::findOrfail($idGarimpo);
+
+         return view('layouts.Garimpo.listarMembrosGarimpo', ['membros'=> $membros, 'nomeGarimpo'=> $nomeGarimpo, 'garimpo'=> $garimpo]); 
  
      }
  

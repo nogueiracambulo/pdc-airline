@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mensagem;
+use App\Models\Garimpo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -36,7 +37,9 @@ class MensagemController extends Controller
         where (m.garimpo_id = $idGarimpo) and (m.user_id = u.id)");
         $logado=auth()->user()->id;
         
-        return view('layouts.Garimpo.ChatGarimpo', ['mensagens' => $mensagens, 'nomeGarimpo' => $nomeGarimpo, 'logado'=> $logado, 'idGarimpo'=> $idGarimpo]);
+        $garimpo=Garimpo::findOrfail($idGarimpo);
+        
+        return view('layouts.Garimpo.ChatGarimpo', ['mensagens' => $mensagens, 'nomeGarimpo' => $nomeGarimpo, 'logado'=> $logado, 'idGarimpo'=> $idGarimpo, 'garimpo'=>$garimpo]);
         
     }
 

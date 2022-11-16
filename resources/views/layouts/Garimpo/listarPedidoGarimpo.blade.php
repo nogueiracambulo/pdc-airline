@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Garimpo {{ $nomeGarimpo }} <br> Todos membros</h1>
+                        <h1>Garimpo {{ $garimpo->nome }} <br> Pedidos de adesão</h1>
 
                     </div>
                     <div class="col-sm-6">
@@ -19,10 +19,10 @@
                 </div>
 
                 <div class="text-right ">
-                    {{-- BOTÃO MODAL, LISTAR MEMBROS --}}
-                    <a href="/pedidos/garimpo/{{ $garimpo->id }}"
+                    {{-- BOTÃO MODAL, LISTAR TODOS PEDIDOS DE ADESÃO --}}
+                    <a href="/pedidos/garimpo"
                         class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false">
-                        <i class="fas fa-bell"></i> Ver pedidos de adesão</a>
+                        <i class="fas fa-bell"></i> Ver todos pedidos</a>
                 </div>
             </div>
         </section>
@@ -66,7 +66,7 @@
                 <section class="content">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Inscritos ao garimpo</h3>
+                            <h3 class="card-title">Pedidos de adesão</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                                     <i class="fas fa-minus"></i>
@@ -81,14 +81,14 @@
                                 <thead>
                                     <tr>
                                         <th style="width: 1%">
-                                            ID
+                                           <i class="fas fa-user-circle"></i>
                                         </th>
                                         <th style="width: 20%">
                                             Nome
                                         </th>
-                                        <th style="width: 20%">
+                                        {{-- <th style="width: 20%">
                                             E-mail
-                                        </th>
+                                        </th> --}}
 
                                         <th style="width: 30%">
                                             Acção
@@ -96,26 +96,33 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($membros as $user)
+                                    @foreach ($pedidos as $user)
                                         <tr>
-                                            <td>{{ $user->id }}</td>
-                                            <td> <a>{{ $user->name }} </a></td>
                                             <td>
+                                                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                                                    <div class="image">
+                                                        <img src={{ $user->profile_photo_path }} class="img-circle elevation-2" alt="Foto perfil">
+                                                    </div>
+                                                </div>  
+                                            </td>
+
+                                            <td> <a>{{ $user->name }} </a></td>
+                                            {{-- <td>
                                                 <ul class="list-inline">
                                                     <li class="list-inline-item">
                                                         {{ $user->email }}
                                                     </li>
                                                 </ul>
-                                            </td>
+                                            </td> --}}
 
                                             <td class="list-inline">
-                                                <a class="btn btn-primary btn-sm" href="/ver_detalhes">
-                                                    <i class="fas fa-user"></i> Ver perfil
+                                                <a class="btn btn-success btn-sm" href="aceitar/pedido/{{$user->pedidoId}}/{{$user->inscritos}}">
+                                                    <i class="fas fa-yes"></i> Aceitar
                                                 </a>
                                              
                                                 <a class="btn btn-danger btn-sm"
-                                                    href="remover/membro/{{ $user->pedidoId }}/{{ $garimpo->inscritos }}">
-													<i class="fas fa-trash"></i> Remover
+                                                    href="eliminar/pedido/{{$user->pedidoId}}">
+													<i class="fas fa-ban"></i> Rejeitar
                                                 </a>
                                             </td>
                                         </tr>

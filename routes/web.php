@@ -44,11 +44,9 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () { return view('layouts.painel.principal'); })->name('dashboard');
+    Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
     // Route::get('/index',  [MainController::class, 'index']);
-    Route::get('/projetos', function () {
-        return view('dashboard');
-    });
+
     // Gestão de Controlo de acesso - ROTAS EXCLUSIVAS PARA O ADMINISTRADOR
     Route::get('/admin/listar_administradores', [AdminController::class, 'listar_administradores']);
     Route::get('/admin/listar_utilizadores', [AdminController::class, 'listar_utilizadores']);
@@ -88,25 +86,22 @@ Route::middleware([
 
     // ROTAS PARA GERIR O UTILIZADOR
     route::get('/perfil', [UserController::class,'index']);
-    //ROTAS PARA GERIR PUBLICAÇÕES
-    // Route::post('/publicacoes/resgisto', [PublicacaoController::class,'store']);
-    // Route::get('/', [PublicacaoController::class, 'mostrarInicio']);
-
 
     //ROTAS PARA GESTÃO DO MÓDULO GARIMPO
     Route::post('/adicionar_garimpo', [garimpoChatController::class,'store']);
-    Route::get('ver/garimpo', [garimpoChatController::class,'listarGarimpos']);
+    Route::get('/ver/garimpo', [garimpoChatController::class,'listarGarimpos']);
     Route::get('eliminar/garimpo/{id}', [garimpoChatController::class,'eliminarGarimpo']);
-    Route::get('listar/membro/{idGarimpo}/{nomeGarimpo}/{inscritos}', [PedidoController::class,'listarMembrosGarimpo']);
+    Route::get('listar/membro/{idGarimpo}/{nomeGarimpo}', [PedidoController::class,'listarMembrosGarimpo']);
 
     Route::get('ver/chat/{idGarimpo}/{nomeGarimpo}', [MensagemController::class,'mostrarChat']);
     Route::post('enviar_msg/{idGarimpo}', [MensagemController::class,'registarMensagem']);
 
     Route::get('inscrever/garimpo/{id}', [PedidoController::class,'inscreverPedido']);
     Route::get('pedidos/garimpo', [PedidoController::class,'listarPedido']);
+    Route::get('/pedidos/garimpo/{idGarimpo}', [PedidoController::class,'listarPedidoGarimpo']);
     Route::get('eliminar/pedido/{id}', [PedidoController::class,'eliminarPedido']);
     Route::get('aceitar/pedido/{id}/{numInscritos}', [PedidoController::class,'aceitarPedido']);
-    Route::get('garimpos/usuario/', [PedidoController::class,'listarGarimpoUsuario']);
+    // Route::get('garimpos/usuario/', [PedidoController::class,'listarGarimpoUsuario']);
     Route::get('remover/membro/{pedidoId}/{numInscritos}', [PedidoController::class,'removerMembro']);
    //=========================================================================================================
 

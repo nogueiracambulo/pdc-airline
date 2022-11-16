@@ -145,7 +145,7 @@
         <li class="nav-item dropdown ">
             <a class="nav-link" data-toggle="dropdown" href="#">
                 <div class="user-panel  image">
-                    <img src={{ Auth::user()->profile_photo_url }} class="img-circle elevation-3" alt="Foto perfil">
+                    <img src={{ Auth::user()->profile_photo_url}} class="img-circle elevation-3" alt="Foto perfil">
                 </div>
                 {{-- <span class="badge badge-warning navbar-badge"></span> --}}
             </a>

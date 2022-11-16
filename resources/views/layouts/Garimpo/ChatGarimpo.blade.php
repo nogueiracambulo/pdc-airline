@@ -22,25 +22,25 @@
 
 			<div class="text-right ">
 				{{-- BOTÃO MODAL, LISTAR MEMBROS --}}         
-				<a href="#" data-toggle="modal" data-target="#Modal_Registar_Garimpo_Chat" 
-				class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false"><i class="fas fa-list"></i> Membros do Garimpo</a>
+				<a href="listar/membro/{{$idGarimpo}}/{{$nomeGarimpo}}" 
+				class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false">
+				<i class="fas fa-list"></i> Membros do Garimpo</a>
 			</div>
 		</div>
 	</section>  
 	<div class="row container-fluid">
-		<div class="col-md-4"> 
+		<div class="col-md-4">
 			<div class=" card-outline">
 				<div class="small-box bg-info">
 					<div class="inner">
-						<h5>hkhgjh</h5>
-						<h3>grrdgtdhth</h3>
+						
+						<h5>{{ $garimpo->descricao }}</h5>
+						<h4>{{ $garimpo->nome }}</h4>
 						<br><br>
 					</div>
 					<div class="icon">
 						<i class="fas fa-chalkboard-teacher"></i>
-						
 					</div>
-					{{-- <a href="/conteudos/turma/{{$turma->id}}" class="small-box-footer"> Aceder <i class="fas fa-arrow-circle-right"></i></a> --}}
 				</div>
 			</div>
 
@@ -50,21 +50,23 @@
 					<h3 class="card-title">Sobre o Garimpo</h3>
 				</div>
 				<div class="card card-body">
-					<strong><i class="fas"></i> Ano académico</strong><br>
-					<p class="text-muted">º ano</p><hr>
+					<strong><i class="fas"></i>Número de Inscritos</strong>
+					<p class="text-muted">{{$garimpo->inscritos}} membros</p>
+					<hr>
+					<strong><i class="fa fa"></i> Criado por</strong>
+					<p class="text-muted">{{$garimpo->user->name }}</p>
+					<hr>
 
-					<strong><i class="fa fa"></i> Semestre académico</strong>
-					<p class="text-muted">º Semestre</p><hr>
-
-					<strong><i class="fas fa-"></i> Professor actual</strong>
-					<p class="text-muted"></p><hr>
+					<strong><i class="fas fa-"></i>data de Criação</strong>
+					<p class="text-muted">{{ $garimpo->created_at }}</p>
+					<hr>
 				</div>
 			</div>
 		</div>
 		<div class="col-md-8 ">
 			<div class="card card-body">
 				@if(count($mensagens)==0)
-					&nbsp;&nbsp;&nbsp;<br><br><br><br><h1>AINDA NÃO HÁ MENSAGENS!!!</h1><br><br><br><br>
+					&nbsp;&nbsp;&nbsp;<br><br><br><br><h1 >AINDA NÃO HÁ MENSAGENS!!! SEJA O 1º</h1><br><br><br><br>
 				@endif
 				@foreach($mensagens as $mensagem)
 					@if($mensagem->userId == auth()->user()->id)

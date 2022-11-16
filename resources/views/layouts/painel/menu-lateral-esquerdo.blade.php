@@ -6,7 +6,7 @@
     <div class="sidebar">
         <div class="col-3">
             <!-- Brand Logo -->
-            <a href="/" class="brand-link">
+            <a href="/dashboard" class="brand-link">
                 &nbsp; &nbsp;  <img width="170px" src="/template_admin_lte/dist/img/2/actual.png" alt="" class="" style="opacity: .8">
             </a>
         </div>
@@ -51,10 +51,9 @@
                         <li class="nav-item">
                             <a href="#"  data-toggle="modal" data-target="#Modal_Registar_Disciplina" class="nav-link">
                                 <i class="fas fa-plus-circle nav-icon"></i>
-                                <p>Inserir Disciplina</p>
+                                <p>Inserir disciplina</p>
                             </a>
                         </li>
-                        
                         <hr>
                     </ul>
 
@@ -63,10 +62,9 @@
                             <a href="#" data-toggle="modal" data-target="#Modal_Registar_Conteudo"
                                 class="nav-link">
                                 <i class="fas fa fa-search nav-icon"></i>
-                                <p>Pesquisar Conteúdo</p>
+                                <p>Pesquisar conteúdo</p>
                             </a>
                         </li><hr>
-                        
                     </ul>
                 </li>
 
@@ -80,30 +78,38 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                        <a href="#" data-toggle="modal" data-target="#Modal_Registar_Garimpo_Chat" class="nav-link">
-                            <i class="fas fa-plus-circle nav-icon"></i>
-                                <p>Registar Garimpo</p>
-                            </a>
-                        </li>
-                       
-                        <li class="nav-item">
                             <a href="ver/garimpo" class="nav-link">
                                 <i class="fas fa-list nav-icon"></i>
-                                    <p>Todos Garimpos</p>
+                                <p>Todos garimpos</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" data-toggle="modal" data-target="#Modal_Registar_Garimpo_Chat" class="nav-link">
+                                <i class="fas fa-plus-circle nav-icon"></i>
+                                <p>Registar garimpo</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="pedidos/garimpo/" class="nav-link">
-                                <i class="fas fa fa-list nav-icon"></i>
-                                    <p>Listar Pedidos de Adesão</p>
+                                <i class="fas fa fa-bell nav-icon"></i>
+                                <p>Pedidos de adesão</p>
                             </a>
-                        </li>
-                        <li class="nav-item">
+                        </li><hr>
+                        {{-- <li class="nav-item">
                             <a href="garimpos/usuario/" class="nav-link">
                                 <i class="fas fa fa-list nav-icon"></i>
                                     <p>Listar Membros</p>
                             </a>
-                        </li>
+                        </li> --}}
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" data-toggle="modal" data-target="#Modal_Registar_Conteudo"
+                                class="nav-link">
+                                <i class="fas fa fa-search nav-icon"></i>
+                                <p>Pesquisar garimpo</p>
+                            </a>
+                        </li><hr>
                     </ul>
                 </li>
                 

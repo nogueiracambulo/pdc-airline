@@ -24,4 +24,6 @@
   <link rel="stylesheet" href="{{ asset('template_Admin_lte/plugins/daterangepicker/daterangepicker.css')}}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{ asset('template_Admin_lte/plugins/summernote/summernote-bs4.min.css')}}">
+
+  <link rel="stylesheet" href="{{ asset('css/estilo.css')}}">
 </head>

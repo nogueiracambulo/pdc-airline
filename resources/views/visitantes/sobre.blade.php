@@ -16,7 +16,7 @@
 	<section class="about-section spad pt-0">
 		<div class="container">
 			<div class="section-title text-center">
-				<h3>BEM-VINDO AO MOLONGI</h3>
+				<h3>BEM-VINDO AO MULONGI</h3>
 				<p>Organize a tua carreira estudantil e Desenvolva projetos de forma responsável <br> e profissional, respeitando o tempo e as etapas</p>
 			</div>
 			<div class="row">
