@@ -23,9 +23,9 @@
             <div class="list-inline">
                 <div class="text-right ">
                     @can('add_role')
-                        {{-- BOTÃO MODAL, REGISTAR NOVA DISCIPLINA --}}         
+                        {{-- BOTÃO MODAL, REGISTAR NOVO CONTEÚDO --}}         
                         <a href="#" data-toggle="modal" data-target="#Modal_Registar_Conteudo" 
-                        class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Adicionar Conteúdo</a>
+                        class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Conteúdo</a>
                     @endcan
                 </div>
             </div><br>
@@ -33,9 +33,8 @@
      
         <div class="row">
             @foreach ($disciplina as $disciplina)
-            {{-- MENU LATERAL ESQUERDO --}}
+            {{-- SOBRE A DISCIPLINA - PERFIL --}}
                 <div class="col-md-3 ">
-                   
                     <div class=" card-outline">
                         <div class="small-box bg-info">
                             <div class="inner">
@@ -133,12 +132,12 @@
                                                     <div class="row">
                                                     <td>
                                                         <div class="col-lg-3">                                            
-                                                            <iframe src="/storage/{{$data->ficheiro}}" scrolling="no" frameborder="0" width="300" ></iframe>
+                                                            <iframe src="/storage/{{$data->ficheiro}}" scrolling="no" frameborder="0" width="250" ></iframe>
                                                             {{-- <iframe width="300%" height="50%" src="https://www.youtube.com/embed/lxYikfwyXcQ" title="Add Video to Webpages with Video and iFrame Elements #tryminim" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe> --}}
                                                         </div>
                                                     </td>  
                                                     <td >
-                                                        <div class="col-lg-10"> 
+                                                        <div class="col-lg-12"> 
                                                             {{-- <a href="#">   --}}
                                                             <h4>{{$data->titulo}}</h4>
                                                             {{$data->descricao}}<br>
@@ -159,7 +158,7 @@
             
                               <div class="tab-pane" id="settings">
                                 <table class=""> 
-                                    @foreach ($conteudos as $data ) 
+                                    @foreach ($conteudos as $data) 
                                         @if($data->tipo=="imagem")
                                             <tbody >
                                                 <tr>
@@ -167,7 +166,7 @@
                                                     <td>
                                                         <div class="col-lg-3">                                            
                                                             <img src="/storage/{{$data->ficheiro}}" width="300">
-                                                        </div>
+                                                        </div><br>
                                                     </td>  
                                                     <td >
                                                         <div class="col-lg-10"> 
@@ -177,9 +176,10 @@
                                                             {{-- </a>  --}}
                                                             <a href="/conteudo/baixar/{{$data->ficheiro}}" class="btn btn-outline-success"><i class="fas fa-download"></i></a>
                                                             <a href="/conteudo/visualizar/{{$data->id}}" class="btn btn-outline-info"><i class="fas fa-eye"></i></a>
-                                                            <a href="#" data-toggle="modal" data-target="#ModalDelete{{$data->id}}"class="btn btn-outline-danger"><i class="fas fa-trash"></i></a>
+                                                            <a href="#" data-toggle="modal" data-target="#ModalDelete{{$data->id}}" class="btn btn-outline-danger" ><i class="fas fa-trash"></i></a>
+                                                            {{-- <a href="/conteudos/eliminarConteudo/{{$data->id}}" class="btn btn-outline-danger" ><i class="fas fa-trash"></i></a> --}}
                                                         </div>
-                                                    </td>
+                                                    </td> 
                                                 </div>
                                                 </tr>
                                             </tbody>

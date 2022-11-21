@@ -4,7 +4,7 @@
  <div class=" modal fade" data-backdrop="static" data-keyboard="false" id="Modal_Registar_Disciplina" tabindex="-1" aria-labelledby="Modal_Registar_DisciplinaLabel" aria-hidden="true">
     <div class="modal-dialog modal-md">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header bg-info" >
                 <h5 class="modal-title" id="Modal_Registar_DisciplinaLabel">Registar Disciplina</h5>
                 <button type="button" class="close fecharX" data-dismiss="modal">
                     <span >&times;</span>
@@ -42,10 +42,9 @@
                 
                     <div class="input-group-append">
                         @isset($ano) 
-                            <select class="custom-select mb-3 text-light border-0 bg-orange" name="ano" id="ano">
+                            <select class="custom-select mb-3 text-light border-0 bg-info" name="ano" id="ano">
                                 <option class="bg-light" value="{{$ano}}">{{$ano}}º ANO</option>
                             </select>
-                    
                         @else
                             <select class="custom-select mb-3 text-light border-0 bg-orange" name="ano" id="ano">
                                 <option class="bg-light" value="1">1º ANO</option>

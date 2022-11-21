@@ -24,7 +24,7 @@
                         <!-- BOTÃO MODAL, REGISTAR NOVA DISCIPLINA -->
                         <a href="#" data-toggle="modal" data-target="#Modal_Registar_Disciplina"
                             class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false"><i
-                                class="fas fa-plus-circle"></i> Adicionar Disciplina</a>
+                                class="fas fa-plus-circle"></i> Disciplina</a>
                     @endcan
                 </div>
             </div><br>
@@ -54,12 +54,12 @@
                                             <div class="small-box bg-secondary">
                                                 <div class="inner">
                                                     <h3>{{ $disciplina->sigla }}</h3>
-                                                    @if (strlen($disciplina->nome) < 20)
-                                                        <!-- Aqui comparamos se o tamanho do texto é menor que 20-->
+                                                    @if (strlen($disciplina->nome) < 23)
+                                                        <!-- Aqui comparamos se o tamanho do texto é menor que 23-->
                                                         <p>{{ $disciplina->nome }}</p><br>
                                                         <!-- Ser for menor, quebramos a linha-->
                                                     @else
-                                                        @if (strlen($disciplina->nome) > 20)
+                                                        @if (strlen($disciplina->nome) > 23)
                                                             <!-- Ser não for menor, perguntamos se é maior que 33(limite)-->
                                                             <p>{{ Str::limit($disciplina->nome, 33) }}</p>
                                                             <!-- Ser for maior, limitamos o texto a 33 letras-->
@@ -88,15 +88,15 @@
                                         <!-- course item -->
                                         <div class="@if ($loop->first)  @endif col-lg-2 col-6">
                                             <!-- small box -->
-                                            <div class="small-box bg-info">
+                                            <div class="small-box bg-secondary">
                                                 <div class="inner">
                                                     <h3>{{ $disciplina->sigla }}</h3>
-                                                    @if (strlen($disciplina->nome) < 20)
+                                                    @if (strlen($disciplina->nome) < 23)
                                                         <!-- Aqui comparamos se o tamanho do texto é menor que 20-->
                                                         <p>{{ $disciplina->nome }}</p><br>
                                                         <!-- Ser for menor, quebramos a linha-->
                                                     @else
-                                                        @if (strlen($disciplina->nome) > 20)
+                                                        @if (strlen($disciplina->nome) > 23)
                                                             <!-- Ser não for menor, perguntamos se é maior que 33(limite)-->
                                                             <p>{{ Str::limit($disciplina->nome, 33) }}</p>
                                                             <!-- Ser for maior, limitamos o texto a 33 letras-->

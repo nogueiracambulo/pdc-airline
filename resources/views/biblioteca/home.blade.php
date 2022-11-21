@@ -29,7 +29,7 @@
                     @can('add_role')
                         {{-- BOTÃO MODAL, REGISTAR NOVA TURMA --}}         
                         <a href="#" data-toggle="modal" data-target="#Modal_Registar_turma" 
-                        class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Nova Turma</a>
+                        class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Turma</a>
                     @endcan
                 </div>
             </div><br>

@@ -16,7 +16,7 @@
                 <div class="modal-body">
                     <span class="description">Selecione o ano</span><br>
                     <div class="input-group-append">
-                        <select class="custom-select mb-3 text-light border-0 bg-orange" name="ano_id" id="ano_id">
+                        <select class="custom-select mb-3 text-light border-0 bg-info" name="ano_id" id="ano_id">
                             @isset($todos_anos)
                                 @foreach ($todos_anos as $anoLectivo)
                                     <option class="bg-light" value={{$anoLectivo->id}}> {{$anoLectivo->descricao}} </option>

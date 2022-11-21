@@ -4,7 +4,7 @@
  <div class=" modal fade" data-backdrop="static" data-keyboard="false" id="Modal_Registar_Conteudo" tabindex="-1" aria-labelledby="Modal_Registar_Conteudo" aria-hidden="true">
     <div class="modal-dialog modal-md">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header bg-info">
                 <h5 class="modal-title" id="Modal_Registar_Conteudo">Registar Conteúdo</h5>
                 <button type="button" class="close fecharX" data-dismiss="modal">
                     <span >&times;</span>

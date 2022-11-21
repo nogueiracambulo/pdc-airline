@@ -150,21 +150,25 @@ class ConteudoController extends Controller
      * @return \Illuminate\Http\Response
      */
     //eliminar Conteudo
-    public function destroy($id,Request $request)
+    public function destroy($id)
     {
         $cont = Conteudo::find($id);
         $cont->delete();
-        
-        // DB::select("
-        // delete from conteudos
-        // WHERE id = '{$id}'
-        // ");
+ 
+        Alert::success('Sucesso','Conteúdo eliminado com sucesso');
+        return back();
+    }
+
+    public function eliminarConteudo($id, Request $request)
+    {
+        $cont = Conteudo::find($id);
+        $cont->delete();
+    
 
         $conteudos=DB::table('conteudos')->where('disciplina_id',$request->disciplina)->get();
         $disciplina=DB::table('disciplinas')->where('id',$request->disciplina)->get();
 
         Alert::success('Sucesso','Conteúdo eliminado com sucesso');
-
         return view('biblioteca.disciplinaPerfil',['conteudos'=>$conteudos,'disciplina'=>$disciplina]);
     }
 }

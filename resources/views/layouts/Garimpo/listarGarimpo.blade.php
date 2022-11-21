@@ -21,11 +21,11 @@
 				{{-- BOTÃO MODAL, LISTAR TODOS PEDIDOS DE ADESÃO AOS GARIMPOS DO UTILIZADOR LOGADO --}}         
 				<a href="/pedidos/garimpo" 
 				class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false">
-				<i class="fas fa-bell"></i> Ver pedidos de adesão</a>
+				<i class="fas fa-bell"></i> Pedidos de adesão</a>
 
 				{{-- BOTÃO MODAL, REGISTAR GARIMPO --}}         
 				<a href="#" data-toggle="modal" data-target="#Modal_Registar_Garimpo_Chat" 
-				class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Criar novo Garimpo</a>
+				class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Garimpo</a>
 			</div>
 		</div><br>
 	</section>  

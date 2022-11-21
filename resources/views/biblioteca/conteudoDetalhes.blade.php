@@ -24,13 +24,14 @@
                 <div class="text-right ">
                     @can('add_role')
                         <!-- BOTÃO MODAL, EDITAR CONTEÚDO-->         
-                        <a href="#" data-toggle="modal" data-target="#" 
+                        <a href="#" data-toggle="modal" data-target="#Modal_Registar_Conteudo" 
                         class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false"><i class="fas fa-edit"></i> Editar conteúdo</a>
                     @endcan
                     @can('add_role')
-                        <!-- BOTÃO MODAL,ELIMINAR CONTEÚDO -->         
+                        <!-- BOTÃO MODAL,ELIMINAR CONTEÚDO --> 
+                        {{-- <a href="/conteudos/eliminarConteudo/{{$conteudo->id}}"  --}} 
                         <a href="#" data-toggle="modal" data-target="#ModalDelete{{$conteudo->id}}" 
-                        class="btn btn-outline-danger rounded-pill" role="button" aria-pressed="false"><i class="fas fa-trash"></i> Eliminar conteúdo</a>
+                        class="btn btn-outline-danger rounded-pill" role="button" aria-pressed="true"><i class="fas fa-trash"></i> Eliminar conteúdo</a>
                     @endcan
                 </div>
             </div><br>

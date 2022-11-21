@@ -22,12 +22,12 @@
                     {{-- BOTÃO MODAL, MOSTRAR CHAT DO GARIMPO --}}
                     <a href="/ver/chat/{{$garimpo->id}}/{{$garimpo->id}}"
                         class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false">
-                        <i class="fas fa-comment"></i> Aceder ao chat</a>
+                        <i class="fas fa-comment"></i> Chat</a>
 
                     {{-- BOTÃO MODAL, LISTAR TODOS MEMBROS DO GARIMPO --}}
                     <a href="/listar/membro/{{$garimpo->id}}/{{$garimpo->id}}"
                         class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false">
-                        <i class="fas fa-users"></i> Ver todos membros</a>
+                        <i class="fas fa-users"></i> Membros</a>
                 </div>
             </div>
         </section>

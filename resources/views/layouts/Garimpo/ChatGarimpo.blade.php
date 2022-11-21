@@ -7,7 +7,7 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1>Chat Garimpo {{$nomeGarimpo}}</h1>
+					<h1>Garimpo {{$nomeGarimpo}} - Chat</h1>
 					@if(count($mensagens)==0)
 						<p>Seja o primeiro a enviar mensagem</p>
 					@endif
@@ -21,24 +21,24 @@
 			</div>
 
 			<div class="text-right ">
-				{{-- BOTÃO MODAL, LISTAR PEDIDOS DE ADESÃO AO GARIMPO --}}         
-				<a href="/pedidos/garimpo/{{ $idGarimpo}}" 
+				{{-- BOTÃO MODAL, LISTAR PEDIDOS DE ADESÃO AO GARIMPO --}}
+				<a href="/pedidos/garimpo/{{ $idGarimpo}}"
 				class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false">
-				<i class="fas fa-bell"></i> Ver pedidos de adesão</a>
+				<i class="fas fa-bell"></i> Pedidos de adesão</a>
 
-				{{-- BOTÃO MODAL, LISTAR MEMBROS --}}         
-				<a href="/listar/membro/{{$idGarimpo}}/{{$nomeGarimpo}}" 
+				{{-- BOTÃO MODAL, LISTAR MEMBROS --}}
+				<a href="/listar/membro/{{$idGarimpo}}/{{$nomeGarimpo}}"
 				class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false">
-				<i class="fas fa-users"></i> Ver todos membros</a>
+				<i class="fas fa-users"></i> Membros</a>
 			</div>
 		</div>
-	</section>  
+	</section>
 	<div class="row container-fluid">
 		<div class="col-md-4">
 			<div class=" card-outline">
 				<div class="small-box bg-info">
 					<div class="inner">
-						
+
 						<h5>{{ $garimpo->descricao }}</h5>
 						<h4>{{ $garimpo->nome }}</h4>
 						<br><br>
@@ -76,33 +76,36 @@
 				@foreach($mensagens as $mensagem)
 					@if($mensagem->userId == auth()->user()->id)
 						<div class="text-right">
-							<label class="">
+							<label class=""><br>
 								<a href="#" class="btn btn-secondary " style="
 								text-align: left;
 								color:rgb(235, 232, 232);
 								background-color:rgba(12, 155, 238, 0.993);
 								border-radius:25px;
 								border-color:rgba(12, 155, 238, 0.993);">
-								<b>{{$mensagem->name}}</b><br>
+								<b>{{$mensagem->name}}</b> @if($garimpo->user->id==$mensagem->userId) - Administrador @endif<br>
 								{{$mensagem->texto }}
 								</a>
-							</label><br>
-							<span class="description">{{$mensagem->created_at}}<a style="color:rgb(221, 141, 141)" href="#"> Eliminar</a></span><br>
-						</div>					
+								<br><span style="font-size:9px"class="description text-center">{{$mensagem->created_at }} <a style="color:rgb(221, 141, 141); "href="#"> Eliminar</a></span>
+							</label>
+						</div>
 					@else
-						<img class="img-circle mr-1" src="#"alt="">
-						<label>
-							<a href="#" class="btn btn-secondary btn-block" style="
-								ext-align: left;
-								color:rgb(7, 7, 7);
-								background-color:rgb(228, 228, 228);
-								border-radius:25px;
-								border-color:rgb(228, 228, 228);">
-								<b style="color:rgb(87, 85, 85)">{{ $mensagem->name }}</b><br>
+						{{-- <img class="img-circle mr-1" src="#"alt=""> --}}
+						<div class="">
+							<label><br>
+								<a href="#" class="btn btn-secondary btn-block" style="
+									text-align: left;
+									color:rgb(7, 7, 7);
+									background-color:rgb(228, 228, 228);
+									border-radius:25px;
+									border-color:rgb(228, 228, 228);">
+									<b style="color:rgb(87, 85, 85)">
+									{{ $mensagem->name }}</b>@if($garimpo->user->id==$mensagem->userId) - Administrador @endif<br>
 									{{ $mensagem->texto }}
-							</a>
-						</label><br>
-						<span class="description">{{$mensagem->created_at }} <a style="color:rgb(221, 141, 141)"href="#"> Eliminar</a></span><br>			
+								</a>
+								&nbsp;&nbsp;&nbsp;<span style="font-size:9px"class="description text-center">{{$mensagem->created_at }} <a style="color:rgb(221, 141, 141); "href="#"> Eliminar</a></span><br>
+							</label>
+						</div>
 					@endif
 				@endforeach
 				<!--ENVIAR MENSAGEM NO CHAT-->
@@ -114,7 +117,7 @@
 							<input type="submit" class="btn btn-primary" role="button" aria-pressed="true" value="Enviar">
 						</div><br>
 					</div>
-				</form> 
+				</form>
 			</div>
 		</div>
 	</div>

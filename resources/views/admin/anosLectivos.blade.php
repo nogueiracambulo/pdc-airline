@@ -31,7 +31,7 @@
                 @can('add_role')
                     {{-- BOTÃO MODAL, REGISTAR NOVA PERMISSÃO --}}         
                     <a href="#" data-toggle="modal" data-target="#Modal_Registar_anoLectivo" 
-                    class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Novo Ano</a>
+                    class="btn btn-outline-primary rounded-pill" role="button" aria-pressed="false"><i class="fas fa-plus-circle"></i> Ano lectivo</a>
                 @endcan
             </div>
         </div><br>

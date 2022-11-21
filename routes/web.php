@@ -76,8 +76,8 @@ Route::middleware([
     Route::get('/conteudos/listar/{id_turma}/{id_disciplina}', [ConteudoController::class, 'listarConteudos']);
     Route::get('/conteudo/visualizar/{id}', [ConteudoController::class, 'verDetalhes']);
     Route::get('/conteudo/baixar/{conteudo}', [ConteudoController::class, 'baixarConteudo']);
-    Route::get('/conteudo/eliminarConteudo/{id}', [ConteudoController::class, 'destroy']);
-
+    Route::post('/conteudo/eliminarConteudo/{id}', [ConteudoController::class, 'destroy']);
+    Route::get('/conteudos/eliminarConteudo/{id}', [ConteudoController::class, 'eliminarConteudo']);
 
     //ROTAS PARA GERIR ANO LECTIVO
     Route::post('/ano_lectivo/registo', [AnoLectivoController::class, 'store']);
