@@ -87,6 +87,7 @@ Route::middleware([
 
     // ROTAS PARA GERIR O UTILIZADOR
     route::get('/perfil', [UserController::class,'index']);
+    route::get('/perfil/editar', [UserController::class,'editarPerfil']);
     Route::get('/user/eliminar{id}', [UserController::class, 'eliminar']);
 
 

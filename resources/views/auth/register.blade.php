@@ -11,7 +11,7 @@
                 @csrf
 
                 <div class="mb-3">
-                    <x-jet-label value="{{ __('Name') }}" />
+                    <x-jet-label value="{{ __('Nome') }}" />
 
                     <x-jet-input class="{{ $errors->has('name') ? 'is-invalid' : '' }}" type="text" name="name"
                                  :value="old('name')" required autofocus autocomplete="name" />
@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <x-jet-label value="{{ __('Password') }}" />
+                    <x-jet-label value="{{ __('Palavra-passe') }}" />
 
                     <x-jet-input class="{{ $errors->has('password') ? 'is-invalid' : '' }}" type="password"
                                  name="password" required autocomplete="new-password" />
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <x-jet-label value="{{ __('Confirm Password') }}" />
+                    <x-jet-label value="{{ __('Confirmar Palavra-passe') }}" />
 
                     <x-jet-input class="form-control" type="password" name="password_confirmation" required autocomplete="new-password" />
                 </div>
@@ -57,12 +57,10 @@
                 <div class="mb-0">
                     <div class="d-flex justify-content-end align-items-baseline">
                         <a class="text-muted me-3 text-decoration-none" href="{{ route('login') }}">
-                            {{ __('Already registered?') }}
+                            {{ __('Já possui uma conta?') }}
                         </a>
 
-                        <x-jet-button>
-                            {{ __('Register') }}
-                        </x-jet-button>
+                        <input type="submit" class="btn btn-primary" style="color:white" value="Registar"> 
                     </div>
                 </div>
             </form>

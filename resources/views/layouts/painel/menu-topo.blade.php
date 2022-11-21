@@ -153,6 +153,7 @@
                 <div class="dropdown-divider"></div>
                 <a href="/perfil" class="dropdown-item"> <i class="fas fa-user mr-2"></i> {{Auth::user()->name}}</a>
                 <div class="dropdown-divider"></div>
+                <a href="/perfil/editar" class="dropdown-item"> <i class="fas fa-edit mr-2"></i> Editar perfil</a>
                 <form action="{{route('logout')}}" method="POST">
                     @csrf
                     <button class="dropdown-item btn btn-outline-primary" type="submit">

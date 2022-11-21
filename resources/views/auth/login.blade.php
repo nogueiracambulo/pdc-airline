@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <x-jet-label value="{{ __('Password') }}" />
+                    <x-jet-label value="{{ __('Palavra-passe') }}" />
 
                     <x-jet-input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" type="password"
                                  name="password" required autocomplete="current-password" />
@@ -36,22 +36,23 @@
                     <div class="custom-control custom-checkbox">
                         <x-jet-checkbox id="remember_me" name="remember" />
                         <label class="custom-control-label" for="remember_me">
-                            {{ __('Remember Me') }}
+                            {{ __('Lembrar palavra-passe') }}
                         </label>
                     </div>
                 </div>
 
                 <div class="mb-0">
                     <div class="d-flex justify-content-end align-items-baseline">
-                        @if (Route::has('password.request'))
+                        {{-- @if (Route::has('password.request'))
                             <a class="text-muted me-3" href="{{ route('password.request') }}">
-                                {{ __('Forgot your password?') }}
+                                {{ __('Esqueceu a palavra-passe?') }}
                             </a>
-                        @endif
-
-                        <x-jet-button>
-                            {{ __('Log in') }}
-                        </x-jet-button>
+                        @endif --}}
+                        <a class="text-muted me-3 text-decoration-none" href="{{ route('register') }}">
+                            {{ __('Não possui uma conta Mulongi?') }}
+                        </a>
+                        
+                        <input type="submit" class="btn btn-primary" style="color:white" value="Entrar"> 
                     </div>
                 </div>
             </form>
