@@ -87,6 +87,8 @@ Route::middleware([
 
     // ROTAS PARA GERIR O UTILIZADOR
     route::get('/perfil', [UserController::class,'index']);
+    Route::get('/user/eliminar{id}', [UserController::class, 'eliminar']);
+
 
     //ROTAS PARA GESTÃO DO MÓDULO GARIMPO
     Route::post('/adicionar_garimpo', [garimpoChatController::class,'store']);

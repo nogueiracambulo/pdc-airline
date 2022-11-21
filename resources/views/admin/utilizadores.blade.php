@@ -99,7 +99,7 @@
                                         </i>
                                         Editar
                                     </a>
-                                    <a class="btn btn-danger btn-sm" href="#">
+                                    <a class="btn btn-danger btn-sm" href="#" data-toggle="modal" data-target="#Modal_eliminar_user">
                                         <i class="fas fa-trash">
                                         </i>
                                         Eliminar

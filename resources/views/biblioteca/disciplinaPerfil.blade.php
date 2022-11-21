@@ -168,6 +168,7 @@
                                                             <img src="/storage/{{$data->ficheiro}}" width="300">
                                                         </div><br>
                                                     </td>  
+                                                    
                                                     <td >
                                                         <div class="col-lg-10"> 
                                                             {{-- <a href="#">   --}}

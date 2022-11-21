@@ -13,7 +13,7 @@
 @include('biblioteca/modal_Disciplina/registarDisciplina')
 @include('biblioteca/modal_Conteudo/registar_conteudo')
 @include('biblioteca/modal_Conteudo/eliminarConteudo')
-
+@include('admin/modal/acesso/UserEliminar') 
 
 <body class="hold-transition sidebar-mini layout-fixed" >
     @include('layouts.painel.menu-topo')

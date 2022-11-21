@@ -31,6 +31,7 @@
                         <!-- BOTÃO MODAL,ELIMINAR CONTEÚDO --> 
                         {{-- <a href="/conteudos/eliminarConteudo/{{$conteudo->id}}"  --}} 
                         <a href="#" data-toggle="modal" data-target="#ModalDelete{{$conteudo->id}}" 
+                        
                         class="btn btn-outline-danger rounded-pill" role="button" aria-pressed="true"><i class="fas fa-trash"></i> Eliminar conteúdo</a>
                     @endcan
                 </div>
