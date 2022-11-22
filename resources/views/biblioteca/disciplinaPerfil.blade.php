@@ -92,7 +92,7 @@
                             <div class="tab-content">
                               <div class="active tab-pane" id="activity">
                                     <table class=""> 
-                                        @foreach ($conteudos as $data )
+                                        @foreach ($conteudos as $data)
                                             @if($data->tipo=="video")
                                                 <tbody >
                                                     <tr>

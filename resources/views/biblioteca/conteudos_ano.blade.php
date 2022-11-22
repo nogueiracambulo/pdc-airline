@@ -54,14 +54,14 @@
                                             <div class="small-box bg-secondary">
                                                 <div class="inner">
                                                     <h3>{{ $disciplina->sigla }}</h3>
-                                                    @if (strlen($disciplina->nome) < 23)
+                                                    @if(strlen($disciplina->nome) < 23)
                                                         <!-- Aqui comparamos se o tamanho do texto é menor que 23-->
                                                         <p>{{ $disciplina->nome }}</p><br>
                                                         <!-- Ser for menor, quebramos a linha-->
                                                     @else
-                                                        @if (strlen($disciplina->nome) > 23)
+                                                        @if(strlen($disciplina->nome) > 23)
                                                             <!-- Ser não for menor, perguntamos se é maior que 33(limite)-->
-                                                            <p>{{ Str::limit($disciplina->nome, 33) }}</p>
+                                                            <p>{{ Str::limit($disciplina->nome, 30) }}</p>
                                                             <!-- Ser for maior, limitamos o texto a 33 letras-->
                                                         @else
                                                             <p>{{ $disciplina->nome }}</p>
@@ -98,7 +98,7 @@
                                                     @else
                                                         @if (strlen($disciplina->nome) > 23)
                                                             <!-- Ser não for menor, perguntamos se é maior que 33(limite)-->
-                                                            <p>{{ Str::limit($disciplina->nome, 33) }}</p>
+                                                            <p>{{ Str::limit($disciplina->nome, 30) }}</p>
                                                             <!-- Ser for maior, limitamos o texto a 33 letras-->
                                                         @else
                                                             <p>{{ $disciplina->nome }}</p>

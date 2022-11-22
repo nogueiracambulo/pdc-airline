@@ -64,7 +64,7 @@
 						<i class="fa fa-graduation-cap"></i>
 					</div>
 					<div class="counter-content">
-						<h2>ORGANIZAÇÃO & ORIENTAÇÃO ACADÊMICA</h2>
+						<h2>ORGANIZAÇÃO & ORIENTAÇÃO ACADÉMICA</h2>
 						<p><i class="fa fa-calendar-o"></i>PRESENCIAL: 07H00 - 20H00</p>
 					</div>
 
@@ -149,12 +149,12 @@
 						</div>
 						<div class="enroll-list-item">
 							<span>2</span>
-							<h5>Garimpo</h5>
+							<h5>Consultoria académica</h5>
 							<p>Solicite na Comunidade académica MULONGI, explicações sobre temas e disciplinas específicas</p>
 						</div>
 						<div class="enroll-list-item">
 							<span>3</span>
-							<h5>Trabalhos</h5>
+							<h5>Avaliação de trabalhos</h5>
 							<p>Acompanhamento em trabalhos por disciplina, alertas de timings e interação com Docentes das cadeiras</p>
 						</div>
 					</div>
@@ -168,7 +168,7 @@
 	<!-- Enroll section end -->
 
 
-	<!-- Courses section -->
+	<!-- Courses section - ANÚNCIO SOBRE GARIMPOS-->
 	<section class="courses-section spad">
 		<div class="container">
 			<div class="section-title text-center">
@@ -176,92 +176,24 @@
 				<p>Elimine suas dúvidas com o colega que melhor entendeu a matéria</p>
 			</div>
 			<div class="row">
-				<!-- course item -->
-				<div class="col-lg-4 col-md-6 course-item">
-					<div class="course-thumb">
-						<img src="img/course/1.jpg" alt="">
-						<div class="course-cat">
-							<span>ANÁLISE MATEMÁTICA</span>
+				@isset($garimpos)
+					@foreach($garimpos as $garimpo)
+						<!-- course item -->
+						<div class="col-lg-4 col-md-6 course-item">
+							<div class="course-thumb">
+								<img src="{{$garimpo->fotoCapa}}" alt="">
+								<div class="course-cat">
+									<span>{{$garimpo->nome}}</span>
+								</div>
+							</div>
+							<div class="course-info">
+								<div class="date"><i class="fa fa-clock-o"></i> {{$garimpo->created_at}}</div>
+								<h4>{{$garimpo->descricao}}</h4>
+								<h4 class="cource-price">{{$garimpo->Preco}}<span>Kz/Mês</span></h4>
+							</div>
 						</div>
-					</div>
-					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i> 22 Mar 2018</div>
-						<h4>Acompanhamento e  <br>resolução de exercícios</h4>
-						<h4 class="cource-price">5000KZ<span>/mês</span></h4>
-					</div>
-				</div>
-				<!-- course item -->
-				<div class="col-lg-4 col-md-6 course-item">
-					<div class="course-thumb">
-						<img src="img/course/2.jpg" alt="">
-						<div class="course-cat">
-							<span>Marketing</span>
-						</div>
-					</div>
-					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i> 22 Mar 2018</div>
-						<h4>Google AdWords: Get More<br> Customers with Search Marketing </h4>
-						<h4 class="cource-price">$150<span>/month</span></h4>
-					</div>
-				</div>
-				<!-- course item -->
-				<div class="col-lg-4 col-md-6 course-item">
-					<div class="course-thumb">
-						<img src="img/course/3.jpg" alt="">
-						<div class="course-cat">
-							<span>DESIGN</span>
-						</div>
-					</div>
-					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i> 22 Mar 2018</div>
-						<h4>The Ultimate Drawing Course<br> Beginner to Advanced</h4>
-						<h4 class="cource-price">$180<span>/month</span></h4>
-					</div>
-				</div>
-				<!-- course item -->
-				<div class="col-lg-4 col-md-6 course-item">
-					<div class="course-thumb">
-						<img src="img/course/4.jpg" alt="">
-						<div class="course-cat">
-							<span>BASE DE DADOS</span>
-						</div>
-					</div>
-					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i> 22 Mar 2018</div>
-						<h4>Mysql actualizado; SQL de iniciante a avançado </h4>
-						<h4 class="cource-price">5000kz<span>/mês</span></h4>
-					</div>
-				</div>
-				<!-- course item -->
-				<div class="col-lg-4 col-md-6 course-item">
-					<div class="course-thumb">
-						<img src="img/course/5.jpg" alt="">
-						<div class="course-cat">
-							<span>PROGRAM</span>
-						</div>
-					</div>
-					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i> 22 Mar 2018</div>
-						<h4>Web Developer Bootcamp<br>Make web  applications</h4>
-						<h4 class="cource-price">$250<span>/month</span></h4>
-					</div>
-				</div>
-				<!-- course item -->
-				<div class="col-lg-4 col-md-6 course-item">
-					<div class="course-thumb">
-						<img src="img/course/6.jpg" alt="">
-						<div class="course-cat">
-							<span>BUSINESS</span>
-						</div>
-					</div>
-					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i> 22 Mar 2018</div>
-						<h4>How to Start an Amazon<br>FBA Store on a Tight Budget</h4>
-						<h4 class="cource-price">$150<span>/month</span></h4>
-					</div>
-				</div>
-
-
+					@endforeach
+				@endisset
 			</div>
 		</div>
 	</section>

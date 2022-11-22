@@ -10,6 +10,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\garimpoChatController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\MensagemController;
+use App\Http\Controllers\VisitanteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,10 +23,7 @@ use App\Http\Controllers\MensagemController;
 */
 
 //ROTAS  PARA UTILIZADORES VISITANTES
-Route::get('/', function () {
-    // return view('welcome');
-    return view('visitantes.inicio');
-});
+Route::get('/', [VisitanteController::class, 'index']);
 
 Route::get('/sobre', function () {
     return view('visitantes.sobre');
@@ -34,8 +32,6 @@ Route::get('/sobre', function () {
 Route::get('/contactos', function () {
     return view('visitantes.contactos');
 });
-
-
 
 
 //ROTA PRINCIPAL

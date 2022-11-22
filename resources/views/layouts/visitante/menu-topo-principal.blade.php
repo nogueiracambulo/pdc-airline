@@ -40,10 +40,10 @@
                 <li><a href="/contactos">Contactos</a></li>
                 <li><a href="/disciplinas1">Grelha Curricular</a></li>
                 {{-- <li><a href="/biblioteca_cc">Biblioteca CC</a></li> --}}
-                <li><a href="/projetos">Serviços</a></li>
+                <li><a href="/dashboard">Serviços</a></li>
 
                 @if(isset(auth()->user()->id))
-                    <li><a href="/profile">Perfil</a></li>
+                    <li><a href="/perfil">Perfil</a></li>
                 @endif
 
             </ul>

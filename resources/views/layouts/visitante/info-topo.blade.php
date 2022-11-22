@@ -7,14 +7,15 @@
         <div class="nav-switch">
             <i class="fa fa-bars"></i>
         </div> 
+    
         <div class="header-info">
-            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-            <div class="offset-1 col-1 hf-item">
+            <div class="hf-item">
                 <a href="/" >
-                    <img src="/template_admin_lte/dist/img/2/preload.png" alt="">
+                    <img src="/template_admin_lte/dist/img/2/preload.png" width="100px" alt="" >
                 </a>
+                <span style="padding: 95px"> </span>
             </div>
-
+           
             <div class="hf-item">
                 <i class="fa fa-clock-o"></i>
                 <p><span>Atendimento presencial:</span>Segunda à Sexta-feira: 08H00 às 15h00</p>
