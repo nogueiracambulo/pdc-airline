@@ -1,15 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AnoLectivoController;
-use App\Http\Controllers\TurmaController;
+
+
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\DisciplinaController;
-use App\Http\Controllers\ConteudoController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\garimpoChatController;
-use App\Http\Controllers\PedidoController;
-use App\Http\Controllers\MensagemController;
 use App\Http\Controllers\VisitanteController;
 /*
 |--------------------------------------------------------------------------
@@ -55,25 +50,6 @@ Route::middleware([
     Route::get('/editar_utilizador/{id}', [AdminController::class, 'editarUtilizador']);
     Route::PUT('/actualizar_utilizador/{id}', [AdminController::class, 'actualizarUtilizador']);
     //=================================================MÓDULO BIBLIOTECA==================================================================================   
-    
-    //ROTAS QUE CARREGAM A PÁGINA  "BIBLIOTECA"
-    Route::get('/conteudos/inicio', [ConteudoController::class, 'index']);
-    Route::get('/conteudos/turma/{id}', [ConteudoController::class, 'listarDisciplina']);
-
-    // ROTA PARA GERIR SEMESTRE
-    Route::post('/turmas/registo', [TurmaController::class, 'store']);
-
-    // ROTA PARA GERIR DISCIPLINAS
-    Route::post('/disciplinas/registo', [DisciplinaController::class, 'store']);
-    Route::get('/disciplinas/perfil/{id}', [DisciplinaController::class, 'mostrarPerfil']);
-
-    //ROTAS PARA GERIR CONTEÚDOS
-    Route::post('/conteudos/registo', [ConteudoController::class, 'store']);
-    Route::get('/conteudos/listar/{id_turma}/{id_disciplina}', [ConteudoController::class, 'listarConteudos']);
-    Route::get('/conteudo/visualizar/{id}', [ConteudoController::class, 'verDetalhes']);
-    Route::get('/conteudo/baixar/{conteudo}', [ConteudoController::class, 'baixarConteudo']);
-    Route::post('/conteudo/eliminarConteudo/{id}', [ConteudoController::class, 'destroy']);
-    Route::get('/conteudos/eliminarConteudo/{id}', [ConteudoController::class, 'eliminarConteudo']);
 
     //ROTAS PARA GERIR ANO LECTIVO
     Route::post('/ano_lectivo/registo', [AnoLectivoController::class, 'store']);
@@ -85,25 +61,6 @@ Route::middleware([
     route::get('/perfil', [UserController::class,'index']);
     route::get('/perfil/editar', [UserController::class,'editarPerfil']);
     Route::get('/user/eliminar{id}', [UserController::class, 'eliminar']);
-
-
-    //ROTAS PARA GESTÃO DO MÓDULO GARIMPO
-    Route::post('/adicionar_garimpo', [garimpoChatController::class,'store']);
-    Route::get('/ver/garimpo', [garimpoChatController::class,'listarGarimpos']);
-    Route::get('/eliminar/garimpo/{id}', [garimpoChatController::class,'eliminarGarimpo']);
-    Route::get('/listar/membro/{idGarimpo}/{nomeGarimpo}', [PedidoController::class,'listarMembrosGarimpo']);
-
-    Route::get('/ver/chat/{idGarimpo}/{nomeGarimpo}', [MensagemController::class,'mostrarChat']);
-    Route::post('/enviar_msg/{idGarimpo}', [MensagemController::class,'registarMensagem']);
-
-    Route::get('/inscrever/garimpo/{id}', [PedidoController::class,'inscreverPedido']);
-    Route::get('/pedidos/garimpo', [PedidoController::class,'listarPedido']);
-    Route::get('/pedidos/garimpo/{idGarimpo}', [PedidoController::class,'listarPedidoGarimpo']);
-    Route::get('/eliminar/pedido/{id}', [PedidoController::class,'eliminarPedido']);
-    Route::get('/aceitar/pedido/{id}/{numInscritos}', [PedidoController::class,'aceitarPedido']);
-    // Route::get('garimpos/usuario/', [PedidoController::class,'listarGarimpoUsuario']);
-    Route::get('/remover/membro/{pedidoId}/{numInscritos}', [PedidoController::class,'removerMembro']);
-   //=========================================================================================================
 
 
 });

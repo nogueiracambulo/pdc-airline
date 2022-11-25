@@ -8,11 +8,6 @@
 @include('admin/modal/acesso/RegistarPermissao')
 @include('admin/modal/acesso/RegistarFuncao')
 @include('admin/modal/AnoLectivoRegistar')
-@include('admin/modal/turmaRegistar')
-@include('admin/modal/AnoLectivoSelecionar')
-@include('biblioteca/modal_Disciplina/registarDisciplina')
-@include('biblioteca/modal_Conteudo/registar_conteudo')
-@include('biblioteca/modal_Conteudo/eliminarConteudo')
 @include('admin/modal/acesso/UserEliminar') 
 
 <body class="hold-transition sidebar-mini layout-fixed" >
@@ -22,7 +17,7 @@
             <div class="wrapper">
                 <!-- Preloader -->
                 <div class="preloader flex-column justify-content-center align-items-center">
-                    <img class="animation__shake" src="/template_Admin_lte/dist/img/2/preload.png" alt="MULONGI"
+                    <img class="animation__shake" src="/template_Admin_lte/dist/img/2/preload.png" alt="pdc-airline"
                         height="80" width="80">
                 </div>
         
