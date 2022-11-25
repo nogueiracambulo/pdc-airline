@@ -29,25 +29,28 @@
                     @enderror <br>
 
                     @isset($disciplina)
-                        {{-- @foreach ($disciplina as $disciplina) --}}
                         <div class="input-group-append">
                             <input type="search" class="form-control form-control-sm @error('disciplina') is-invalid @enderror"  name="disciplina" value="{{$disciplina->id}}" hidden>
                             <input type="search" class="form-control form-control-sm"   placeholder="{{$disciplina->nome}}" disabled> <br><br>
                         </div>
                         @error('disciplina')
-                        <span class="description" style="color:red">{{$message}} </span><br>
+                             <span class="description" style="color:red">{{$message}} </span><br>
                         @enderror <br>
                         
                         <div class="input-group-append">
                             <input type="search" class="form-control form-control-sm @error('turma') is-invalid @enderror"  name="turma" value="{{$disciplina->turma_id}}" hidden>
                         </div>
-                        {{-- @endforeach --}}
+                        @error('turma')
+                            <span class="description" style="color:red">{{$message}} </span><br>
+                        @enderror <br>
                     @endisset   
                     <div class="input-group-append">
-                        <input type="file" id="ficheiro" name="ficheiro" style="display: none" >
+                        <input type="file" id="ficheiro" name="ficheiro" style="display: none" class="@error('ficheiro') is-invalid @enderror" >
                         <label for="ficheiro" class="btn_file">Carregar o conteúdo</label>
                     </div><br>
-                     <br>
+                    @error('ficheiro')
+                        <span class="description" style="color:red">{{$message}} </span><br>
+                    @enderror <br>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light fecharX" data-dismiss="modal">Cancelar</button>
