@@ -59,12 +59,11 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function ano_lectivo(){
-        return $this->hasMany(ano_lectivo::class);
-    }
-
     public function roles(){
         return $this->belongsToMany(Role::class, 'roles_users');
     }
 
+    public function membro_pdc_info(){
+        return $this->hasOne(Membro::class,'user_id');
+    }
 }

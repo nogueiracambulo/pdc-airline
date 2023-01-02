@@ -11,7 +11,7 @@
         <div class="header-info">
             <div class="hf-item">
                 <a href="/" >
-                    <img src="/template_admin_lte/dist/img/2/preload.png" width="100px" alt="" >
+                    <img src="/template_admin_lte/dist/img/2/preto.png" width="100px" alt="" >
                 </a>
                 <span style="padding: 95px"> </span>
             </div>

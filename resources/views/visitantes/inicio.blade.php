@@ -3,11 +3,6 @@
 @section('titulo', 'MULONGI - Início')
 
 @section('content')
-    {{-- @include('publicacoes/modal/registarPublicacao') --}}
-    {{-- @include('publicacoes/modal/publicacaoDetalhes') --}}
-    {{-- @include('aulas_Apoio/modal/registarAnuncio') --}}
-
-
 	<main class="container-fluid imgCapa2 " >
 		<div id=mainslider class="carousel slide " data-ride="carousel">
 			<ol class="carousel-indicators">
@@ -20,24 +15,7 @@
 			</ol>
 			<div class="container" >
 				<div class="carousel-inner" style="height: 31.2em" >
-                    {{-- @forelse($publicacoes as $pub)
-                        @if($loop->index<3)
-                            <div  class="carousel-item  @if($loop->index==0) active @endif" style= "transition-duration: 1s; transition-time-function: ease-in">
-                                <img src="publicacoes/{{$pub->imagem}}" class="d-block w-100  imgCapa" alt="">
-                                <div class="carousel-caption d-none d-md-block  text-left">
-                                    <div class="hs-subtitle">{{$pub->legenda}}</div>
-                                    <h2 class="hs-titl">{{$pub->legenda}}</h2>
-                                    <p class="hs-des">{{$pub->texto}}</p>
-                                    <a href="#" class="main-btn" data-toggle="modal" data-target="#Modal_publicacaoDetalhes{{$pub->id}}">Ver Detalhes</a>
-
-                                </div>
-                            </div>
-                        @endif
-                    	@empty
-                    @endforelse --}}
-
                 </div>
-
 			</div>
 
             <a href="#mainslider" class="carousel-control-prev" role="button" data-slide="prev">
@@ -50,8 +28,6 @@
 				<span class="sr-only">Avançar</span>
                 <br><br><br><br>
 			</a>
-
-
 		</div>
 	</main>
 
@@ -61,13 +37,12 @@
 			<div class="row">
 				<div class="col-lg-7 col-md-6">
 					<div class="big-icon">
-						<i class="fa fa-graduation-cap"></i>
+						<i class="fa fa-plane"></i>
 					</div>
 					<div class="counter-content">
-						<h2>ORGANIZAÇÃO & ORIENTAÇÃO ACADÉMICA</h2>
-						<p><i class="fa fa-calendar-o"></i>PRESENCIAL: 07H00 - 20H00</p>
+						<h2>DESCUBRA O MUNDO CONNOSCO</h2>
+						<p><i class="fa fa-calendar-o"></i>PDC-AIRLINES | 2022</p>
 					</div>
-
 				</div>
 				<div class="col-lg-5 col-md-6">
 					<div class="counter">
@@ -86,18 +61,18 @@
 	<!-- Services section -->
 	<section class="service-section spad">
 		<div class="container services">
-			<div class="section-title text-center">
+			{{-- <div class="section-title text-center">
 				<h3>SERVIÇOS MULONGI</h3>
 				<p>Providenciamos a oportunidade que lhe prepara para uma carreira
                      estudantil brilhante<br> e um potencial profissional de sucesso em TI</p>
-			</div>
+			</div> --}}
 			<div class="row">
 				<div class="col-lg-4 col-sm-6 service-item">
 					<div class="service-icon">
 						<img src="vendor_visitante/img/cc-icon/biblioteca.png" alt="1">
 					</div>
 					<div class="service-content">
-						<h4>BIBLIOTECA </h4>
+						<h4>VOOS</h4>
 						<p>Neste módulo MULONGI, encontrará uma grande facilidade em localizar os conteúdos das suas disciplinas,
                             pois eles estarão organizados aqui de acordo ao ano acadêmico e disciplina.</P>
                         <P> Vai ainda encontrar links associados aos conteúdos, que em algum momento já serviram de auxílio para
@@ -109,7 +84,7 @@
 						<img src="vendor_visitante/img/services-icons/4.png" alt="1">
 					</div>
 					<div class="service-content">
-						<h4>TRABALHOS</h4>
+						<h4>RESERVAS</h4>
 						<p>Este módulo atenta-se aos projetos semestrais das disciplinas realizados no departamento</p>
                         <p>Permite aos docentes publicarem propostas de projetos e avaliar grupos de estudantes bem como projetos desenvolvidos por eles </p>
                         <p>Aos estudantes são permitidos criar grupos de 2 a 5 elementos para desenvolver o projeto de uma disciplina específica, carregá-lo no MULONGI e aguardar pela avaliação do docente.</p>
@@ -121,11 +96,10 @@
 						<img src="vendor_visitante/img/services-icons/3.png" alt="1">
 					</div>
 					<div class="service-content">
-						<h4>GARIMPO</h4>
+						<h4>OUTROS</h4>
 						<p>O MULONGI lhe proporciona a oportunidade de comaltar as dúvidas nos assuntos de todas a Disciplinas do curso, estudando online com outros estudantes ou agendar estudo presencial com colegas que melhor percebem o assunto específico</p>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</section>
@@ -176,7 +150,7 @@
 				<p>Elimine suas dúvidas com o colega que melhor entendeu a matéria</p>
 			</div>
 			<div class="row">
-				@isset($garimpos)
+				{{-- @isset($garimpos)
 					@foreach($garimpos as $garimpo)
 						<!-- course item -->
 						<div class="col-lg-4 col-md-6 course-item">
@@ -193,7 +167,7 @@
 							</div>
 						</div>
 					@endforeach
-				@endisset
+				@endisset --}}
 			</div>
 		</div>
 	</section>

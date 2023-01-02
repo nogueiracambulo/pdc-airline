@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bilhete;
 use Illuminate\Http\Request;
 
-
-class VisitanteController extends Controller
+class BilheteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +14,8 @@ class VisitanteController extends Controller
      */
     public function index()
     {
-        // $garimpos=Garimpo::all();
-
-        return view('visitantes.inicio');
+        //
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -44,10 +41,10 @@ class VisitanteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Bilhete  $bilhete
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Bilhete $bilhete)
     {
         //
     }
@@ -55,10 +52,10 @@ class VisitanteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Bilhete  $bilhete
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Bilhete $bilhete)
     {
         //
     }
@@ -67,10 +64,10 @@ class VisitanteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Bilhete  $bilhete
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Bilhete $bilhete)
     {
         //
     }
@@ -78,10 +75,10 @@ class VisitanteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Bilhete  $bilhete
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Bilhete $bilhete)
     {
         //
     }
