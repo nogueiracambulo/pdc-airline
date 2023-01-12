@@ -13,13 +13,25 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::create('aeronaves', function (Blueprint $table) {
+            $fotoPadrao ="aviaoModelo.png";
+            $table->id();
+            $table->string('nome');
+            $table->string('matricula')->unique();
+            $table->string('marca');
+            $table->string('modelo');
+            $table->string('foto', 2048)->default($fotoPadrao);
+            $table->timestamps();
+        });
+
         Schema::create('voos', function (Blueprint $table) {
             $table->id();
-            $table->date('numero_voo');
+            $table->string('numero_voo');
             $table->date('dataPartida');
+            $table->time('horaPartida');
             $table->time('horaCheckin');
             $table->time('horaEmbarque');
-            $table->time('horaPartida');
+            $table->date('dataChegada');
             $table->time('horaChegada');
 
             $table->bigInteger('percurso_id')->unsigned();
@@ -28,10 +40,10 @@ return new class extends Migration
             ->on('percursos')
             ->onDelete('cascade');
 
-            $table->bigInteger('aviao_id')->unsigned();
-            $table->foreign('aviao_id')
+            $table->bigInteger('aeronave_id')->unsigned();
+            $table->foreign('aeronave_id')
             ->references('id')
-            ->on('avioes')
+            ->on('aeronaves')
             ->onDelete('cascade');
 
             $table->bigInteger('administrativo_id')->unsigned();
@@ -52,6 +64,7 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('aeronaves');
         Schema::dropIfExists('voos');
     }
 };

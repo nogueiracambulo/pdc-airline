@@ -26,7 +26,13 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 
+        'apelido',
+        'dataNascimento',
+        'genero',
+        'telefone',
+        'email', 
+        'password'
     ];
 
     /**
@@ -62,8 +68,8 @@ class User extends Authenticatable
     public function roles(){
         return $this->belongsToMany(Role::class, 'roles_users');
     }
-
-    public function membro_pdc_info(){
-        return $this->hasOne(Membro::class,'user_id');
+    
+    public function morada(){
+        return $this->hasOne(Morada::class, 'user_id');
     }
 }

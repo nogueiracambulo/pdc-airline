@@ -5,23 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class MembroPDC extends Model
+class Membro extends Model
 {
     use HasFactory;
     protected $fillable=[
         'numero_membro',
-        'preferencia_viagem',
-        'morada',
-        'milha',
-        'pais',
-        'cidade',
-        'refeicao',
-        'tipo_lugar',
-        'user_id'
+        'titulo',
+        'idioma_preferencia',
+        'milhas',
+        'user_id',
+        'preferencia_id'
     ];
 
 
     public function user(){
         return $this->belongsTo(User::class,'user_id');
+    }
+
+    public function preferencia(){
+        return $this->belongsTo(Preferencia::class,'preferencia_id');
     }
 }

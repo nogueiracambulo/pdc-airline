@@ -2,6 +2,12 @@
 <html lang="en">
     <head>
         @include('layouts.visitante.header')
+        @include('aeroporto/registar') 
+        @include('percurso/registar') 
+        @include('regalia/registar') 
+        @include('tarifa/registar') 
+        @include('frota/registar') 
+        @include('voo/registar') 
     </head>
 
     <body>

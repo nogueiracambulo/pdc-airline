@@ -1,5 +1,5 @@
 @extends('layouts.visitante.principal')
-@section('titulo', 'MULONGI - Contactos')
+@section('titulo', 'PDC-AIRLINES - Contacto')
 
 @section('content')
 

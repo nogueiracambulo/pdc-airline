@@ -16,7 +16,7 @@
                 <div class="icon">
                     <i class="fas fa-plane"></i>
                 </div>
-                <a href="#" class="small-box-footer"> Aceder <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="/voos/listar" class="small-box-footer"> Aceder <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <div class="col-md-4 ">

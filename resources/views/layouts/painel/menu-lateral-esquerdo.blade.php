@@ -6,26 +6,17 @@
     <div class="sidebar">
         <div class="col-3">
             <!-- Brand Logo -->
-            <a href="/dashboard" class="brand-link">
+            <a href="/dashboard" title="Área restrita"class="brand-link">
                 &nbsp; &nbsp;  <img width="170px" src="/template_admin_lte/dist/img/2/logo-preto.png" alt="" class="" style="opacity: .8">
             </a>
         </div>
-        <!-- Settings Dropdown -->
-        <!-- Sidebar user panel (optional) -->
-        {{-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-                <img src={{ Auth::user()->profile_photo_url }} class="img-circle elevation-2" alt="Foto perfil">
-            </div>
-            <div class="info">
-                <a href="/perfil" class="d-block">{{ Auth::user()->name }}</a>
-            </div>
-        </div> --}}
 
         <!-- Sidebar Menu -->
+        @isset(Auth::user()->name)
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
-                @can('add_role')
+                {{-- @can('add_role') --}}
                  <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-cog"></i>
@@ -63,9 +54,9 @@
                         </li><hr>
                     </ul>
                 </li>
-                @endcan
+                {{-- @endcan --}}
 
-                @can('add_role')
+                {{-- @can('add_role') --}}
                  <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-plane"></i>
@@ -78,43 +69,48 @@
                       
                         
                         <li class="nav-item">
-                            <a href="/admin/listar_administradores" class="nav-link">
-                                <i class="fa fa-list nav-icon"></i>
+                            <a href="/voos/listar" class="nav-link">
+                                <i class="fas fa-list nav-icon"></i>
                                 <p>Voos disponíveis</p>
                             </a>
                         </li>
                      
                         <li class="nav-item">
-                            <a href="/admin/listar_administradores" class="nav-link">
+                            <a href="/frota/listar" class="nav-link">
                                 <i class="fa fa-list nav-icon"></i>
-                                <p>Frotas</p>
+                                <p>Frotas (Aviões)</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/listar_administradores" class="nav-link">
-                                <i class="fas fa-route nav-icon"></i>
-                                <p>Destinos</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/admin/listar_administradores" class="nav-link">
+                            <a href="/tarifas/listar" class="nav-link">
                                 <i class="fa fa-list nav-icon"></i>
                                 <p>Tarifas</p>
                             </a>
                         </li>
-                   
                         <li class="nav-item">
-                            <a href="/admin/listar_utilizadores" class="nav-link">
-                                <i class="fas fa fa-list nav-icon"></i>
-                                <p>Aeroportos</p>
+                            <a href="/regalias/listar" class="nav-link">
+                                <i class="fa fa-list nav-icon"></i>
+                                <p>Regalias</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/percursos/listar" class="nav-link">
+                                <i class="fas fa-route nav-icon"></i>
+                                <p>Percursos</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/aeroportos/listar" class="nav-link">
+                                <i class="fas fa fa-building nav-icon"></i>
+                                <p>Aeroportos (Destinos)</p>
                             </a>
                         </li>
                         <hr>
                     </ul>
                 </li>
-                @endcan
+                {{-- @endcan --}}
 
-                @can('add_role')
+                {{-- @can('add_role') --}}
                 <li class="nav-item">
                    <a href="#" class="nav-link">
                        <i class="nav-icon fas fa-ticket-alt"></i>
@@ -153,9 +149,9 @@
                        <hr>
                    </ul>
                </li>
-               @endcan
+               {{-- @endcan --}}
 
-               @can('add_role')
+               {{-- @can('add_role') --}}
                <li class="nav-item">
                   <a href="#" class="nav-link">
                       <i class="nav-icon fas fa-users"></i>
@@ -166,31 +162,24 @@
                   </a>
                   <ul class="nav nav-treeview">
                       <li class="nav-item">
-                          <a href="/admin/listar_administradores" class="nav-link">
+                          <a href="/membros/listar" class="nav-link">
                               <i class="fa fa-list nav-icon"></i>
                               <p> Ver membros</p>
                           </a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="/admin/listar_utilizadores" class="nav-link">
-                              <i class="fas fa fa-user-plus nav-icon"></i>
-                              <p>Registar-se</p>
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="/admin/listar_utilizadores" class="nav-link">
-                            <i class="fas fa-sign-in-alt nav-icon"></i>
-                            <p>Fazer login</p>
-                        </a>
                       </li>
                       <hr>
                   </ul>
 
               </li>
-              @endcan
-
+              {{-- @endcan1 --}}
              </ul>
         </nav>
+        @else
+        
+        
+
+        @endisset
+
         <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->

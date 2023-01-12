@@ -6,6 +6,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\VisitanteController;
+use App\Http\Controllers\AeroportoController;
+use App\Http\Controllers\PercursoController;
+use App\Http\Controllers\TarifaController;
+use App\Http\Controllers\AeronaveController;
+use App\Http\Controllers\VooController;
+use App\Http\Controllers\MembroController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,19 +49,38 @@ Route::middleware([
     Route::get('/admin/listar_utilizadores', [AdminController::class, 'listar_utilizadores']);
     Route::get('/admin/listar_funcoes', [AdminController::class, 'listar_funcoes']);
     Route::get('/admin/listar_permissoes', [AdminController::class, 'listar_permissoes']);
-    Route::get('/admin/anosLectivos', [AnoLectivoController::class, 'listar_anosLectivos']);
     Route::post('/registar_funcao', [AdminController::class, 'registarFuncao']);
     Route::post('/registar_permissao', [AdminController::class, 'registarPermissao']);
     Route::post('/registar_utilizador', [AdminController::class, 'registarUtilizador']);
     Route::get('/editar_utilizador/{id}', [AdminController::class, 'editarUtilizador']);
     Route::PUT('/actualizar_utilizador/{id}', [AdminController::class, 'actualizarUtilizador']);
-    //=================================================MÓDULO BIBLIOTECA==================================================================================   
+    //=========================================================================================================================================   
 
-    //ROTAS PARA GERIR ANO LECTIVO
-    Route::post('/ano_lectivo/registo', [AnoLectivoController::class, 'store']);
-    Route::get('/ano_lectivo/mostrar', [AnoLectivoController::class, 'show']);
-    Route::post('/selecionarAno', [AnoLectivoController::class, 'selecionar']);
+    //ROTAS PARA GERIR AEROPORTO
+    Route::get('/aeroportos/listar', [AeroportoController::class, 'listarAeroportos']);
+    Route::post('/aeroporto/registar', [AeroportoController::class, 'registarAeroporto']);
 
+    //ROTAS PARA GERIR PERCURSOS
+    Route::get('/percursos/listar', [PercursoController::class, 'listarPercurso']);
+    Route::post('/percurso/registar', [PercursoController::class, 'registarPercurso']);
+
+    //ROTAS PARA GERIR REGALIAS
+    Route::get('/regalias/listar', [TarifaController::class, 'listarRegalias']);
+    Route::post('/regalia/registar', [TarifaController::class, 'registarRegalia']);
+
+    //ROTAS PARA GERIR TARIFAS
+    Route::get('/tarifas/listar', [TarifaController::class, 'listarTarifas']);
+    Route::post('/tarifa/registar', [TarifaController::class, 'registarTarifa']);
+
+    //ROTAS PARA GERIR FROTA
+    Route::get('/frota/listar', [AeronaveController::class, 'listarFrota']);
+    Route::post('/frota/registar', [AeronaveController::class, 'registarAeronave']);
+    Route::post('/cabine/registar', [AeronaveController::class, 'registarCabine']);
+    
+    //ROTAS PARA GERIR VOOS
+    Route::get('/voos/listar', [VooController::class, 'listarVoos']);
+    Route::post('/voo/registar', [VooController::class, 'registarVoo']);
+    Route::get('/voo/listarDetalhes/{id}', [VooController::class, 'listarDetalhesVoo']);
 
     // ROTAS PARA GERIR O UTILIZADOR
     route::get('/perfil', [UserController::class,'index']);
@@ -64,3 +89,9 @@ Route::middleware([
 
 
 });
+
+ //ROTAS PARA GERIR MEMBROS PDC-AIRLINES
+ Route::get('/membros/listar', [MembroController::class, 'listarMembros']);
+ Route::get('/membros/listarDetalhes/{id}', [MembroController::class, 'listarDetalhesMembro']);
+ Route::get('/membros/registo', [MembroController::class, 'apresentarFormRegisto']);
+ Route::post('/membro/registar', [MembroController::class, 'registarMembro']);

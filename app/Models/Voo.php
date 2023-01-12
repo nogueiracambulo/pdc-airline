@@ -11,12 +11,13 @@ class Voo extends Model
     protected $fillable=[
         'numero_voo',
         'dataPartida',
+        'horaPartida',
         'horaCheckin',
         'horaEmbarque',
-        'horaPartida',
+        'dataChegada',
         'horaChegada',
         'percurso_id',
-        'aviao_id',
+        'aeronave_id',
         'administrativo_id'
     ];
 
@@ -24,11 +25,17 @@ class Voo extends Model
         return $this->belongsTo(Percurso::class, 'percurso_id');
     }
 
-    public function aviao(){
-        return $this->belongsTo(Aviao::class, 'aviao_id');
+    public function aeronave(){
+        return $this->belongsTo(Aeronave::class, 'aeronave_id');
     }
 
     public function user(){
         return $this->belongsTo(User::class, 'administrativo_id');
     }
+
+    public function tarifas(){
+        return $this->belongsToMany(Tarifa::class, 'voos_tarifas','voo_id','tarifa_id');
+    }
+
+
 }

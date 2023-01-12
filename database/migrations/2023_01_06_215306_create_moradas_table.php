@@ -13,13 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('avioes', function (Blueprint $table) {
+        Schema::create('moradas', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->string('matricula')->unique();
-            $table->string('marca');
-            $table->string('modelo');
-            $table->integer('capacidade');
+            $table->string('pais');
+            $table->string('cidade');
+
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('cascade');
+            
             $table->timestamps();
         });
     }
@@ -31,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('aviaos');
+        Schema::dropIfExists('moradas');
     }
 };

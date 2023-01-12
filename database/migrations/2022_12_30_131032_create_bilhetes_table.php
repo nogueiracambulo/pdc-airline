@@ -14,30 +14,30 @@ return new class extends Migration
     public function up()
     {
 
-        Schema::create('origems', function (Blueprint $table) {
-            $table->id();
+        // Schema::create('origems', function (Blueprint $table) {
+        //     $table->id();
 
-            $table->bigInteger('aeroporto_id')->unsigned();
-            $table->foreign('aeroporto_id')
-            ->references('id')
-            ->on('aeroportos')
-            ->onDelete('cascade');
+        //     $table->bigInteger('aeroporto_id')->unsigned();
+        //     $table->foreign('aeroporto_id')
+        //     ->references('id')
+        //     ->on('aeroportos')
+        //     ->onDelete('cascade');
             
-            $table->timestamps();
-        });
+        //     $table->timestamps();
+        // });
 
-        Schema::create('destinos', function (Blueprint $table) {
-            $table->id();
+        // Schema::create('destinos', function (Blueprint $table) {
+        //     $table->id();
 
             
-            $table->bigInteger('aeroporto_id')->unsigned();
-            $table->foreign('aeroporto_id')
-            ->references('id')
-            ->on('aeroportos')
-            ->onDelete('cascade');
+        //     $table->bigInteger('aeroporto_id')->unsigned();
+        //     $table->foreign('aeroporto_id')
+        //     ->references('id')
+        //     ->on('aeroportos')
+        //     ->onDelete('cascade');
             
-            $table->timestamps();
-        });
+        //     $table->timestamps();
+        // });
 
         Schema::create('bilhetes', function (Blueprint $table) {
             $table->id();
@@ -60,13 +60,13 @@ return new class extends Migration
             $table->bigInteger('origem_id')->unsigned();
             $table->foreign('origem_id')
             ->references('id')
-            ->on('origems')
+            ->on('aeroportos')
             ->onDelete('cascade');
 
             $table->bigInteger('destino_id')->unsigned();
             $table->foreign('destino_id')
             ->references('id')
-            ->on('destinos')
+            ->on('aeroportos')
             ->onDelete('cascade');
             $table->timestamps();
         });
@@ -79,8 +79,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('origems');
-        Schema::dropIfExists('destinos');
         Schema::dropIfExists('bilhetes');
     }
 };

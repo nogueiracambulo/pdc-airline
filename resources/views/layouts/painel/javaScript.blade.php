@@ -34,4 +34,16 @@
 {{-- <script src="{{ asset('template_Admin_lte/dist/js/demo.js')}}"></script> --}}
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('template_Admin_lte/dist/js/pages/dashboard.js')}}"></script>
+<script src="{{ asset('template_Admin_lte/dist/js/bootstrap-multiselect.js')}}"></script>
 
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('#colors').multiselect({
+        buttonWidth:'470px',
+        includeSelectAllOption:true,
+        
+      });
+  });
+</script>

@@ -26,6 +26,30 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             RoleUserSeeder::class,
             PermissionRoleSeeder::class,
+            AeroportoSeeder::class,
+            PercursoSeeder::class,
+            AeroportoPercursoSeeder::class,
+            AeronaveSeeder::class,
+            RegaliaSeeder::class,
+            TarifaSeeder::class,
+            RegaliaTarifaSeeder::class,
+            CabineSeeder::class,
+            MoradaSeeder::class,
+            PreferenciaSeeder::class,
+            MembroSeeder::class,
+            VooSeeder::class,
+            VooTarifaSeeder::class,
+            //ClienteSeeder::class,
+            //CompraSeeder::class,
+            //AnuncioSeeder::class,
+            //BilheteSeeder::class,
+            
+           
+          
+           
+            
+           
+           
         ]);
     }
 }

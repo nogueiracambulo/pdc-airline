@@ -1,6 +1,6 @@
 @extends('layouts.visitante.principal')
 
-@section('titulo', 'MULONGI - Sobre nós')
+@section('titulo', 'PDC-AIRLINES - Sobre nós')
 @section ('content')  
 	<!-- Breadcrumb section -->
 	<div class="site-breadcrumb">
@@ -16,7 +16,7 @@
 	<section class="about-section spad pt-0">
 		<div class="container">
 			<div class="section-title text-center">
-				<h3>BEM-VINDO AO MULONGI</h3>
+				<h3>BEM-VINDO AO PDC-AIRLINES</h3>
 				<p>Organize a tua carreira estudantil e Desenvolva projetos de forma responsável <br> e profissional, respeitando o tempo e as etapas</p>
 			</div>
 			<div class="row">

@@ -47,9 +47,9 @@
                             <a class="text-muted me-3" href="{{ route('password.request') }}">
                                 {{ __('Esqueceu a palavra-passe?') }}
                             </a>
-                        @endif --}}
-                        <a class="text-muted me-3 text-decoration-none" href="{{ route('register') }}">
-                            {{ __('Não possui uma conta Mulongi?') }}
+                        @endif {{ route('register') }}--}}
+                        <a class="text-muted me-3 text-decoration-none" href="/membros/registo">
+                            {{ __('Não é membro PDC-Airlines?') }}
                         </a>
                         
                         <input type="submit" class="btn btn-primary" style="color:white" value="Entrar"> 

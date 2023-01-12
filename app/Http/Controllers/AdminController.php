@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Role;
 use App\Models\Permission;
+use App\Models\Morada;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -152,17 +153,29 @@ class AdminController extends Controller
 
 
     public function registarUtilizador(Request $request){
-        $utilizador = new User;
-        $utilizador->name=$request->name;
-        $utilizador->email=$request->email;
-        $utilizador->password=Hash::make($request->password);
-        $utilizador->save();
+        $user=new User();
+        $user->name=$request->nome;
+        $user->apelido=$request->apelido;
+        $user->dataNascimento=$request->dataNascimento;
+        $user->genero=$request->genero;
+        $user->telefone=$request->telefone;
+        $user->email=$request->email;
+        $user->password=Hash::make($request->password);
+        $user->save();
+
+        //Criar morada e associar ao utilizador criado.
+        $morada=new Morada();
+        $morada->pais=$request->pais;
+        $morada->cidade=$request->cidade;
+        $morada->user_id=$user->id;
+        $morada->save();
 
         //Atribuindo Função ao Utilizador
-        User::find($utilizador->id)->roles()->attach($request->funcao);
+        User::find($user->id)->roles()->attach($request->funcao);
                 
         Alert::success('sucesso', 'Utilizador criado com sucesso');
         return back();
+
     }
 
     public function editarUtilizador($id){

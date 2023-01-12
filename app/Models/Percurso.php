@@ -11,6 +11,7 @@ class Percurso extends Model
 
   
     public function aeroportos(){
-        return $this->belongsToMany(Aeroporto::class, 'aeroporto_percuros','percurso_id','aeroporto_id');
+        return $this->belongsToMany(Aeroporto::class, 'aeroporto_percursos','percurso_id','aeroporto_id');
     }
 }
+  

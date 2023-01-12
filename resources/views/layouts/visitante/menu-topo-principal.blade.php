@@ -32,14 +32,14 @@
             </div>
         </div>
         <div class="container">
-           
+           @include('percurso.registar')
             <ul class="main-menu" >
 
                 <li class="active"><a href="/">Início</a></li>
                 <li><a href="/sobre">Sobre nós</a></li>
                 <li><a href="/contactos">Contactos</a></li>
                 <li><a href="/disciplinas1">Grelha Curricular</a></li>
-                {{-- <li><a href="/biblioteca_cc">Biblioteca CC</a></li> --}}
+                <li><a href="#" data-toggle="modal" data-target="#Modal_Registar_percurso">TESTE MODAL</a></li>
                 <li><a href="/dashboard">Serviços</a></li>
 
                 @if(isset(auth()->user()->id))

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class MembroPDCController extends Controller
+class AnuncioController extends Controller
 {
     //
 }
