@@ -8,14 +8,15 @@
 @include('admin/modal/acesso/RegistarPermissao')
 @include('admin/modal/acesso/RegistarFuncao')
 @include('admin/modal/acesso/UserEliminar')
+@include('frota/definirCabine') 
 @include('aeroporto/registar') 
 @include('percurso/registar') 
+@include('anuncio/registar')
 @include('regalia/registar') 
 @include('tarifa/registar') 
 @include('frota/registar') 
-@include('frota/definirCabine') 
 @include('voo/registar')
- 
+@include('membro/sobrePDC')
 
 <body class="hold-transition sidebar-mini layout-fixed" >
    

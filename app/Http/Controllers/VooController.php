@@ -6,6 +6,7 @@ use App\Models\Voo;
 use App\Models\Percurso;
 use App\Models\Tarifa;
 use App\Models\Aeronave;
+use App\Classes\Enc;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -59,6 +60,8 @@ class VooController extends Controller
 
     //Listar detalhes das informações do voo
     public function listarDetalhesVoo($id){
+        $enc=new Enc;
+        $id=$enc->desencriptar($id);
         $voo=Voo::find($id);
         return view('voo.vooDetalhes',['voo'=>$voo]);
     }

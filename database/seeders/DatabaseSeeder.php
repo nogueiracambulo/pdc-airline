@@ -39,16 +39,12 @@ class DatabaseSeeder extends Seeder
             MembroSeeder::class,
             VooSeeder::class,
             VooTarifaSeeder::class,
-            //ClienteSeeder::class,
-            //CompraSeeder::class,
-            //AnuncioSeeder::class,
-            //BilheteSeeder::class,
-            
-           
-          
-           
-            
-           
+            AnuncioSeeder::class,
+            PassageiroSeeder::class,
+            BilheteSeeder::class,
+            ReservaSeeder::class,
+            ReservaBilheteSeeder::class,
+            ReservaVooSeeder::class,
            
         ]);
     }

@@ -47,3 +47,23 @@
       });
   });
 </script>
+
+<script>
+  var incrementButton=getElementsByClassName('inc');
+  var decrementButton=getElementsByClassName('dec');
+
+  // console.log(incrementButton);
+  // console.log(decrementButton);
+
+  for(var i; i<incrementButton.length; i++){
+      var button=incrementButton[i];
+      button.addEventListener('click', function(event){
+        var buttonClicked= event.target;
+        // console.log(buttonClicked);
+        var input=buttonClicked.parentElement.children[01]
+        var inputValue=input.value;
+        var newValue=parseInt(inputValue) + 1; 
+        input.value=newValue;
+      })
+  }
+</script>

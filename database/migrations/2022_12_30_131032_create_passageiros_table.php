@@ -13,16 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('clientes', function (Blueprint $table) {
+
+        Schema::create('passageiros', function (Blueprint $table) {
+            //Dados do titular
             $table->id();
-            $table->string('primeiro_nome');
-            $table->string('nome_meio');
-            $table->string('ultimo_nome');
-            $table->string('genero')->default('masculino');
+            $table->string('nome');
+            $table->string('sobrenome');
+            $table->string('genero');
             $table->string('telefone');
-            $table->string('email')->unique();
+            $table->string('email')->nullable();
             $table->date('dataNascimento');
+            $table->timestamps();
         });
+
+        
     }
 
     /**
@@ -32,6 +36,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clientes');
+        Schema::dropIfExists('passageiros');
+      
     }
 };

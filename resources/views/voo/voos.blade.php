@@ -3,7 +3,9 @@
 
 
 @section('content')
-    {{-- {{dd($roles)}} --}}
+    @php
+        $enc= new App\Classes\Enc();   
+    @endphp
     <div class="content">
         <section class="content-header">
             <div class="container-fluid">
@@ -108,7 +110,7 @@
                                     @endforeach
                                 </td>
                                 <td class="list-inline">
-                                    <a class="btn btn-primary btn-sm rounded-pill" href="/voo/listarDetalhes/{{$voo->id}}">
+                                    <a class="btn btn-primary btn-sm rounded-pill" href="/voo/listarDetalhes/{{$enc->encriptar($voo->id)}}">
                                         <i class="fas fa-eye">
                                         </i>
                                         detalhes

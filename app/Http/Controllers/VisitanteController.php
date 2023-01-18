@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Anuncio;
+use App\Models\Aeroporto;
+use App\Models\Tarifa;
 
 class VisitanteController extends Controller
 {
@@ -14,11 +16,12 @@ class VisitanteController extends Controller
      */
     public function index()
     {
-        // $garimpos=Garimpo::all();
-
-        return view('visitantes.inicio');
+        $anuncios=Anuncio::all();
+        $aeroportos=Aeroporto::all();
+        $tarifas=Tarifa::all();
+        return view('visitantes.inicio',['anuncios'=>$anuncios,'aeroportos'=>$aeroportos, 'tarifas'=>$tarifas]);
     }
-
+ 
 
     /**
      * Show the form for creating a new resource.

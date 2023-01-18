@@ -20,13 +20,13 @@ class TarifaSeeder extends Seeder
     {
         Tarifa::insert([
             'id' =>1,
-            'nome'=>"Classe Executiva",
+            'nome'=>"Executiva",
             'codigo'=>"C",
         ]);
 
         Tarifa::insert([
             'id' =>2,
-            'nome'=>"Classe Económica",
+            'nome'=>"Económica",
             'codigo'=>"Y",
         ]);
     }

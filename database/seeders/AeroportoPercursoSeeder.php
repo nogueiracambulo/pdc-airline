@@ -25,5 +25,8 @@ class AeroportoPercursoSeeder extends Seeder
 
         //Adicionar aeroportos 1,2 e 3 ao percurso 2.
         Percurso::find(2)->aeroportos()->attach([1,2,3]);
+
+        //Adicionar aeroportos 2 e 1 ao percurso 3.
+        Percurso::find(3)->aeroportos()->attach([2,1]);
     }
 }

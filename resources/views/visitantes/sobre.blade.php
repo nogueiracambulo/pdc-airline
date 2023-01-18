@@ -1,4 +1,4 @@
-@extends('layouts.visitante.principal')
+@extends('layouts.painel.principal')
 
 @section('titulo', 'PDC-AIRLINES - Sobre nós')
 @section ('content')  

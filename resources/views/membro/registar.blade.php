@@ -64,8 +64,8 @@
 
                             <span class="description"> Informe o Género</span>
                             <div class="input-group input-group-sm mb-3">
-                                <input type="checkbox" name="genero" value="masculino" active> Masculino  &nbsp;
-                                <input type="checkbox" name="genero"value="femenino"> Femenino
+                                <input type="radio" name="genero" value="masculino" active> Masculino  &nbsp;
+                                <input type="radio" name="genero"value="femenino"> Femenino
                             </div>
 
                             <div class="input-group input-group-sm mb-0">

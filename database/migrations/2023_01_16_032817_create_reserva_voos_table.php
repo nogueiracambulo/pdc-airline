@@ -13,20 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-     
-        Schema::create('anuncios', function (Blueprint $table) {
-            $fotoPadrao ="aviaoModelo.png";
-
+        Schema::create('reserva_voos', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo');
-            $table->string('descricao');
-            $table->string('tipo');
-            $table->string('imagem', 2048)->default($fotoPadrao);
-            
-            $table->bigInteger('user_id')->unsigned();
-            $table->foreign('user_id')
+
+            $table->bigInteger('reserva_id')->unsigned();
+            $table->foreign('reserva_id')
             ->references('id')
-            ->on('users')
+            ->on('reservas')
+            ->onDelete('cascade');
+
+            $table->bigInteger('voo_id')->unsigned();
+            $table->foreign('voo_id')
+            ->references('id')
+            ->on('voos')
             ->onDelete('cascade');
             $table->timestamps();
         });
@@ -39,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('anuncios');
+        Schema::dropIfExists('reserva_voos');
     }
 };

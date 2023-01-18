@@ -11,6 +11,7 @@ class Anuncio extends Model
     protected $fillable=[
         'titulo',
         'descricao',
+        'tipo',
         'imagem',
         'user_id'
     ];

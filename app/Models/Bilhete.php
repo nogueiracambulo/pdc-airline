@@ -13,17 +13,14 @@ class Bilhete extends Model
         'referencia',
         'tipo',
         'tarifa_id',
-        'origem_id',
-        'destino_id'
+        'passageiro_id' 
     ];
 
-    public function origem(){
-        return $this->belongsTo(Origem::class, 'origem_id');
-    }
-    public function destino(){
-        return $this->belongsTo(Destino::class, 'destino_id');
-    }
+
     public function tarifa(){
         return $this->belongsTo(Tarifa::class, 'tarifa_id');
+    }
+    public function titular(){
+        return $this->belongsTo(Passageiro::class, 'passageiro_id');
     }
 }

@@ -8,6 +8,7 @@ use App\Models\Membro;
 use App\Models\User;
 use App\Models\Preferencia;
 use App\Models\Morada;
+use App\Classes\Enc;
 use Illuminate\Support\Facades\Hash;
 
 use RealRashid\SweetAlert\Facades\Alert;
@@ -70,6 +71,8 @@ class MembroController extends Controller
 
     //Listar detalhes das informações de um Membro PDC
     public function listarDetalhesMembro($id){
+        $enc=new Enc;
+        $id= $enc->desencriptar($id);
         $membro=Membro::find($id);
         return view('membro.membroDetalhes',['membro'=>$membro]);
     }

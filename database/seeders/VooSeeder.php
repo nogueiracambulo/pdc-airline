@@ -32,7 +32,21 @@ class VooSeeder extends Seeder
             'percurso_id'=>1,
             'aeronave_id'=>1,
             'administrativo_id'=>1,
+        ]);
 
+        Voo::insert([
+            'id' =>2,
+            'numero_voo'=>"PD651",
+            'dataPartida'=>"2023/01/20",
+            'horaPartida'=>"13:30",
+            'horaCheckin'=>"10:30",
+            'horaEmbarque'=>"12:30",
+            'dataChegada'=>"2023/01/20",
+            'horaChegada'=>"15:30",
+
+            'percurso_id'=>3,
+            'aeronave_id'=>1,
+            'administrativo_id'=>1,
         ]);
     }
 

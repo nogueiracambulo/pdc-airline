@@ -116,10 +116,10 @@
                        <i class="nav-icon fas fa-ticket-alt"></i>
                        <p>
                            Reservas
-                           <i class="fas fa-angle-left right"></i>
+                           {{-- <i class="fas fa-angle-left right"></i> --}}
                        </p>
                    </a>
-                   <ul class="nav nav-treeview">
+                   {{-- <ul class="nav nav-treeview">
                      
                        
                        <li class="nav-item">
@@ -147,7 +147,7 @@
                         </a>
                     </li>
                        <hr>
-                   </ul>
+                   </ul> --}}
                </li>
                {{-- @endcan --}}
 
@@ -164,7 +164,7 @@
                       <li class="nav-item">
                           <a href="/membros/listar" class="nav-link">
                               <i class="fa fa-list nav-icon"></i>
-                              <p> Ver membros</p>
+                              <p> Informação de membro</p>
                           </a>
                       </li>
                       <hr>
@@ -175,12 +175,128 @@
              </ul>
         </nav>
         @else
-        
-        
 
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                data-accordion="false">
+                 <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-plane"></i>
+                        <p>
+                            Voos
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/listar_administradores" class="nav-link">
+                                <i class="fa fa-eye nav-icon"></i>
+                                <p>Ver estado do voo</p>
+                            </a>
+                        </li><hr>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                   <a href="#" class="nav-link">
+                       <i class="nav-icon fas fa-ticket-alt"></i>
+                       <p>
+                           Reservas
+                           <i class="fas fa-angle-left right"></i>
+                       </p>
+                   </a>
+                   <ul class="nav nav-treeview">  
+                       <li class="nav-item">
+                           <a href="/reservas/procurarMinhas" class="nav-link">
+                               <i class="fa fa-list nav-icon"></i>
+                               <p>Minhas reservas</p>
+                           </a>
+                       </li>
+                       <li class="nav-item">
+                        <a href="/" class="nav-link">
+                            <i class="fa fa-plus-circle nav-icon"></i>
+                            <p>Nova reserva</p>
+                        </a>
+                       </li><hr>
+                   </ul> 
+               </li>
+               <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Membros PDC
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#Modal_sobre_pdcClub">
+                                <i class="fa fa-list nav-icon"></i>
+                                <p> Sobre PDC-Club</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/membros/registo" class="nav-link">
+                                <i class="fas fa-sign-out-alt nav-icon"></i>
+                                <p> Registar-se</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/login" class="nav-link">
+                                <i class="fas fa-sign-in-alt nav-icon"></i>
+                                <p> Iniciar sessão</p>
+                            </a>
+                        </li>
+                        <hr>
+                    </ul>
+                </li>
+
+             </ul>
+        </nav>
+        {{-- <div class="row ">  
+            <div class="col-md-12">
+                <br>
+                <!-- small box -->
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>VOOS</h3>
+                        <p>Saiba o estado do seu voo</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <a href="/voos/listar" class="small-box-footer"> Aceder <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-md-12 ">
+            
+                <!-- small box -->
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>RESERVAS</h3>
+                        <p>Gerir reservas</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <a href="#" class="small-box-footer"> Aceder <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-md-12">
+             
+                <!-- small box -->
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>PDC CLUB</h3>
+                        <p>Saber mais sobre o PDC CLUB</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <a href="#" class="small-box-footer"> Aceder <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div> --}}
+        
         @endisset
-
-        <!-- /.sidebar-menu -->
     </div>
-    <!-- /.sidebar -->
 </aside>

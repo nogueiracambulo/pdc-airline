@@ -13,21 +13,25 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('compras', function (Blueprint $table) {
+        Schema::create('bilhetes', function (Blueprint $table) {
             $table->id();
-            
-            $table->bigInteger('cliente_id')->unsigned();
-            $table->foreign('cliente_id')
+            $table->string('estado')->default('ok');
+            $table->string('referencia')->unique()->nullable();
+            $table->string('tipo')->nullable();
+
+            $table->bigInteger('tarifa_id')->unsigned();
+            $table->foreign('tarifa_id')
             ->references('id')
-            ->on('clientes')
+            ->on('tarifas')
             ->onDelete('cascade');
 
-            $table->bigInteger('bilhete_id')->unsigned();
-            $table->foreign('bilhete_id')
+            //Dados do titular
+            $table->bigInteger('passageiro_id')->unsigned();
+            $table->foreign('passageiro_id')
             ->references('id')
-            ->on('bilhetes')
+            ->on('passageiros')
             ->onDelete('cascade');
-
+       
             $table->timestamps();
         });
     }
@@ -39,6 +43,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('compras');
+        Schema::dropIfExists('bilhetes');
     }
 };

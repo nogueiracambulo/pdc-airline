@@ -12,6 +12,9 @@ use App\Http\Controllers\TarifaController;
 use App\Http\Controllers\AeronaveController;
 use App\Http\Controllers\VooController;
 use App\Http\Controllers\MembroController;
+use App\Http\Controllers\AnuncioController;
+use App\Http\Controllers\ReservaController;
+use App\Http\Controllers\BilheteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -87,7 +90,7 @@ Route::middleware([
     route::get('/perfil/editar', [UserController::class,'editarPerfil']);
     Route::get('/user/eliminar{id}', [UserController::class, 'eliminar']);
 
-
+    
 });
 
  //ROTAS PARA GERIR MEMBROS PDC-AIRLINES
@@ -95,3 +98,13 @@ Route::middleware([
  Route::get('/membros/listarDetalhes/{id}', [MembroController::class, 'listarDetalhesMembro']);
  Route::get('/membros/registo', [MembroController::class, 'apresentarFormRegisto']);
  Route::post('/membro/registar', [MembroController::class, 'registarMembro']);
+ 
+//ROTAS PARA GERIR ANÚNCIOS
+Route::post('/anuncio/registar', [AnuncioController::class, 'registarAnuncio']);
+
+//ROTAS PARA GERIR RESERVAS
+Route::post('/reservas/procurar', [ReservaController::class, 'procurarDisponibilidade']);
+Route::get('/reserva/registo/{tarifa}/{passageiros}/{voo_id}/{origem_id}/{destino_id}', [ReservaController::class, 'apresentarFormRegisto']);
+Route::post('/reserva/registar', [ReservaController::class, 'registarReserva']);
+
+

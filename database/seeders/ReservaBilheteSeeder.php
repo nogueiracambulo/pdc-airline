@@ -1,15 +1,16 @@
 <?php
 
 namespace Database\Seeders;
+use App\Models\Reserva;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Percurso;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Symfony\Component\CssSelector\Parser\Handler\HashHandler;
 use Illuminate\Database\Seeder;
 
-class PercursoSeeder extends Seeder
+
+class ReservaBilheteSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,16 +19,11 @@ class PercursoSeeder extends Seeder
      */
     public function run()
     {
-        Percurso::insert([
-            'id' =>1,
-        ]);
 
-        Percurso::insert([
-            'id' =>2,
-        ]);
+        //Adicionar à reserva 1 os bilhetes 1 e 2 .
+        Reserva::find(1)->bilhetes()->attach([1,2]);
 
-        Percurso::insert([
-            'id' =>3,
-        ]);
+       
+        
     }
 }
